@@ -1,4 +1,4 @@
-import pandas as pd
+import dask.array as da
 from util.constants import (
     RAW_DATA_FILES,
     COMBINED_DATA_FILE,
@@ -12,13 +12,10 @@ from tqdm import tqdm
 import time
 
 # Read in the data
-dfs = []
-for file in tqdm(RAW_DATA_FILES):
-    dfs.append(pd.read_csv(file))
+df = da.read_csv(RAW_DATA_FILES)
 
 # Append the columns for the 8-class and 2-class task
 t = time.time()
-df = pd.concat(dfs)
 df[CLASSES_8_Y_COLUMN] = df[CLASSES_34_Y_COLUMN].apply(lambda x: CLASSES_8_MAPPING[x])
 df[CLASSES_2_Y_COLUMN] = df[CLASSES_34_Y_COLUMN].apply(lambda x: CLASSES_2_MAPPING[x])
 print("Time to append columns: {:.2f}s".format(time.time() - t))

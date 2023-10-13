@@ -1,10 +1,10 @@
-import numpy as np
+import dask.array as da
 from .constants import *
 
 def fpr(actual, pred):
     # Convert to numpy arrays
-    actual = np.array(actual)
-    pred = np.array(pred)
+    actual = da.array(actual)
+    pred = da.array(pred)
 
     # Convert to 'attack' if anything other than 'benign'
     actual[actual != BENIGN] = ATTACK
@@ -12,13 +12,13 @@ def fpr(actual, pred):
 
     # Calculate the false positive rate
     # FPR = FP / (FP + TN)
-    return np.mean((actual == BENIGN) & (pred == ATTACK))
+    return da.mean((actual == BENIGN) & (pred == ATTACK))
         
 
 def fnr(actual, pred):
     # Convert to numpy arrays
-    actual = np.array(actual)
-    pred = np.array(pred)
+    actual = da.array(actual)
+    pred = da.array(pred)
 
     # Convert to 'attack' if anything other than 'benign'
     actual[actual != BENIGN] = ATTACK
@@ -26,12 +26,12 @@ def fnr(actual, pred):
 
     # Calculate the false negative rate
     # FNR = FN / (FN + TP)
-    return np.mean((actual == ATTACK) & (pred == BENIGN))
+    return da.mean((actual == ATTACK) & (pred == BENIGN))
 
 def f1_score(actual, pred):
     # Convert to numpy arrays
-    actual = np.array(actual)
-    pred = np.array(pred)
+    actual = da.array(actual)
+    pred = da.array(pred)
 
     # Convert to 'attack' if anything other than 'benign'
     actual[actual != BENIGN] = ATTACK
@@ -45,9 +45,9 @@ def f1_score(actual, pred):
 
 def accuracy_score(actual, pred):
     # Convert to numpy arrays
-    actual = np.array(actual)
-    pred = np.array(pred)
+    actual = da.array(actual)
+    pred = da.array(pred)
 
     # Calculate the accuracy
     # accuracy = (TP + TN) / (TP + TN + FP + FN)
-    return np.mean(actual == pred)
+    return da.mean(actual == pred)
