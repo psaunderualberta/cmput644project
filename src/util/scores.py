@@ -1,41 +1,41 @@
-import dask.array as da
+import numpy as np
 from .constants import *
 
 def fpr(actual, pred):
     # Convert to numpy arrays
-    actual = da.array(actual)
-    pred = da.array(pred)
+    actual = np.array(actual)
+    pred = np.array(pred)
 
     # Convert to 'attack' if anything other than 'benign'
-    actual[actual != BENIGN] = ATTACK
-    pred[pred != BENIGN] = ATTACK
+    actual[actual != BENIGN_CLASS] = ATTACK_CLASS
+    pred[pred != BENIGN_CLASS] = ATTACK_CLASS
 
     # Calculate the false positive rate
     # FPR = FP / (FP + TN)
-    return da.mean((actual == BENIGN) & (pred == ATTACK))
+    return np.mean((actual == BENIGN_CLASS) & (pred == ATTACK_CLASS))
         
 
 def fnr(actual, pred):
     # Convert to numpy arrays
-    actual = da.array(actual)
-    pred = da.array(pred)
+    actual = np.array(actual)
+    pred = np.array(pred)
 
     # Convert to 'attack' if anything other than 'benign'
-    actual[actual != BENIGN] = ATTACK
-    pred[pred != BENIGN] = ATTACK
+    actual[actual != BENIGN_CLASS] = ATTACK_CLASS
+    pred[pred != BENIGN_CLASS] = ATTACK_CLASS
 
     # Calculate the false negative rate
     # FNR = FN / (FN + TP)
-    return da.mean((actual == ATTACK) & (pred == BENIGN))
+    return np.mean((actual == ATTACK_CLASS) & (pred == BENIGN_CLASS))
 
 def f1_score(actual, pred):
     # Convert to numpy arrays
-    actual = da.array(actual)
-    pred = da.array(pred)
+    actual = np.array(actual)
+    pred = np.array(pred)
 
     # Convert to 'attack' if anything other than 'benign'
-    actual[actual != BENIGN] = ATTACK
-    pred[pred != BENIGN] = ATTACK
+    actual[actual != BENIGN_CLASS] = ATTACK_CLASS
+    pred[pred != BENIGN_CLASS] = ATTACK_CLASS
 
     # Calculate the F1-score
     # F1 = 2 * (precision * recall) / (precision + recall)
@@ -45,9 +45,9 @@ def f1_score(actual, pred):
 
 def accuracy_score(actual, pred):
     # Convert to numpy arrays
-    actual = da.array(actual)
-    pred = da.array(pred)
+    actual = np.array(actual)
+    pred = np.array(pred)
 
     # Calculate the accuracy
     # accuracy = (TP + TN) / (TP + TN + FP + FN)
-    return da.mean(actual == pred)
+    return np.mean(actual == pred)

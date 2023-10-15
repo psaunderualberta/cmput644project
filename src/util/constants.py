@@ -1,11 +1,14 @@
 import os
 from glob import glob
 
-COMBINED_DATA_FILE = os.path.join(os.path.dirname(__file__), "..", "..", "CICIoT2023", "data", "combined_data.csv")
+COMBINED_DATA_FILES = glob(os.path.join(os.path.dirname(__file__), "..", "..", "CICIoT2023", "data", "combined_data", "*.csv"))
+SHORTENED_DATA_FILES = glob(os.path.join(os.path.dirname(__file__), "..", "..", "CICIoT2023", "data", "shortened_data", "*.csv"))
 RAW_DATA_FILES = glob(os.path.join(os.path.dirname(__file__), "..", "..", "CICIoT2023", "data", "original", "*.csv"))
 
 BENIGN = "Benign"
+ATTACK_CLASS = 1
 ATTACK = "Attack"
+BENIGN_CLASS = 0
 
 CLASSES_8_MAPPING = {
     'DDoS-RSTFINFlood': 'DDoS',
@@ -53,48 +56,48 @@ CLASSES_8_MAPPING = {
 }
 
 CLASSES_2_MAPPING = {
-    'DDoS-RSTFINFlood': 'Attack',
-    'DDoS-PSHACK_Flood': 'Attack',
-    'DDoS-SYN_Flood': 'Attack',
-    'DDoS-UDP_Flood': 'Attack',
-    'DDoS-TCP_Flood': 'Attack',
-    'DDoS-ICMP_Flood': 'Attack',
-    'DDoS-SynonymousIP_Flood': 'Attack',
-    'DDoS-ACK_Fragmentation': 'Attack',
-    'DDoS-UDP_Fragmentation': 'Attack',
-    'DDoS-ICMP_Fragmentation': 'Attack',
-    'DDoS-SlowLoris': 'Attack',
-    'DDoS-HTTP_Flood': 'Attack',
+    'DDoS-RSTFINFlood': ATTACK_CLASS,
+    'DDoS-PSHACK_Flood': ATTACK_CLASS,
+    'DDoS-SYN_Flood': ATTACK_CLASS,
+    'DDoS-UDP_Flood': ATTACK_CLASS,
+    'DDoS-TCP_Flood': ATTACK_CLASS,
+    'DDoS-ICMP_Flood': ATTACK_CLASS,
+    'DDoS-SynonymousIP_Flood': ATTACK_CLASS,
+    'DDoS-ACK_Fragmentation': ATTACK_CLASS,
+    'DDoS-UDP_Fragmentation': ATTACK_CLASS,
+    'DDoS-ICMP_Fragmentation': ATTACK_CLASS,
+    'DDoS-SlowLoris': ATTACK_CLASS,
+    'DDoS-HTTP_Flood': ATTACK_CLASS,
 
-    'DoS-UDP_Flood': 'Attack',
-    'DoS-SYN_Flood': 'Attack',
-    'DoS-TCP_Flood': 'Attack',
-    'DoS-HTTP_Flood': 'Attack',
+    'DoS-UDP_Flood': ATTACK_CLASS,
+    'DoS-SYN_Flood': ATTACK_CLASS,
+    'DoS-TCP_Flood': ATTACK_CLASS,
+    'DoS-HTTP_Flood': ATTACK_CLASS,
 
 
-    'Mirai-greeth_flood': 'Attack',
-    'Mirai-greip_flood': 'Attack',
-    'Mirai-udpplain': 'Attack',
+    'Mirai-greeth_flood': ATTACK_CLASS,
+    'Mirai-greip_flood': ATTACK_CLASS,
+    'Mirai-udpplain': ATTACK_CLASS,
 
-    'Recon-PingSweep': 'Attack',
-    'Recon-OSScan': 'Attack',
-    'Recon-PortScan': 'Attack',
-    'VulnerabilityScan': 'Attack',
-    'Recon-HostDiscovery': 'Attack',
+    'Recon-PingSweep': ATTACK_CLASS,
+    'Recon-OSScan': ATTACK_CLASS,
+    'Recon-PortScan': ATTACK_CLASS,
+    'VulnerabilityScan': ATTACK_CLASS,
+    'Recon-HostDiscovery': ATTACK_CLASS,
 
-    'DNS_Spoofing': 'Attack',
-    'MITM-ArpSpoofing': 'Attack',
+    'DNS_Spoofing': ATTACK_CLASS,
+    'MITM-ArpSpoofing': ATTACK_CLASS,
 
-    'BenignTraffic': 'Benign',
+    'BenignTraffic': BENIGN_CLASS,
 
-    'BrowserHijacking': 'Attack',
-    'Backdoor_Malware': 'Attack',
-    'XSS': 'Attack',
-    'Uploading_Attack': 'Attack',
-    'SqlInjection': 'Attack',
-    'CommandInjection': 'Attack',
+    'BrowserHijacking': ATTACK_CLASS,
+    'Backdoor_Malware': ATTACK_CLASS,
+    'XSS': ATTACK_CLASS,
+    'Uploading_Attack': ATTACK_CLASS,
+    'SqlInjection': ATTACK_CLASS,
+    'CommandInjection': ATTACK_CLASS,
 
-    'DictionaryBruteForce': 'Attack',
+    'DictionaryBruteForce': ATTACK_CLASS,
 }
 
 X_COLUMNS = [
