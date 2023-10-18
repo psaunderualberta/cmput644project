@@ -1,7 +1,7 @@
 import numpy as np
 from .constants import *
 
-def fpr(actual, pred):
+def fp_rate(actual, pred):
     # Convert to numpy arrays
     actual = np.array(actual)
     pred = np.array(pred)
@@ -15,7 +15,7 @@ def fpr(actual, pred):
     return np.mean((actual == BENIGN_CLASS) & (pred == ATTACK_CLASS))
         
 
-def fnr(actual, pred):
+def fn_rate(actual, pred):
     # Convert to numpy arrays
     actual = np.array(actual)
     pred = np.array(pred)
@@ -39,8 +39,8 @@ def f1_score(actual, pred):
 
     # Calculate the F1-score
     # F1 = 2 * (precision * recall) / (precision + recall)
-    precision = 1 - fpr(actual, pred)
-    recall = 1 - fnr(actual, pred)
+    precision = 1 - fp_rate(actual, pred)
+    recall = 1 - fn_rate(actual, pred)
     return 2 * (precision * recall) / (precision + recall)
 
 def accuracy_score(actual, pred):

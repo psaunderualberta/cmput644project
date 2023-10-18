@@ -10,7 +10,6 @@ from util.constants import (
     CLASSES_34_Y_COLUMN,
 )
 import time
-import os
 from dask.distributed import Client, LocalCluster
 
 if __name__ == "__main__":
@@ -32,16 +31,16 @@ if __name__ == "__main__":
     print("Time to append columns: {:.2f}s".format(time.time() - t))
 
 
-    # Sample 5 million rows, keeping the distribution of 2-classes
-    n = 5e6
+    # Sample 20 million rows, keeping the distribution of 2-classes
+    n = 2e7
     t = time.time()
-    frac = n / df.shape[0]
+    frac = (n / df.shape[0]).compute()
     df_short = df.sample(frac=frac, random_state=42).reset_index(drop=True)
     print("Time to sample data: {:.2f}s".format(time.time() - t))
 
     # Output the shortened data to csv
     t = time.time()
-    df_short.to_csv(SHORTENED_DATA_FILES, index=False)
+    df_short.to_csv(SHORTENED_DATA_FILES)
     print("Time to output shortened data: {:.2f}s".format(time.time() - t))
 
     # Combine the data and output to csv
