@@ -1,6 +1,8 @@
 import os
 from glob import glob
 
+MAX_TREE_SIZE = 10
+
 COMBINED_DATA_FILES = glob(os.path.join(os.path.dirname(__file__), "..", "..", "CICIoT2023", "data", "combined_data", "*.csv"))
 SHORTENED_DATA_FILES = glob(os.path.join(os.path.dirname(__file__), "..", "..", "CICIoT2023", "data", "shortened_data", "*.csv"))
 RAW_DATA_FILES = glob(os.path.join(os.path.dirname(__file__), "..", "..", "CICIoT2023", "data", "original", "*.csv"))

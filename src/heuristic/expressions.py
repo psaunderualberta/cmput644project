@@ -1,28 +1,37 @@
 from src.utility.util import operators
 import numpy as np
 
+
 # Abstract Base Class
 class __Heuristic:
-    def __repr__(self):
-        raise NotImplementedError("This is an abstract class")
+    __abc_err_msg = "This is an abstract class"
 
-    def __eq__(self):
-        raise NotImplementedError("This is an abstract class")
+    def __repr__(self):
+        raise NotImplementedError(self.__abc_err_msg)
+
+    def __eq__(self, _):
+        raise NotImplementedError(self.__abc_err_msg)
+    
+    def __ne__(self, _):
+        raise NotImplementedError(self.__abc_err_msg)
 
     def size(self):
-        raise NotImplementedError("This is an abstract class")
+        raise NotImplementedError(self.__abc_err_msg)
 
     def depth(self):
-        raise NotImplementedError("This is an abstract class")
+        raise NotImplementedError(self.__abc_err_msg)
 
-    def execute(self, data):
-        raise NotImplementedError("This is an abstract class")
+    def execute(self, _):
+        raise NotImplementedError(self.__abc_err_msg)
     
-    def num_unique_terminals(self, data):
-        raise NotImplementedError("This is an abstract class")
+    def num_unique_terminals(self, _):
+        raise NotImplementedError(self.__abc_err_msg)
     
-    def unique_terminals(self, data):
-        raise NotImplementedError("This is an abstract class")
+    def unique_terminals(self, _):
+        raise NotImplementedError(self.__abc_err_msg)
+    
+    def __hash__(self):
+        raise NotImplementedError(self.__abc_err_msg)
 
 class Binary(__Heuristic):
     def __init__(self, op, left, right):
@@ -35,6 +44,9 @@ class Binary(__Heuristic):
 
     def __eq__(self, other):
         return isinstance(other, Binary) and self.op == other.op and self.left == other.left and self.right == other.right
+    
+    def __hash__(self):
+        return hash(repr(self))
 
     def size(self):
         return 1 + self.left.size() + self.right.size()
@@ -64,6 +76,9 @@ class Unary(__Heuristic):
     def __eq__(self, other):
         return isinstance(other, Unary) and self.op == other.op and self.right == other.right
     
+    def __hash__(self):
+        return hash(repr(self))
+
     def size(self):
         return 1 + self.right.size()
     
@@ -89,6 +104,9 @@ class Terminal(__Heuristic):
     def __eq__(self, other):
         return isinstance(other, Terminal) and self.data == other.data
     
+    def __hash__(self):
+        return hash(repr(self))
+
     def size(self):
         return 1
     
@@ -98,7 +116,7 @@ class Terminal(__Heuristic):
     def execute(self, data):
         return data[self.data].values
     
-    def num_unique_terminals(self, data):
+    def num_unique_terminals(self, _):
         return 1
     
     def unique_terminals(self, data):
@@ -114,6 +132,9 @@ class Number(__Heuristic):
     def __eq__(self, other):
         return isinstance(other, Number) and self.value == other.value
 
+    def __hash__(self):
+        return hash(repr(self))
+
     def size(self):
         return 1
     
@@ -123,8 +144,8 @@ class Number(__Heuristic):
     def execute(self, data):
         return np.full(len(data), self.value)
     
-    def num_unique_terminals(self, data):
+    def num_unique_terminals(self, _):
         return 0
     
-    def unique_terminals(self, data):
+    def unique_terminals(self, _):
         return set()
