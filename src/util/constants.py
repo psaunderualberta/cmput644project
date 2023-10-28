@@ -116,3 +116,30 @@ CLASSES_34_Y_COLUMN = 'label'
 CLASSES_8_Y_COLUMN = 'class_8'
 CLASSES_2_Y_COLUMN = 'class_2'
 
+__grammar_columns = "\n\t| ".join([f"\"{col}\" -> {col}" for col in X_COLUMNS])
+HEURISTIC_GRAMMAR = r""""
+    ?heuristic: "(" binary ")"
+        | "(" unary ")"
+        | terminal
+
+    ?terminal: NUMBER
+        | """ + __grammar_columns + r"""
+    
+    ?unary: unary_op heuristic 
+    ?unary_op: "neg"
+        | "abs"
+        | "sqrt"
+        | "sqr"
+
+    ?binary: binary_op heuristic heuristic 
+    ?binary_op: "+"
+        | "/"
+        | "*"
+        | "-"
+        | "max"
+        | "min"
+
+    %import common.SIGNED_NUMBER -> NUMBER
+    %import common.WS
+    %ignore WS
+"""
