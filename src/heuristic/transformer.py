@@ -1,36 +1,5 @@
 from lark import Transformer
-
-class Binary:
-    def __init__(self, op, left, right):
-        self.op = op
-        self.left = left
-        self.right = right
-    
-    def __repr__(self):
-        return f"({self.op} {self.left} {self.right})"
-
-class Unary:
-    def __init__(self, op, right):
-        self.op = op
-        self.right = right
-    
-    def __repr__(self):
-        return f"({self.op} {self.right})"
-
-class Terminal:
-    def __init__(self, data):
-        self.data = data
-    
-    def __repr__(self):
-        return str(self.data)
-    
-class Number:
-    def __init__(self, value):
-        self.value = value
-    
-    def __repr__(self):
-        return str(self.value)
-    
+from src.heuristic.expressions import Binary, Unary, Terminal, Number
 
 class HeuristicTransformer(Transformer):    
     def binary(self, args):

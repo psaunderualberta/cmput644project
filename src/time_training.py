@@ -1,11 +1,11 @@
-from util import load_data
+from src.utility import load_data
 
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 
 import time
-from util.constants import (
+from utility.constants import (
     COMBINED_DATA_FILES,
     SHORTENED_DATA_FILES,
     X_COLUMNS,

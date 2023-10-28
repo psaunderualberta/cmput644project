@@ -144,4 +144,3 @@ HEURISTIC_GRAMMAR = r"""
     %import common.WS
     %ignore WS
 """
-print(HEURISTIC_GRAMMAR)
