@@ -28,6 +28,8 @@ if __name__ == "__main__":
     df[CLASSES_2_Y_COLUMN] = df[CLASSES_34_Y_COLUMN].apply(
         lambda x: CLASSES_2_MAPPING[x], meta=(CLASSES_2_Y_COLUMN, "int64")
     )
+
+    df = df.categorize(columns=[CLASSES_8_Y_COLUMN, CLASSES_2_Y_COLUMN, CLASSES_34_Y_COLUMN])
     print("Time to append columns: {:.2f}s".format(time.time() - t))
 
 

@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import StratifiedKFold
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from copy import deepcopy
+from util.scores import get_metrics
 
 def cross_validation(df, data_classes, target_class, k, learner, random_state=42):
     """
@@ -32,14 +32,14 @@ def cross_validation(df, data_classes, target_class, k, learner, random_state=42
 
         # Evaluate the learner using accuracy, fpr, fnr, and f1
         y_pred = learner_copy.predict(X_test)
-        stats = [
-            accuracy_score(y_test, y_pred),
-            precision_score(y_test, y_pred),
-            recall_score(y_test, y_pred),
-            f1_score(y_test, y_pred),
-        ]
+        stats = get_metrics(y_test, y_pred)
 
         # Append the scores to the list
-        scores.loc[i] = stats
+        scores.loc[i] = [
+            stats["acc"],
+            stats["fpr"],
+            stats["fnr"],
+            stats["f1"],
+        ]
     
     return scores.mean()

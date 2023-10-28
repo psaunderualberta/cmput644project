@@ -1,53 +1,27 @@
 import numpy as np
 from .constants import *
+from sklearn.metrics import confusion_matrix
 
-def fp_rate(actual, pred):
-    # Convert to numpy arrays
-    actual = np.array(actual)
-    pred = np.array(pred)
+def get_metrics(actual, pred):
+    # https://stackoverflow.com/questions/50666091/true-positive-rate-and-false-positive-rate-tpr-fpr-for-multi-class-data-in-py
+    # Accessed October 19th, 2023
+    cnf_matrix = confusion_matrix(actual, pred)
 
-    # Convert to 'attack' if anything other than 'benign'
-    actual[actual != BENIGN_CLASS] = ATTACK_CLASS
-    pred[pred != BENIGN_CLASS] = ATTACK_CLASS
+    FP = cnf_matrix.sum(axis=0) - np.diag(cnf_matrix)  
+    FN = cnf_matrix.sum(axis=1) - np.diag(cnf_matrix)
+    TP = np.diag(cnf_matrix)
+    TN = cnf_matrix.sum() - (FP + FN + TP)
 
-    # Calculate the false positive rate
-    # FPR = FP / (FP + TN)
-    return np.mean((actual == BENIGN_CLASS) & (pred == ATTACK_CLASS))
-        
+    FP = FP.astype(float)
+    FN = FN.astype(float)
+    TP = TP.astype(float)
+    TN = TN.astype(float)
 
-def fn_rate(actual, pred):
-    # Convert to numpy arrays
-    actual = np.array(actual)
-    pred = np.array(pred)
-
-    # Convert to 'attack' if anything other than 'benign'
-    actual[actual != BENIGN_CLASS] = ATTACK_CLASS
-    pred[pred != BENIGN_CLASS] = ATTACK_CLASS
-
-    # Calculate the false negative rate
-    # FNR = FN / (FN + TP)
-    return np.mean((actual == ATTACK_CLASS) & (pred == BENIGN_CLASS))
-
-def f1_score(actual, pred):
-    # Convert to numpy arrays
-    actual = np.array(actual)
-    pred = np.array(pred)
-
-    # Convert to 'attack' if anything other than 'benign'
-    actual[actual != BENIGN_CLASS] = ATTACK_CLASS
-    pred[pred != BENIGN_CLASS] = ATTACK_CLASS
-
-    # Calculate the F1-score
-    # F1 = 2 * (precision * recall) / (precision + recall)
-    precision = 1 - fp_rate(actual, pred)
-    recall = 1 - fn_rate(actual, pred)
-    return 2 * (precision * recall) / (precision + recall)
-
-def accuracy_score(actual, pred):
-    # Convert to numpy arrays
-    actual = np.array(actual)
-    pred = np.array(pred)
-
-    # Calculate the accuracy
-    # accuracy = (TP + TN) / (TP + TN + FP + FN)
-    return np.mean(actual == pred)
+    return {
+        "tpr": TP / (TP + FN),
+        "fpr": FP / (FP + TN),
+        "tnr": TN / (TN + FP),
+        "fnr": FN / (FN + TP),
+        "acc": (TP + TN) / (TP + FP + FN + TN),
+        "f1": 2 * TP / (2 * TP + FP + FN),
+    }
