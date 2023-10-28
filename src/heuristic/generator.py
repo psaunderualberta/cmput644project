@@ -2,13 +2,14 @@ import numpy as np
 from src.heuristic.expressions import Binary, Unary, Terminal, Number
 from src.utility.constants import MAX_TREE_SIZE, NORMALIZED_COLUMN_NAMES
 
+
 def random_heuristic(tree_size=np.random.randint(1, MAX_TREE_SIZE)):
     """
     Generate a random heuristic.
     """
 
     if tree_size < 1:
-        tree_size=np.random.randint(1, MAX_TREE_SIZE)
+        tree_size = np.random.randint(1, MAX_TREE_SIZE)
 
     # Base cases
     if tree_size == 1:
@@ -35,7 +36,7 @@ def __random_binary(tree_size):
     return Binary(op, left, right)
 
 
-def __random_unary(tree_size):    
+def __random_unary(tree_size):
     # Generate a random unary operator
     op = np.random.choice(["neg", "abs", "sqrt", "sqr"])
     # Generate a random subtree

@@ -5,6 +5,7 @@ import numpy as np
 
 from copy import deepcopy
 
+
 def mutate_heuristic(heuristic):
     """
     Mutate a heuristic by randomly replacing a subtree with a new subtree.
@@ -18,28 +19,35 @@ def mutate_heuristic(heuristic):
 
     return heuristic
 
+
 def __mutate_heuristic(heuristic, mut_probability, max_tree_size=MAX_TREE_SIZE):
     """
     Mutate a heuristic by randomly replacing a subtree with a new subtree.
     """
-    new_tree_size = np.random.randint(1, max_tree_size+1)
+    new_tree_size = np.random.randint(1, max_tree_size + 1)
 
     if np.random.random() < mut_probability:
         print(new_tree_size)
         return True, random_heuristic(new_tree_size)
-    
+
     if isinstance(heuristic, Binary):
         right_size = heuristic.right.size()
-        mutated, heuristic.left = __mutate_heuristic(heuristic.left, mut_probability, max_tree_size - right_size - 1)
+        mutated, heuristic.left = __mutate_heuristic(
+            heuristic.left, mut_probability, max_tree_size - right_size - 1
+        )
         if mutated:
             return True, heuristic
-        
+
         left_size = heuristic.left.size()
-        mutated, heuristic.right = __mutate_heuristic(heuristic.right, mut_probability, max_tree_size - left_size - 1)
+        mutated, heuristic.right = __mutate_heuristic(
+            heuristic.right, mut_probability, max_tree_size - left_size - 1
+        )
         return mutated, heuristic
-    
+
     if isinstance(heuristic, Unary):
-        mutated, heuristic.right = __mutate_heuristic(heuristic.right, mut_probability, max_tree_size - 1)
+        mutated, heuristic.right = __mutate_heuristic(
+            heuristic.right, mut_probability, max_tree_size - 1
+        )
         return mutated, heuristic
 
     return False, heuristic

@@ -4,6 +4,7 @@ from sklearn.model_selection import StratifiedKFold
 from copy import deepcopy
 from scores import get_metrics
 
+
 def cross_validation(df, data_classes, target_class, k, learner, random_state=42):
     """
     Perform k-fold cross validation on the given data and learner.
@@ -41,5 +42,5 @@ def cross_validation(df, data_classes, target_class, k, learner, random_state=42
             stats["fnr"],
             stats["f1"],
         ]
-    
+
     return scores.mean()

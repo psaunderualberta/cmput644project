@@ -1,6 +1,7 @@
 from src.heuristic.generator import random_heuristic
 from src.utility.constants import MAX_TREE_SIZE
 
+
 def test_random_heuristic_creation():
     num_iters = 100
     for size in range(1, MAX_TREE_SIZE):
