@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import StratifiedKFold
 from copy import deepcopy
-from util.scores import get_metrics
+from scores import get_metrics
 
 def cross_validation(df, data_classes, target_class, k, learner, random_state=42):
     """

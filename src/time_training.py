@@ -1,4 +1,4 @@
-from util.util import load_data
+from util import load_data
 
 import numpy as np
 from sklearn.preprocessing import StandardScaler

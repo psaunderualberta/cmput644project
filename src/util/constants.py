@@ -116,30 +116,32 @@ CLASSES_34_Y_COLUMN = 'label'
 CLASSES_8_Y_COLUMN = 'class_8'
 CLASSES_2_Y_COLUMN = 'class_2'
 
-__grammar_columns = "\n\t| ".join([f"\"{col}\" -> {col}" for col in X_COLUMNS])
-HEURISTIC_GRAMMAR = r""""
+__normalized_columns = [col.replace(' ', '_').lower() for col in X_COLUMNS]
+__grammar_columns = "\n\t| ".join([f"{col}" for col in __normalized_columns])
+HEURISTIC_GRAMMAR = r"""
     ?heuristic: "(" binary ")"
         | "(" unary ")"
-        | terminal
-
-    ?terminal: NUMBER
-        | """ + __grammar_columns + r"""
+        | """ + "\n\t| ".join([f"{col} -> terminal" for col in __normalized_columns]) + r"""
+        | FLOAT -> decimal
+        
+    """ + "\n".join([f"?{col}: \"{col}\"" for col in __normalized_columns]) + r"""
     
     ?unary: unary_op heuristic 
-    ?unary_op: "neg"
-        | "abs"
-        | "sqrt"
-        | "sqr"
+    ?unary_op: "neg"    -> neg
+        | "abs"         -> abs
+        | "sqrt"        -> sqrt
+        | "sqr"         -> sqr
 
     ?binary: binary_op heuristic heuristic 
-    ?binary_op: "+"
-        | "/"
-        | "*"
-        | "-"
-        | "max"
-        | "min"
+    ?binary_op: "+"     -> plus
+        | "/"           -> div
+        | "*"           -> mul
+        | "-"           -> sub
+        | "max"         -> max
+        | "min"         -> min
 
-    %import common.SIGNED_NUMBER -> NUMBER
+    %import common.SIGNED_FLOAT -> FLOAT
     %import common.WS
     %ignore WS
 """
+print(HEURISTIC_GRAMMAR)

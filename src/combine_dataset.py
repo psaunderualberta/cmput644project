@@ -1,5 +1,5 @@
 import dask.dataframe as dd
-from util.constants import (
+from constants import (
     RAW_DATA_FILES,
     COMBINED_DATA_FILES,
     SHORTENED_DATA_FILES,
