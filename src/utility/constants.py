@@ -113,20 +113,20 @@ X_COLUMNS = [
        'Max', 'AVG', 'Std', 'Tot size', 'IAT', 'Number', 'Magnitue',
        'Radius', 'Covariance', 'Variance', 'Weight', 
 ]
+NORMALIZED_COLUMN_NAMES_MAPPING = {col.replace(' ', '_').lower(): col for col in X_COLUMNS}
+NORMALIZED_COLUMN_NAMES = list(NORMALIZED_COLUMN_NAMES_MAPPING.keys())
 
 CLASSES_34_Y_COLUMN = 'label'
 CLASSES_8_Y_COLUMN = 'class_8'
 CLASSES_2_Y_COLUMN = 'class_2'
 
-__normalized_columns = [col.replace(' ', '_').lower() for col in X_COLUMNS]
-__grammar_columns = "\n\t| ".join([f"{col}" for col in __normalized_columns])
 HEURISTIC_GRAMMAR = r"""
     ?heuristic: "(" binary ")"
         | "(" unary ")"
-        | """ + "\n\t| ".join([f"{col} -> terminal" for col in __normalized_columns]) + r"""
+        | """ + "\n\t| ".join([f"{col} -> terminal" for col in NORMALIZED_COLUMN_NAMES]) + r"""
         | FLOAT -> decimal
         
-    """ + "\n".join([f"?{col}: \"{col}\"" for col in __normalized_columns]) + r"""
+    """ + "\n".join([f"?{col}: \"{col}\"" for col in NORMALIZED_COLUMN_NAMES]) + r"""
     
     ?unary: unary_op heuristic 
     ?unary_op: "neg"    -> neg

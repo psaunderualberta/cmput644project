@@ -1,6 +1,6 @@
 import numpy as np
 from src.heuristic.expressions import Binary, Unary, Terminal, Number
-from src.utility.constants import MAX_TREE_SIZE, X_COLUMNS
+from src.utility.constants import MAX_TREE_SIZE, NORMALIZED_COLUMN_NAMES
 
 def random_heuristic(tree_size=np.random.randint(1, MAX_TREE_SIZE)):
     """
@@ -46,7 +46,7 @@ def __random_unary(tree_size):
 
 def __random_terminal():
     # Generate a random terminal
-    return Terminal(np.random.choice(X_COLUMNS))
+    return Terminal(np.random.choice(NORMALIZED_COLUMN_NAMES))
 
 
 def __random_number():
