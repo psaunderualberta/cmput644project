@@ -18,16 +18,16 @@ class __Heuristic:
     def size(self):
         raise NotImplementedError(self.__abc_err_msg)
 
+    def num_unique_terminals(self):
+        raise NotImplementedError(self.__abc_err_msg)
+
+    def unique_terminals(self):
+        raise NotImplementedError(self.__abc_err_msg)
+
     def depth(self):
         raise NotImplementedError(self.__abc_err_msg)
 
     def execute(self, _):
-        raise NotImplementedError(self.__abc_err_msg)
-
-    def num_unique_terminals(self, _):
-        raise NotImplementedError(self.__abc_err_msg)
-
-    def unique_terminals(self, _):
         raise NotImplementedError(self.__abc_err_msg)
 
     def __hash__(self):
@@ -63,12 +63,12 @@ class Binary(__Heuristic):
     def execute(self, data):
         return self.fun(self.left.execute(data), self.right.execute(data))
 
-    def num_unique_terminals(self, data):
-        return len(self.unique_terminals(data))
+    def num_unique_terminals(self):
+        return len(self.unique_terminals())
 
-    def unique_terminals(self, data):
-        left_terminals = self.left.unique_terminals(data)
-        right_terminals = self.right.unique_terminals(data)
+    def unique_terminals(self):
+        left_terminals = self.left.unique_terminals()
+        right_terminals = self.right.unique_terminals()
         return left_terminals.union(right_terminals)
 
 
@@ -99,11 +99,11 @@ class Unary(__Heuristic):
     def execute(self, data):
         return self.fun(self.right.execute(data))
 
-    def num_unique_terminals(self, data):
-        return self.right.num_unique_terminals(data)
+    def num_unique_terminals(self):
+        return self.right.num_unique_terminals()
 
-    def unique_terminals(self, data):
-        return self.right.unique_terminals(data)
+    def unique_terminals(self):
+        return self.right.unique_terminals()
 
 
 class Terminal(__Heuristic):
@@ -128,10 +128,10 @@ class Terminal(__Heuristic):
     def execute(self, data):
         return data[self.data].values
 
-    def num_unique_terminals(self, _):
+    def num_unique_terminals(self):
         return 1
 
-    def unique_terminals(self, _):
+    def unique_terminals(self):
         return set([self.data])
 
 
@@ -157,8 +157,8 @@ class Number(__Heuristic):
     def execute(self, data):
         return np.full(len(data), self.value)
 
-    def num_unique_terminals(self, _):
+    def num_unique_terminals(self):
         return 0
 
-    def unique_terminals(self, _):
+    def unique_terminals(self):
         return set()
