@@ -27,7 +27,6 @@ def __mutate_heuristic(heuristic, mut_probability, max_tree_size=MAX_TREE_SIZE):
     new_tree_size = np.random.randint(1, max_tree_size + 1)
 
     if np.random.random() < mut_probability:
-        print(new_tree_size)
         return True, random_heuristic(new_tree_size)
 
     if isinstance(heuristic, Binary):

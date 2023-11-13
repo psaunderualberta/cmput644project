@@ -2,6 +2,7 @@ import os
 from glob import glob
 
 MAX_TREE_SIZE = 10
+MAX_TREE_DEPTH = 10
 
 COMBINED_DATA_FILES = glob(
     os.path.join(
@@ -159,9 +160,9 @@ X_COLUMNS = [
     "Weight",
 ]
 NORMALIZED_COLUMN_NAMES_MAPPING = {
-    col.replace(" ", "_").lower(): col for col in X_COLUMNS
+    col: col.replace(" ", "_").lower() for col in X_COLUMNS
 }
-NORMALIZED_COLUMN_NAMES = list(NORMALIZED_COLUMN_NAMES_MAPPING.keys())
+NORMALIZED_COLUMN_NAMES = list(NORMALIZED_COLUMN_NAMES_MAPPING.values())
 
 CLASSES_34_Y_COLUMN = "label"
 CLASSES_8_Y_COLUMN = "class_8"

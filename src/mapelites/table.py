@@ -1,4 +1,5 @@
 import numpy as np
+from src.heuristic.generator import random_heuristic
 
 
 class Table:
@@ -16,28 +17,30 @@ class Table:
 
         # Create the tables
         table_shape = [resolution] * len(method_names)
-        self.heuristics = np.full(table_shape, np.NaN, dtype=object)
+        self.heuristics = np.full(table_shape, "", dtype=object)
         self.fitnesses = np.full(table_shape, np.NaN, dtype=np.float64)
         self.method_names = method_names
         self.resolution = resolution
-        print(self.bins)
 
     def get_random_heuristic(self):
         """Get a random heuristic from the table"""
         try:
+            lengths = np.vectorize(lambda t: len(str(t)))(self.heuristics)
             return np.random.choice(
-                self.heuristics[not np.isnan(self.heuristics)].flatten()
+                self.heuristics[lengths > 0].flatten()
             )
         except ValueError:
-            return None
+            return random_heuristic()
 
     def insert_heuristic_if_better(self, heuristic, fitness):
         """Insert a heuristic into the table if it is better than the current heuristic
         at the same indices"""
         indices = self.get_indices(heuristic)
-        if np.isnan(self.heuristics[indices]) or heuristic > self.heuristics[indices]:
-            self.heuristics[indices] = heuristic
-            self.fitnesses[indices] = fitness
+        old_heuristic = self.heuristics.item(*indices)
+        old_fitness = self.fitnesses.item(*indices)
+        if np.isnan(old_fitness) or fitness > old_fitness:
+            self.heuristics.itemset(*indices, heuristic)
+            self.fitnesses.itemset(*indices, fitness)
 
         return indices
 

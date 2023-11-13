@@ -23,8 +23,8 @@ if __name__ == "__main__":
 
     # Evaluate Logistic Regression using CV
     t = time.time()
-    model = LogisticRegression(n_jobs=-1, max_iter=250, random_state=42, solver="saga", multi_class='multinomial')
-    results = cross_validation(df, X_COLUMNS, CLASSES_8_Y_COLUMN, 5, model)
+    model = LogisticRegression(n_jobs=-1, random_state=42, solver="saga")
+    results = cross_validation(df, X_COLUMNS, CLASSES_2_Y_COLUMN, 3, model)
     print("Time to run CV: {:.2f}s".format(time.time() - t))
 
     # Print results

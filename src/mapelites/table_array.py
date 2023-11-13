@@ -17,13 +17,36 @@ class TableArray:
     def insert_heuristic_if_better(self, heuristic, fitness):
         """Insert a heuristic into the table if it is better than the current heuristic
         at the same indices"""
-        indices = self.get_indices(heuristic)
         for table in self.tables:
             table.insert_heuristic_if_better(heuristic, fitness)
-
-        return indices
 
     def get_random_heuristic(self):
         """Get a random heuristic from a random table"""
         table = np.random.choice(self.tables)
         return table.get_random_heuristic()
+
+    def get_fitnesses(self, idx=None):
+        """Get the fitnesses of all heuristics in the table"""
+        if idx is None:
+            return np.concatenate([table.fitnesses.flatten() for table in self.tables])
+
+        return self.tables[idx].fitnesses.flatten()
+
+    def get_stored_data(self, strip_nan=False):
+        """Get the heuristics and fitnesses of all heuristics in the table"""
+        heuristics = []
+        fitnesses = []
+        for table in self.tables:
+            heuristics.append(table.heuristics.flatten())
+            fitnesses.append(table.fitnesses.flatten())
+        
+        heuristics = np.concatenate(heuristics)
+        fitnesses = np.concatenate(fitnesses)
+
+        if strip_nan:
+            non_nan_idxs = ~np.isnan(fitnesses)
+            heuristics = heuristics[non_nan_idxs]
+            fitnesses = fitnesses[non_nan_idxs]
+        
+        return heuristics, fitnesses
+

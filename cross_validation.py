@@ -24,9 +24,9 @@ def cross_validation(df, data_classes, target_class, k, learner, random_state=42
     for i, (train_index, test_index) in enumerate(skf.split(X, y)):
         # Get the train and test data
         X_train = X.iloc[train_index]
-        y_train = y[train_index]
+        y_train = y.iloc[train_index]
         X_test = X.iloc[test_index]
-        y_test = y[test_index]
+        y_test = y.iloc[test_index]
 
         scaler = StandardScaler()
         X_train = scaler.fit_transform(X_train)
