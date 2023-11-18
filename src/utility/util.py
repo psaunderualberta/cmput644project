@@ -2,16 +2,18 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 from src.utility.constants import NORMALIZED_COLUMN_NAMES_MAPPING as mapping
+import dask.dataframe as dd
 
-def load_data(files):
-    dfs = []
-    for f in tqdm(files):
-        dfs.append(pd.read_csv(f))
+def load_data(files, dask=False):
+    df = []
 
-    combined = pd.concat(dfs, axis=0, ignore_index=True)
-    combined.columns = list(map(lambda col: mapping[col] if col in mapping else col, combined.columns))
-    return combined
+    if not dask:
+        df = pd.read_parquet(files)
+    else:
+        df = dd.read_parquet(files)
 
+    df.columns = list(map(lambda col: mapping[col] if col in mapping else col, df.columns))
+    return df
 
 def operators(op):
     ops = {

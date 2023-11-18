@@ -1,6 +1,6 @@
 from src.utility.util import operators
 import numpy as np
-
+import dask.array as da
 
 # Abstract Base Class
 class __Heuristic:
@@ -155,7 +155,7 @@ class Number(__Heuristic):
         return 1
 
     def execute(self, data):
-        return np.full(len(data), self.value)
+        return da.full(len(data), self.value)
 
     def num_unique_terminals(self):
         return 0

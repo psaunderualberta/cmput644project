@@ -64,3 +64,5 @@ class Table:
             )
 
         return method()
+
+        
