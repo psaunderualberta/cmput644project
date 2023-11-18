@@ -5,7 +5,7 @@ from src.utility.constants import NORMALIZED_COLUMN_NAMES_MAPPING as mapping
 
 def load_data(files):
     dfs = []
-    for f in tqdm(files[:1]):
+    for f in tqdm(files):
         dfs.append(pd.read_csv(f))
 
     combined = pd.concat(dfs, axis=0, ignore_index=True)

@@ -13,13 +13,11 @@ def main():
     config = {
         "SEED": 42,
         "POPULATION_SIZE": 20,
-        "TIMEOUT": 5,
-        "WANDB": False,
+        "TIMEOUT": 8 * 60 * 60,  # 8 hours
+        "WANDB": True,
         "WANDB_PROJECT": "cmput644project",
         "WANDB_ENTITY": "psaunder",
     }
-
-    print(config)
 
     # Set seed
     if "seed" in config:
@@ -42,8 +40,8 @@ def main():
     # Load data
     data = load_data(COMBINED_DATA_FILES)
     targets = data[CLASSES_2_Y_COLUMN].to_numpy()
-    targets = np.vectorize(lambda x: ATTACK_CLASS if x == ATTACK_CLASS else BENIGN_CLASS)(targets).astype(np.int64)
-    targets[0] = 1
+    targets = np.vectorize(lambda x: ATTACK_CLASS if x == ATTACK else BENIGN_CLASS)(targets).astype(np.int64)
+    # targets[0] = 1
     
     # Create initial population
     population = [random_heuristic(MAX_TREE_SIZE) for _ in range(config["POPULATION_SIZE"])]
@@ -56,32 +54,34 @@ def main():
         # Evaluate the population
         fitnesses = [compute_fitness(h, data, targets) for h in population]
 
-        # log Statistics to wandb
-        if config["WANDB"]:
-            # Population specific statistics
-            wandb.log({"Mean Population Fitness": np.nanmean(fitnesses)})
-            wandb.log({"Max Population Fitness": np.nanmax(fitnesses)})
-            wandb.log({"Min Population Fitness": np.nanmin(fitnesses)})
-            wandb.log({"Std Population Fitness": np.nanstd(fitnesses)})
-
-            # MAP-Elites specific statistics
-            mapelites_fitnesses = tables.get_fitnesses(len(resolutions) - 1)
-            wandb.log({"Mean MAP-Elites Fitness": np.nanmean(mapelites_fitnesses)})
-            wandb.log({"Max MAP-Elites Fitness": np.nanmax(mapelites_fitnesses)})
-            wandb.log({"Min MAP-Elites Fitness": np.nanmin(mapelites_fitnesses)})
-            wandb.log({"Std MAP-Elites Fitness": np.nanstd(mapelites_fitnesses)})
-
         # Insert the population into MAP-Elites
         for heuristic, fitness in zip(population, fitnesses):
             tables.insert_heuristic_if_better(heuristic, fitness)
+
+        # log Statistics to wandb
+        if config["WANDB"]:
+            # Population specific statistics
+            mapelites_fitnesses = tables.get_fitnesses(len(resolutions) - 1)
+            wandb.log({
+                "Mean Population Fitness": np.nanmean(fitnesses),
+                "Max Population Fitness": np.nanmax(fitnesses),
+                "Min Population Fitness": np.nanmin(fitnesses),
+                "Std Population Fitness": np.nanstd(fitnesses),
+
+                # MAP-Elites specific statistics
+                "Mean MAP-Elites Fitness": np.nanmean(mapelites_fitnesses),
+                "Max MAP-Elites Fitness": np.nanmax(mapelites_fitnesses),
+                "Min MAP-Elites Fitness": np.nanmin(mapelites_fitnesses),
+                "Std MAP-Elites Fitness": np.nanstd(mapelites_fitnesses),
+            })
 
         # Select new population
         population = [tables.get_random_heuristic() for _ in range(config["POPULATION_SIZE"])]
 
         # Mutate new population
-        for heuristic in population:
-            mutate_heuristic(heuristic)
-    
+        for i, heuristic in enumerate(population):
+            population[i] = mutate_heuristic(heuristic)
+
     # Log final statistics to wandb
     heuristics, fitnesses = tables.get_stored_data(True)
     best_idx = np.argmax(fitnesses)
@@ -90,10 +90,12 @@ def main():
     print("Best Fitness: {:0.4f}".format(best_fitness))
     print("Best Heuristic: {}".format(best_heuristic))
     if config["WANDB"]:
-        wandb.log({"Best Fitness": best_fitness})
-        wandb.log({"Best Heuristic": str(best_heuristic)})
-        wandb.log({"All Heuristics": heuristics})
-        wandb.log({"All Fitnesses": fitnesses})
+        wandb.log({
+            "Best Fitness": str(best_fitness),
+            "Best Heuristic": str(best_heuristic),
+            "All Heuristics": list(map(str, heuristics)),
+            "All Fitnesses": fitnesses,
+        })
 
 
 def compute_fitness(h, data, targets):
