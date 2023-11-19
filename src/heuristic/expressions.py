@@ -37,8 +37,8 @@ class __Heuristic:
 
 
 class Binary(__Heuristic):
-    def __init__(self, op, left, right):
-        (self.op, self.fun) = operators(op)
+    def __init__(self, op, left, right, dask=False):
+        (self.op, self.fun) = operators(op, dask=dask)
         self.left = left
         self.right = right
 
@@ -75,8 +75,8 @@ class Binary(__Heuristic):
 
 
 class Unary(__Heuristic):
-    def __init__(self, op, right):
-        (self.op, self.fun) = operators(op)
+    def __init__(self, op, right, dask=False):
+        (self.op, self.fun) = operators(op, dask)
         self.right = right
 
     def __repr__(self):
@@ -109,7 +109,7 @@ class Unary(__Heuristic):
 
 
 class Terminal(__Heuristic):
-    def __init__(self, data):
+    def __init__(self, data, dask=False):
         self.data = data
 
     def __repr__(self):
@@ -138,7 +138,7 @@ class Terminal(__Heuristic):
 
 
 class Number(__Heuristic):
-    def __init__(self, value):
+    def __init__(self, value, dask=False):
         self.value = value
 
     def __repr__(self):

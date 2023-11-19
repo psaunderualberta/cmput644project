@@ -165,3 +165,4 @@ data/
 .vscode/
 large/
 wandb/
+artifacts/

@@ -12,8 +12,8 @@ import pickle
 def main():
     config = {
         "SEED": 42,
-        "POPULATION_SIZE": 5,
-        "TIMEOUT": 120,  # 8 hours
+        "POPULATION_SIZE": 20,
+        "TIMEOUT": 12 * 60 * 60,  # 12 hours
         "WANDB": True,
         "WANDB_PROJECT": "cmput644project",
         "WANDB_ENTITY": "psaunder",
