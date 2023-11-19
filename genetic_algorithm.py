@@ -7,13 +7,13 @@ import numpy as np
 import wandb
 import random
 import time
-
+import pickle
 
 def main():
     config = {
         "SEED": 42,
-        "POPULATION_SIZE": 20,
-        "TIMEOUT": 8 * 60 * 60,  # 8 hours
+        "POPULATION_SIZE": 5,
+        "TIMEOUT": 120,  # 8 hours
         "WANDB": True,
         "WANDB_PROJECT": "cmput644project",
         "WANDB_ENTITY": "psaunder",
@@ -40,8 +40,6 @@ def main():
     # Load data
     data = load_data(COMBINED_DATA_FILES)
     targets = data[CLASSES_2_Y_COLUMN].to_numpy()
-    targets = np.vectorize(lambda x: ATTACK_CLASS if x == ATTACK else BENIGN_CLASS)(targets).astype(np.int64)
-    # targets[0] = 1
     
     # Create initial population
     population = [random_heuristic(MAX_TREE_SIZE) for _ in range(config["POPULATION_SIZE"])]
@@ -97,6 +95,16 @@ def main():
             "All Fitnesses": fitnesses,
         })
 
+    # Save the 'TablesArray' object to a pickle file, then upload to wandb
+    if config["WANDB"]:
+        fname = os.path.join("tables.pkl")
+        with open(fname, "wb") as f:
+            pickle.dump(tables, f)
+
+        artifact = wandb.Artifact("map-elites", type="dataset")
+        artifact.add_file("tables.pkl")
+        wandb.log_artifact(artifact)
+        os.remove(fname)
 
 def compute_fitness(h, data, targets):
     values = h.execute(data)

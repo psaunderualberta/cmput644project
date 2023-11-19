@@ -5,25 +5,19 @@ MAX_TREE_SIZE = 10
 MAX_TREE_DEPTH = 10
 
 COMBINED_DATA_FILES = glob(
-    os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "..",
+    os.path.join(".",
         "CICIoT2023",
         "data",
         "combined_data",
-        "*.csv",
+        "*.parquet",
     )
 )
 SHORTENED_DATA_FILES = glob(
-    os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "..",
+    os.path.join(".",
         "CICIoT2023",
         "data",
         "shortened_data",
-        "*.csv",
+        "*.parquet",
     )
 )
 RAW_DATA_FILES = glob(

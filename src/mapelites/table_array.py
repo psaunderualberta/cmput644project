@@ -49,4 +49,3 @@ class TableArray:
             fitnesses = fitnesses[non_nan_idxs]
         
         return heuristics, fitnesses
-

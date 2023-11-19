@@ -1,5 +1,6 @@
 import numpy as np
 from src.heuristic.generator import random_heuristic
+from src.heuristic.parsing import parse_heuristic
 
 
 class Table:
@@ -26,9 +27,9 @@ class Table:
         """Get a random heuristic from the table"""
         try:
             lengths = np.vectorize(lambda t: len(str(t)))(self.heuristics)
-            return np.random.choice(
+            return parse_heuristic(np.random.choice(
                 self.heuristics[lengths > 0].flatten()
-            )
+            ))
         except ValueError:
             return random_heuristic()
 
@@ -36,10 +37,9 @@ class Table:
         """Insert a heuristic into the table if it is better than the current heuristic
         at the same indices"""
         indices = self.get_indices(heuristic)
-        old_heuristic = self.heuristics.item(*indices)
         old_fitness = self.fitnesses.item(*indices)
         if np.isnan(old_fitness) or fitness > old_fitness:
-            self.heuristics.itemset(*indices, heuristic)
+            self.heuristics.itemset(*indices, str(heuristic))
             self.fitnesses.itemset(*indices, fitness)
 
         return indices

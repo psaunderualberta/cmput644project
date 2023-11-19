@@ -3,12 +3,15 @@ import numpy as np
 from tqdm import tqdm
 from src.utility.constants import NORMALIZED_COLUMN_NAMES_MAPPING as mapping
 import dask.dataframe as dd
+import glob
 
 def load_data(files, dask=False):
     df = []
 
     if not dask:
-        df = pd.read_parquet(files)
+        for file in tqdm(files):
+            df.append(pd.read_parquet(file))
+        df = pd.concat(df, axis=0)
     else:
         df = dd.read_parquet(files)
 
