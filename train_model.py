@@ -7,8 +7,10 @@ from src.utility.constants import *
 from src.utility.util import load_data
 import pandas as pd
 from src.heuristic.parsing import parse_heuristic
-from dask.distributed import Client, LocalCluster
+from dask.distributed import Client, LocalCluster, wait
 from dask_ml.linear_model import LogisticRegression
+from cross_validation import cross_validation
+import time
 
 def main():
 
@@ -31,15 +33,18 @@ def main():
     heuristics = list(map(lambda h: parse_heuristic(h, dask=True), heuristics))
 
     # Load the data
-    original_df = load_data(COMBINED_DATA_FILES, dask=True)
+    df = load_data(COMBINED_DATA_FILES, dask=True).repartition(npartitions=100)
 
-    new_cols = {str(h): h.execute(original_df) for h in heuristics}
-    original_df = original_df.assign(**new_cols)
+    new_cols = {str(h): h.execute(df) for h in heuristics}
+    df = df.assign(**new_cols)
 
-    x_columns = X_COLUMNS + list(map(str, heuristics))
-    y_column = CLASSES_2_Y_COLUMN
+    x_columns = NORMALIZED_COLUMN_NAMES + list(new_cols.keys())
 
-    model = LogisticRegression(n_jobs=-1, random_state=42, solver="saga")
+    model = LogisticRegression(n_jobs=-1, random_state=42, solver="lbfgs")
+    start = time.time()
+    results = cross_validation(df, x_columns, CLASSES_2_Y_COLUMN, 5, model)
+    print(results)
+    print("Time to run CV: {:.2f}s".format(time.time() - start))
 
 if __name__ == "__main__":
     main()

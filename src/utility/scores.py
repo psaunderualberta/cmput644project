@@ -1,17 +1,28 @@
+import dask.array as da
+import dask.dataframe as dd
 import numpy as np
 from .constants import *
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+import pandas as pd
 
 
 def get_metrics(actual, pred):
-    # https://stackoverflow.com/questions/50666091/true-positive-rate-and-false-positive-rate-tpr-fpr-for-multi-class-data-in-py
-    # Accessed October 19th, 2023
 
-    return {
-        "precision": precision_score(actual, pred, average="macro"),
-        "fpr": 1 - precision_score(actual, pred, average="macro"),
-        "recall": recall_score(actual, pred, average="macro"),
-        "fnr": 1 - recall_score(actual, pred, average="macro"),
-        "acc": accuracy_score(actual, pred),
-        "f1": f1_score(actual, pred, average="macro"),
-    }
+    df = dd.from_pandas(pd.DataFrame(columns=["accuracy", "precision", "recall", "f1"], dtype=np.float64, index=[0]))
+
+    # Compute accuracy, insert into df
+    accuracy = da.mean(actual == pred)
+    df["accuracy"] = accuracy
+    
+    # Compute precision score
+    tp = da.logical_and(actual == ATTACK_CLASS, pred == ATTACK_CLASS).sum()
+    fp = da.logical_and(actual == ATTACK_CLASS, pred == BENIGN_CLASS).sum()
+    df["precision"] = tp / (tp + fp)
+
+    # Compute recall score
+    fn = da.logical_and(actual == BENIGN_CLASS, pred == ATTACK_CLASS).sum()
+    df["recall"] = tp / (tp + fn)
+
+    # Compute f1 score
+    df["f1"] = 2 * df["precision"] * df["recall"] / (df["precision"] + df["recall"])
+
+    return df
