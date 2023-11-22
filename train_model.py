@@ -12,12 +12,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from cross_validation import cross_validation
 import time
-from dask import delayed
+import dask
 
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 
-@delayed
+@dask.delayed
 def delayed_load_data(file):
     df = pd.read_parquet(file)
     df.columns = list(
@@ -31,7 +31,7 @@ def delayed_load_data(file):
     return df
 
 
-@delayed(nout=2)
+@dask.delayed(nout=2)
 def delayed_execute_heuristic(df, heuristics, use_heuristic=True):
     if use_heuristic:
         new_cols = {str(h): h.execute(df) for h in heuristics}
@@ -43,19 +43,19 @@ def delayed_execute_heuristic(df, heuristics, use_heuristic=True):
     return new_df[x_cols], new_df[CLASSES_2_Y_COLUMN]
 
 
-@delayed
+@dask.delayed
 def delayed_mean(df):
     return df.mean()
 
 
-@delayed
+@dask.delayed
 def delayed_variance(df):
     variances = df.var()
     variances[variances == 0] = 1
     return variances
 
 
-@delayed
+@dask.delayed
 def delayed_pooled_mean_and_var(means, variances, lens):
     means = np.array(means)
     variances = np.array(variances)
@@ -66,39 +66,35 @@ def delayed_pooled_mean_and_var(means, variances, lens):
     )
 
 
-@delayed
+@dask.delayed
 def delayed_normalize(df, mu, std):
     return (df - mu) / std
 
 
-@delayed
+@dask.delayed
 def delayed_train(X, y, model):
     return model.fit(X, y)
 
 
-@delayed
+@dask.delayed
 def delayed_predict(X, model):
     return model.predict(X)
 
 
-@delayed
+@dask.delayed
 def delayed_scores(y_true, y_pred):
+    y_true = np.concatenate(y_true)
+    y_pred = np.concatenate(y_pred)
     # Get accuracy, precision, recall, and f1 score
     return pd.Series(
         [
             accuracy_score(y_true, y_pred),
-            precision_score(y_true, y_pred),
-            recall_score(y_true, y_pred),
-            f1_score(y_true, y_pred),
+            precision_score(y_true, y_pred, average="macro"),
+            recall_score(y_true, y_pred, average="macro"),
+            f1_score(y_true, y_pred, average="macro"),
         ],
         index=["accuracy", "precision", "recall", "f1"],
-    )
-
-
-@delayed
-def delayed_mean_scores(scores):
-    print(scores)
-    return pd.concat(scores, axis=1).T.mean()
+    ).T
 
 
 def main():
@@ -117,7 +113,7 @@ def main():
 
     # Get unique heuristics
     heuristics, _ = tables.get_stored_data(strip_nan=True)
-    heuristics = list(map(lambda h: parse_heuristic(h, dask=True), heuristics))
+    heuristics = list(map(lambda h: parse_heuristic(h, dask=False), heuristics))
 
     # Load parquet files
     dfs = []
@@ -141,7 +137,7 @@ def main():
     means, variances = delayed_pooled_mean_and_var(means, variances, lens).compute()
 
     # Train model
-    model = LogisticRegression(warm_start=True)
+    model = dask.delayed(LogisticRegression)(warm_start=True)
 
     for X, Y in zip(X_train, y_train):
         X = delayed_normalize(X, means, variances**0.5)
@@ -150,14 +146,14 @@ def main():
     model = model.compute()
 
     # Test model
-    scores = []
+    truths = []
+    predictions = []
     for X, Y in zip(X_test, y_test):
         X = delayed_normalize(X, means, variances**0.5)
-        y_pred = delayed_predict(X, model)
-        scores.append(delayed_scores(Y, y_pred))
+        truths.append(Y)
+        predictions.append(delayed_predict(X, model))
 
-    scores = delayed_mean_scores(scores).compute()
-    print(scores)
+    scores = delayed_scores(truths, predictions).compute()
 
 
 if __name__ == "__main__":

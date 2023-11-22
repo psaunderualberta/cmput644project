@@ -22,7 +22,7 @@ SHORTENED_DATA_FILES = glob(
 )
 RAW_DATA_FILES = glob(
     os.path.join(
-        os.path.dirname(__file__), "..", "..", "CICIoT2023", "data", "original", "*.csv"
+        "CICIoT2023", "data", "original", "*.csv"
     )
 )
 
