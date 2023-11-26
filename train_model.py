@@ -8,9 +8,9 @@ from src.utility.util import load_data
 import pandas as pd
 from src.heuristic.parsing import parse_heuristic
 from dask.distributed import Client, LocalCluster, wait
+from dask.graph_manipulation import bind
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
-from cross_validation import cross_validation
 import time
 import dask
 
@@ -82,7 +82,7 @@ def delayed_predict(X, model):
 
 
 @dask.delayed
-def delayed_scores(y_true, y_pred):
+def delayed_get_scores(y_true, y_pred):
     y_true = np.concatenate(y_true)
     y_pred = np.concatenate(y_pred)
     # Get accuracy, precision, recall, and f1 score
@@ -104,7 +104,7 @@ def main():
 
     # Download the artifact from W&B
     api = wandb.Api()
-    artifact = api.artifact("psaunder/cmput644project/map-elites:latest")
+    artifact = api.artifact("psaunder/cmput644project/map-elites:v1")
     artifact_path = os.path.join(artifact.download(), "tables.pkl")
 
     # Load the map-elites table
@@ -117,7 +117,7 @@ def main():
 
     # Load parquet files
     dfs = []
-    for file in COMBINED_DATA_FILES:
+    for file in COMBINED_DATA_FILES[:10]:
         dfs.append(delayed_load_data(file))
 
     Xs = [None for _ in dfs]
@@ -127,33 +127,76 @@ def main():
     for i, df in enumerate(dfs):
         Xs[i], ys[i] = delayed_execute_heuristic(df, heuristics, use_heuristic=False)
 
-    split_index = int(len(Xs) * 0.8)
-    X_train, y_train = Xs[:split_index], ys[:split_index]
-    X_test, y_test = Xs[split_index:], ys[split_index:]
+    # Split data into train and test sets
+    numfolds = 5
+    splits = np.linspace(0, len(Xs), numfolds + 1, dtype=int)
+    X_trains = []
+    y_trains = []
+    X_tests = []
+    y_tests = []
+    delayed_means_variances = []
+    delayed_models = []
+    delayed_scores = []
 
-    lens = [df.shape[0] for df in X_train]
-    means = [delayed_mean(df) for df in X_train]
-    variances = [delayed_variance(df) for df in X_train]
-    means, variances = delayed_pooled_mean_and_var(means, variances, lens).compute()
+    for test_lower, test_upper in zip(splits, splits[1:]):
+        print(test_lower, test_upper)
+        X_trains.append(Xs[:test_lower] + Xs[test_upper:])
+        y_trains.append(ys[:test_lower] + ys[test_upper:])
+        X_tests.append(Xs[test_lower:test_upper])
+        y_tests.append(ys[test_lower:test_upper])
 
-    # Train model
-    model = dask.delayed(LogisticRegression)(warm_start=True)
+        lens = [df.shape[0] for df in X_trains[-1]]
+        means = [delayed_mean(df) for df in X_trains[-1]]
+        variances = [delayed_variance(df) for df in X_trains[-1]]
 
-    for X, Y in zip(X_train, y_train):
-        X = delayed_normalize(X, means, variances**0.5)
-        model = delayed_train(X, Y, model)
+        delayed_means_variances.append(
+            delayed_pooled_mean_and_var(means, variances, lens)
+        )
 
-    model = model.compute()
+    start = time.time()
+    means_variances = dask.compute(*delayed_means_variances)
+    print("Time to compute means and variances: {}".format(time.time() - start))
 
-    # Test model
-    truths = []
-    predictions = []
-    for X, Y in zip(X_test, y_test):
-        X = delayed_normalize(X, means, variances**0.5)
-        truths.append(Y)
-        predictions.append(delayed_predict(X, model))
+    for X_train, y_train, (means, variances) in zip(
+        X_trains, y_trains, means_variances
+    ):
+        model = dask.delayed(LogisticRegression)(warm_start=True)
 
-    scores = delayed_scores(truths, predictions).compute()
+        model_history = []
+        for X, Y in zip(X_train, y_train):
+            # Bind the current data to the 2nd previous model,
+            # making sure that data loaded into memory is used relatively soon.
+            # This is to prevent the memory from filling up and spilling to disk,
+            # which can be in excess of 100GB when using heuristics.
+            if len(model_history) > 2:
+                X = bind(X, model_history[-2])
+
+            X = delayed_normalize(X, means, variances**0.5)
+            model = delayed_train(X, Y, model)
+            model_history.append(model)
+
+        delayed_models.append(model)
+
+    start = time.time()
+    models = dask.compute(*delayed_models)
+    print("Time to train models: {}".format(time.time() - start))
+
+    for X_test, y_test, model in zip(X_tests, y_tests, models):
+        # Test model
+        truths = []
+        predictions = []
+        for X, Y in zip(X_test, y_test):
+            X = delayed_normalize(X, means, variances**0.5)
+            truths.append(Y)
+            predictions.append(delayed_predict(X, model))
+
+        delayed_scores.append(delayed_get_scores(truths, predictions))
+
+    start = time.time()
+    scores = dask.compute(*delayed_scores)
+    means = pd.concat(scores, axis=1).T.mean()
+    print(means)
+    print("Time to compute scores: {}".format(time.time() - start))
 
 
 if __name__ == "__main__":

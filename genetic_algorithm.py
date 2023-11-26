@@ -11,7 +11,7 @@ import pickle
 
 def main():
     config = {
-        "SEED": 42,
+        "SEED": 69,
         "POPULATION_SIZE": 20,
         "TIMEOUT": 12 * 60 * 60,  # 12 hours
         "WANDB": True,
