@@ -104,7 +104,7 @@ def main():
 
     # Download the artifact from W&B
     api = wandb.Api()
-    artifact = api.artifact("psaunder/cmput644project/map-elites:v1")
+    artifact = api.artifact("psaunder/cmput644project/map-elites:v2")
     artifact_path = os.path.join(artifact.download(), "tables.pkl")
 
     # Load the map-elites table
@@ -113,11 +113,11 @@ def main():
 
     # Get unique heuristics
     heuristics, _ = tables.get_stored_data(strip_nan=True)
-    heuristics = list(map(lambda h: parse_heuristic(h, dask=False), heuristics))
+    heuristics = list(map(lambda h: parse_heuristic(h), heuristics))
 
     # Load parquet files
     dfs = []
-    for file in COMBINED_DATA_FILES[:10]:
+    for file in COMBINED_DATA_FILES:
         dfs.append(delayed_load_data(file))
 
     Xs = [None for _ in dfs]
@@ -125,7 +125,7 @@ def main():
 
     # Execute heuristics
     for i, df in enumerate(dfs):
-        Xs[i], ys[i] = delayed_execute_heuristic(df, heuristics, use_heuristic=False)
+        Xs[i], ys[i] = delayed_execute_heuristic(df, heuristics, use_heuristic=True)
 
     # Split data into train and test sets
     numfolds = 5
@@ -139,7 +139,6 @@ def main():
     delayed_scores = []
 
     for test_lower, test_upper in zip(splits, splits[1:]):
-        print(test_lower, test_upper)
         X_trains.append(Xs[:test_lower] + Xs[test_upper:])
         y_trains.append(ys[:test_lower] + ys[test_upper:])
         X_tests.append(Xs[test_lower:test_upper])
@@ -195,8 +194,12 @@ def main():
     start = time.time()
     scores = dask.compute(*delayed_scores)
     means = pd.concat(scores, axis=1).T.mean()
+    # Save the scores
+    fpath = os.path.join(os.path.dirname(artifact_path), "scores.csv")
+    means.to_csv(fpath)
     print(means)
     print("Time to compute scores: {}".format(time.time() - start))
+
 
 
 if __name__ == "__main__":

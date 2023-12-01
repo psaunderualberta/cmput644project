@@ -1,8 +1,4 @@
 from src.utility.util import operators
-import numpy as np
-import dask.array as da
-import dask.dataframe as dd
-import pandas as pd
 
 # Abstract Base Class
 class __Heuristic:
@@ -37,8 +33,8 @@ class __Heuristic:
 
 
 class Binary(__Heuristic):
-    def __init__(self, op, left, right, dask=False):
-        (self.op, self.fun) = operators(op, dask=dask)
+    def __init__(self, op, left, right):
+        (self.op, self.fun) = operators(op)
         self.left = left
         self.right = right
 
@@ -75,8 +71,8 @@ class Binary(__Heuristic):
 
 
 class Unary(__Heuristic):
-    def __init__(self, op, right, dask=False):
-        (self.op, self.fun) = operators(op, dask)
+    def __init__(self, op, right):
+        (self.op, self.fun) = operators(op)
         self.right = right
 
     def __repr__(self):
@@ -109,7 +105,7 @@ class Unary(__Heuristic):
 
 
 class Terminal(__Heuristic):
-    def __init__(self, data, dask=False):
+    def __init__(self, data):
         self.data = data
 
     def __repr__(self):
@@ -138,7 +134,7 @@ class Terminal(__Heuristic):
 
 
 class Number(__Heuristic):
-    def __init__(self, value, dask=False):
+    def __init__(self, value):
         self.value = value
 
     def __repr__(self):

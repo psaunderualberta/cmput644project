@@ -43,9 +43,8 @@ if __name__ == "__main__":
     print("Time to append columns: {:.2f}s".format(time.time() - t))
 
     # Sample 20 million rows, keeping the distribution of 2-classes
-    n = 2e7
     t = time.time()
-    frac = (n / df.shape[0]).compute()
+    frac = 1 / 200  # Approximately 100MB
     df_short = df.sample(frac=frac, random_state=42).reset_index(drop=True)
     print("Time to sample data: {:.2f}s".format(time.time() - t))
 
@@ -53,7 +52,7 @@ if __name__ == "__main__":
     t = time.time()
     df_short = df_short.reset_index(drop=True)
     df_short = df_short.repartition(partition_size="100MB")
-    df_short.to_parquet("./CICIoT2023/data/shortened_data/", overwrite=True)
+    df_short.to_parquet("./shortened_data/", overwrite=True)
     print("Time to output shortened data: {:.2f}s".format(time.time() - t))
 
     # Combine the data and output to csv
