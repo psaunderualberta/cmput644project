@@ -3,18 +3,25 @@ from src.utility.constants import *
 from src.heuristic.generator import random_heuristic
 from src.heuristic.mutator import mutate_heuristic
 from src.mapelites.table_array import TableArray
+from dask import delayed, compute
+import pandas as pd
 import numpy as np
 import wandb
 import random
 import time
 import pickle
+from dask.distributed import Client, LocalCluster, wait
 
 def main():
+    cluster = LocalCluster()  # Launches a scheduler and workers locally
+    client = Client(cluster)
+    print(client.dashboard_link)
+
     config = {
         "SEED": 69,
         "POPULATION_SIZE": 20,
         "TIMEOUT": 12 * 60 * 60,  # 12 hours
-        "WANDB": True,
+        "WANDB": False,
         "WANDB_PROJECT": "cmput644project",
         "WANDB_ENTITY": "psaunder",
     }
@@ -38,9 +45,10 @@ def main():
     tables = TableArray(methods, ranges, resolutions)
 
     # Load data
-    data = load_data(COMBINED_DATA_FILES)
-    targets = data[CLASSES_2_Y_COLUMN].to_numpy()
-    
+    dfs = [delayed_load_data(file) for file in COMBINED_DATA_FILES]
+    delayed_targets = [df[CLASSES_2_Y_COLUMN] for df in dfs]
+    targets = np.concatenate(compute(*delayed_targets))
+
     # Create initial population
     population = [random_heuristic(MAX_TREE_SIZE) for _ in range(config["POPULATION_SIZE"])]
     
@@ -49,8 +57,20 @@ def main():
     while time.time() - start < config["TIMEOUT"]:
         print("Time left: {:0.3f}s".format(config["TIMEOUT"] - (time.time() - start)))
 
+        # Execute the population
+        delayed_features = []
+        for heuristic in population:
+            new_feats = [delayed_execute_heuristic(df, heuristic) for df in dfs]
+            concat = delayed(np.concatenate)(new_feats)
+            delayed_features.append(concat)
+
         # Evaluate the population
-        fitnesses = [compute_fitness(h, data, targets) for h in population]
+        fitnesses = [delayed_compute_fitness(delayed_feature, targets) for delayed_feature in delayed_features]
+
+        start = time.time()
+        fitnesses = compute(*fitnesses)
+        print("Time to compute fitnesses: {}".format(time.time() - start))
+        exit()
 
         # Insert the population into MAP-Elites
         for heuristic, fitness in zip(population, fitnesses):
@@ -97,25 +117,46 @@ def main():
 
     # Save the 'TablesArray' object to a pickle file, then upload to wandb
     if config["WANDB"]:
-        fname = os.path.join("tables.pkl")
+        os.mkdir("artifacts", exist_ok=True)
+        fname = os.path.join(os.path.join("tables.pkl"))
         with open(fname, "wb") as f:
             pickle.dump(tables, f)
 
         artifact = wandb.Artifact("map-elites", type="dataset")
-        artifact.add_file("tables.pkl")
+        artifact.add_file(fname)
         wandb.log_artifact(artifact)
         os.remove(fname)
 
-def compute_fitness(h, data, targets):
-    values = h.execute(data)
-
+@delayed
+def delayed_compute_fitness(features, targets):
+    print(features.shape)
+    print(targets.shape)
     # Remove nan values
-    non_nan_idxs = ~np.isnan(values)
-    non_nan_values = values[non_nan_idxs]
+    non_nan_idxs = ~np.isnan(features)
+    non_nan_values = features[non_nan_idxs]
     non_nan_targets = targets[non_nan_idxs]
 
     # Calculate fitness
     return abs(np.corrcoef(non_nan_values, non_nan_targets)[0][1])
+
+
+@delayed
+def delayed_load_data(file):
+    df = pd.read_parquet(file)
+    df.columns = list(
+        map(
+            lambda col: NORMALIZED_COLUMN_NAMES_MAPPING[col]
+            if col in NORMALIZED_COLUMN_NAMES_MAPPING
+            else col,
+            df.columns,
+        )
+    )
+    return df
+
+
+@delayed
+def delayed_execute_heuristic(df, heuristic):
+    return heuristic.execute(df)
 
 
 if __name__ == "__main__":

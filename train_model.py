@@ -104,7 +104,7 @@ def main():
 
     # Download the artifact from W&B
     api = wandb.Api()
-    artifact = api.artifact("psaunder/cmput644project/map-elites:v2")
+    artifact = api.artifact("psaunder/cmput644project/map-elites:latest")
     artifact_path = os.path.join(artifact.download(), "tables.pkl")
 
     # Load the map-elites table
