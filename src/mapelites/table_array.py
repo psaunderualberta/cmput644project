@@ -1,4 +1,5 @@
 import numpy as np
+from functools import reduce
 from src.mapelites.table import Table
 
 
@@ -32,7 +33,7 @@ class TableArray:
 
         return self.tables[idx].fitnesses.flatten()
 
-    def get_stored_data(self, strip_nan=False):
+    def get_stored_data(self, strip_nan=False, unique=True):
         """Get the heuristics and fitnesses of all heuristics in the table"""
         heuristics = []
         fitnesses = []
@@ -48,4 +49,8 @@ class TableArray:
             heuristics = heuristics[non_nan_idxs]
             fitnesses = fitnesses[non_nan_idxs]
         
+        if unique:
+            heuristics, unique_idxs = np.unique(heuristics, return_index=True)
+            fitnesses = fitnesses[unique_idxs]
+
         return heuristics, fitnesses

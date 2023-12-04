@@ -1,4 +1,5 @@
 import os
+from sympy import Symbol
 from glob import glob
 
 MAX_TREE_SIZE = 10
@@ -157,6 +158,8 @@ NORMALIZED_COLUMN_NAMES_MAPPING = {
     col: col.replace(" ", "_").lower() for col in X_COLUMNS
 }
 NORMALIZED_COLUMN_NAMES = list(NORMALIZED_COLUMN_NAMES_MAPPING.values())
+
+SYMPY_VARS = {col: Symbol(col) for col in NORMALIZED_COLUMN_NAMES}
 
 CLASSES_34_Y_COLUMN = "label"
 CLASSES_8_Y_COLUMN = "class_8"

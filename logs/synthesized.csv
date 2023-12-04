@@ -1,0 +1,109 @@
+$expressions$latex$fitnesses$origins
+43$(min (- (/ rst_count (sqr -3.4)) 5.2) (min flow_duration 9.8))$\min\left(9.8, \text\{flow duration\}, 0.0865051903114187 \text\{rst count\} - 5.2\right)$0.7885492850465249$1
+45$(min (- (/ rst_count (sqr 4.7)) 6.5) (abs syn_count))$\min\left(0.0452693526482571 \text\{rst count\} - 6.5, \left|{\text\{syn count\}}\right|\right)$0.7793146119005332$1
+41$(min (- (/ rst_count (sqr (neg 5.0))) 6.5) (abs syn_count))$\min\left(0.04 \text\{rst count\} - 6.5, \left|{\text\{syn count\}}\right|\right)$0.7791659458619077$1
+47$(min (- (/ rst_count 9.2) 9.2) (sqrt (* 8.7 syn_count)))$\min\left(2.94957624075052 \sqrt{\text\{syn count\}}, 0.108695652173913 \text\{rst count\} - 9.2\right)$0.7778633352634032$1
+44$(min (- (/ rst_count (sqr -3.6)) 7.7) syn_count)$\min\left(\text\{syn count\}, 0.0771604938271605 \text\{rst count\} - 7.7\right)$0.777254755655131$1
+80$(min (sqrt (max (abs llc) rst_count)) (sqr (abs -4.1)))$\min\left(16.81, \sqrt{\max\left(\text\{rst count\}, \left|{\text\{llc\}}\right|\right)}\right)$0.7770102926551262$2
+79$(min (sqrt (max (abs (sqrt -1.1)) rst_count)) (sqr (abs -4.1)))$\min\left(16.81, \sqrt{\max\left(1.04880884817015, \text\{rst count\}\right)}\right)$0.7769794427010798$2
+42$(min (- (/ rst_count (sqr (sqrt (sqr -3.2)))) 9.9) syn_count)$\min\left(\text\{syn count\}, 0.09765625 \text\{rst count\} - 9.9\right)$0.7764335521050638$1
+82$(min (sqrt (max 2.0 rst_count)) (sqr (abs -4.1)))$\min\left(16.81, \sqrt{\max\left(2.0, \text\{rst count\}\right)}\right)$0.7762334623698854$2
+15$(sqrt (+ -5.1 (min (sqrt (+ -3.0 rst_count)) (sqr 5.6))))$2.25831795812724 \sqrt{0.196078431372549 \min\left(31.36, 1.73205080756888 \sqrt{0.333333333333333 \text\{rst count\} - 1}\right) - 1}$0.7762273624448791$0
+40$(min (- (/ rst_count (sqr (neg -3.3))) 8.1) syn_count)$\min\left(\text\{syn count\}, 0.0918273645546373 \text\{rst count\} - 8.1\right)$0.7760811104267892$1
+46$(min (- (/ rst_count 7.6) 7.7) (sqrt duration))$\min\left(\sqrt{\text\{duration\}}, 0.131578947368421 \text\{rst count\} - 7.7\right)$0.7750167479190668$1
+83$(min (sqrt (max 2.0 rst_count)) (sqr -4.4))$\min\left(19.36, \sqrt{\max\left(2.0, \text\{rst count\}\right)}\right)$0.7749104967613163$2
+48$(min (- (/ rst_count 9.3) (sqr -2.8)) (sqrt duration))$\min\left(\sqrt{\text\{duration\}}, 0.10752688172043 \text\{rst count\} - 7.84\right)$0.774827851961903$1
+49$(min (- (/ rst_count 9.3) 7.7) syn_count)$\min\left(\text\{syn count\}, 0.10752688172043 \text\{rst count\} - 7.7\right)$0.774194717344688$1
+81$(min (sqrt (max (max rst_flag_number 5.5) rst_count)) (sqr (abs -4.1)))$\min\left(16.81, \sqrt{\max\left(5.5, \text\{rst count\}, \text\{rst flag number\}\right)}\right)$0.7740861130301048$2
+88$(min (sqrt rst_count) (sqr (max (neg ack_count) 4.3)))$\min\left(\sqrt{\text\{rst count\}}, \max\left(4.3, - \text\{ack count\}\right)^{2}\right)$0.7739654673902262$2
+87$(min (sqrt rst_count) (sqr (max (neg (sqr -7.9)) 4.3)))$\min\left(18.49, \sqrt{\text\{rst count\}}\right)$0.7739654673902262$2
+86$(min (sqrt rst_count) (sqr (max (neg (sqr (sqrt duration))) 4.3)))$\min\left(\sqrt{\text\{rst count\}}, \max\left(4.3, - \text\{duration\}\right)^{2}\right)$0.7739654673902262$2
+90$(min (sqrt rst_count) (sqr -4.2))$\min\left(17.64, \sqrt{\text\{rst count\}}\right)$0.7738642269669764$2
+85$(min (sqrt rst_count) (sqr (abs -4.1)))$\min\left(16.81, \sqrt{\text\{rst count\}}\right)$0.7735235098484453$2
+84$(min (sqrt rst_count) (sqr (abs (neg 4.5))))$\min\left(20.25, \sqrt{\text\{rst count\}}\right)$0.7734775322363358$2
+89$(min (sqrt rst_count) (sqr (sqrt (neg (abs (neg (sqr 4.0)))))))$\min\left(-16.0, \sqrt{\text\{rst count\}}\right)$0.7729499462749831$2
+19$(sqrt (+ -9.4 (min (sqrt (+ -3.0 rst_count)) 9.5)))$3.06594194335118 \sqrt{0.106382978723404 \min\left(9.5, 1.73205080756888 \sqrt{0.333333333333333 \text\{rst count\} - 1}\right) - 1}$0.7722449805883256$0
+18$(sqrt (+ -9.4 (min (sqrt (+ (neg 4.0) rst_count)) 9.5)))$3.06594194335118 \sqrt{0.106382978723404 \min\left(9.5, 2.0 \sqrt{0.25 \text\{rst count\} - 1}\right) - 1}$0.7722223881642722$0
+75$(max (min rst_count (sqr (sqr (neg -3.5)))) variance)$\max\left(\text\{variance\}, \min\left(150.0625, \text\{rst count\}\right)\right)$0.7721417352102914$2
+74$(max (min rst_count (sqr (neg (sqr (abs 3.6))))) variance)$\max\left(\text\{variance\}, \min\left(167.9616, \text\{rst count\}\right)\right)$0.772063716495237$2
+76$(max (min rst_count (sqr -9.9)) (/ (abs variance) (sqr -0.9)))$\max\left(1.23456790123457 \left|{\text\{variance\}}\right|, \min\left(98.01, \text\{rst count\}\right)\right)$0.7703008046355928$2
+77$(max (min rst_count (sqr -9.9)) (/ (abs variance) 1.2))$\max\left(0.833333333333333 \left|{\text\{variance\}}\right|, \min\left(98.01, \text\{rst count\}\right)\right)$0.7702979497520981$2
+73$(max (min -6.7 -8.4) (/ rst_count -8.5))$\max\left(-8.4, - 0.117647058823529 \text\{rst count\}\right)$0.7673393442294876$2
+78$(max (neg 9.3) (/ rst_count -7.5))$\max\left(-9.3, - 0.133333333333333 \text\{rst count\}\right)$0.7670855538111121$2
+99$(sqr (abs (min rst_count (sqr -9.8))))$\left|{\min\left(96.04, \text\{rst count\}\right)}\right|^{2}$0.7656254804431021$2
+103$(sqr (abs (sqrt (sqr (min rst_count (sqr 9.3))))))$\left|{\sqrt{\min\left(86.49, \text\{rst count\}\right)^{2}}}\right|^{2}$0.7654815222891471$2
+55$(min (/ urg_count 4.2) (min flow_duration 4.3))$\min\left(4.3, \text\{flow duration\}, 0.238095238095238 \text\{urg count\}\right)$0.7650679285674609$1
+98$(sqr (abs (min rst_count (sqr (sqr 2.8)))))$\left|{\min\left(61.4656, \text\{rst count\}\right)}\right|^{2}$0.763856635741414$2
+97$(sqr (abs (min rst_count (sqr (sqr (abs (neg 2.7)))))))$\left|{\min\left(53.1441, \text\{rst count\}\right)}\right|^{2}$0.7627870747443893$2
+52$(min (- urg_count (sqrt (abs (neg urg_count)))) 8.6)$\min\left(8.6, \text\{urg count\} - \sqrt{\left|{\text\{urg count\}}\right|}\right)$0.7625491223466775$1
+53$(min (- urg_count 7.7) (sqrt duration))$\min\left(\sqrt{\text\{duration\}}, \text\{urg count\} - 7.7\right)$0.7619694147630559$1
+38$(max (sqrt (sqrt (sqrt rst_count))) (abs llc))$\max\left(\sqrt[8]{\text\{rst count\}}, \left|{\text\{llc\}}\right|\right)$0.7610959408870301$1
+39$(max (sqrt (sqrt (sqrt rst_count))) llc)$\max\left(\text\{llc\}, \sqrt[8]{\text\{rst count\}}\right)$0.7610959408870301$1
+51$(min (- urg_count (sqrt (abs (neg (sqr -8.9))))) 8.6)$\min\left(8.6, \text\{urg count\} - 8.9\right)$0.7609040164147672$1
+54$(min (- urg_count 8.9) 9.0)$\min\left(9.0, \text\{urg count\} - 8.9\right)$0.7609027509406502$1
+50$(min (- urg_count (sqrt (abs (neg (sqr (abs -8.8)))))) 8.6)$\min\left(8.6, \text\{urg count\} - 8.8\right)$0.7609015983369773$1
+91$(min urg_count (sqr (abs 4.3)))$\min\left(18.49, \text\{urg count\}\right)$0.7608582566695461$2
+61$(min urg_count (sqr (abs 4.1)))$\min\left(16.81, \text\{urg count\}\right)$0.7608580359795676$1
+56$(min urg_count (* 7.0 (sqrt 7.4)))$\min\left(19.0420587122296, \text\{urg count\}\right)$0.7607856002626163$1
+93$(min urg_count (sqr 4.4))$\min\left(19.36, \text\{urg count\}\right)$0.7607274513297584$2
+17$(sqrt (+ -9.2 (min urg_count 9.6)))$3.03315017762062 \sqrt{0.108695652173913 \min\left(9.6, \text\{urg count\}\right) - 1}$0.7605738983162484$0
+60$(min urg_count (sqr (abs (sqrt (sqr (abs 4.6))))))$\min\left(21.16, \text\{urg count\}\right)$0.7602747695953449$1
+62$(min urg_count (sqr 5.0))$\min\left(25.0, \text\{urg count\}\right)$0.7587895904363615$1
+12$(sqrt (+ (- -6.8 (neg ece_flag_number)) (min urg_count 9.6)))$2.60768096208106 \sqrt{0.147058823529412 \text\{ece flag number\} + 0.147058823529412 \min\left(9.6, \text\{urg count\}\right) - 1}$0.7587637202734806$0
+13$(sqrt (+ (- -6.8 7.5) (min urg_count 9.6)))$3.78153408023781 \sqrt{0.0699300699300699 \min\left(9.6, \text\{urg count\}\right) - 1}$0.755668361919444$0
+92$(min urg_count (sqr (sqrt (sqr (sqrt (sqr (abs (sqrt 9.8))))))))$\min\left(9.8, \text\{urg count\}\right)$0.7521554256359679$2
+59$(min urg_count (sqr (abs (sqrt (abs -9.5)))))$\min\left(9.5, \text\{urg count\}\right)$0.7511370722962284$1
+94$(min urg_count 9.3)$\min\left(9.3, \text\{urg count\}\right)$0.750410409035127$2
+11$(sqrt (+ (+ (sqrt irc) (sqr -3.8)) (min urg_count 9.6)))$3.8 \sqrt{0.0692520775623269 \sqrt{\text\{irc\}} + 0.0692520775623269 \min\left(9.6, \text\{urg count\}\right) + 1}$0.7485101184184203$0
+58$(min urg_count (sqr (abs (sqr (sqr (abs (neg 1.6)))))))$\min\left(42.94967296, \text\{urg count\}\right)$0.7477180334776468$1
+16$(sqrt (+ -9.2 (min urg_count (abs 6.8))))$3.03315017762062 \sqrt{0.108695652173913 \min\left(6.8, \text\{urg count\}\right) - 1}$0.7453388089387105$0
+14$(sqrt (+ (abs -1.8) (min urg_count 9.6)))$1.34164078649987 \sqrt{0.555555555555556 \min\left(9.6, \text\{urg count\}\right) + 1}$0.7363010194293996$0
+63$(min urg_count 6.3)$\min\left(6.3, \text\{urg count\}\right)$0.732645635562475$1
+31$(sqrt (sqrt (sqrt (sqr (neg (min -6.7 (neg rst_count)))))))$\sqrt[4]{- \min\left(-6.7, - \text\{rst count\}\right)}$0.7262160541219831$0
+27$(sqrt (+ rst_count (sqr (sqr (- number (neg -8.9))))))$79.21 \sqrt{0.000159382257321666 \text\{rst count\} + \left(0.112359550561798 \text\{number\} - 1\right)^{4}}$0.7184036946590735$0
+30$(sqrt (sqrt (sqrt (sqr (neg (min (sqrt tcp) (neg rst_count)))))))$\sqrt[8]{\min\left(- \text\{rst count\}, \sqrt{\text\{tcp\}}\right)^{2}}$0.7133832969346188$0
+100$(sqr (abs (sqrt (abs (neg (sqrt (sqrt (abs rst_count))))))))$\sqrt[4]{\left|{\text\{rst count\}}\right|}$0.7133832969346188$2
+96$(neg (sqrt (neg (sqrt (abs (neg rst_count))))))$- i \sqrt[4]{\left|{\text\{rst count\}}\right|}$0.7133832969346188$2
+33$(sqrt (sqrt rst_count))$\sqrt[4]{\text\{rst count\}}$0.7133832969346188$0
+24$(sqrt (+ rst_count (neg (sqr 6.6))))$6.6 \sqrt{0.0229568411386593 \text\{rst count\} - 1}$0.6964966084230095$0
+23$(sqrt (+ rst_count (neg (sqr (neg -7.3)))))$7.3 \sqrt{0.0187652467629949 \text\{rst count\} - 1}$0.6962562913160967$0
+20$(sqrt (+ rst_count (* (sqrt (neg -5.7)) -8.8)))$4.58363524289526 \sqrt{0.0475970350331472 \text\{rst count\} - 1}$0.695243530808539$0
+22$(sqrt (+ rst_count (neg (sqr (abs (abs -8.9))))))$8.9 \sqrt{0.0126246686024492 \text\{rst count\} - 1}$0.694389476176062$0
+21$(sqrt (+ rst_count (min (+ -9.1 -3.7) 9.6)))$3.57770876399966 \sqrt{0.078125 \text\{rst count\} - 1}$0.69355856990567$0
+28$(sqrt (+ rst_count -8.8))$2.96647939483827 \sqrt{0.113636363636364 \text\{rst count\} - 1}$0.6921254081405723$0
+26$(sqrt (+ rst_count (neg 6.9)))$2.62678510731274 \sqrt{0.144927536231884 \text\{rst count\} - 1}$0.6911725379209797$0
+104$(sqr (abs (sqrt (sqrt rst_count))))$\left|{\sqrt[4]{\text\{rst count\}}}\right|^{2}$0.6775132242324534$2
+72$(abs (sqrt rst_count))$\left|{\sqrt{\text\{rst count\}}}\right|$0.6775132242324534$2
+64$(neg (neg (sqrt (neg rst_count))))$\sqrt{- \text\{rst count\}}$0.6775132242324534$1
+95$(neg (sqrt (neg (sqrt (abs (neg (sqr rst_count)))))))$- i \sqrt[4]{\left|{\text\{rst count\}^{2}}\right|}$0.6775132242324534$2
+70$(sqrt rst_count)$\sqrt{\text\{rst count\}}$0.6775132242324534$1
+34$(sqrt rst_count)$\sqrt{\text\{rst count\}}$0.6775132242324534$0
+66$(sqrt (sqrt (sqr (sqr (neg (abs (neg (sqrt rst_count))))))))$\left|{\sqrt{\text\{rst count\}}}\right|$0.6775132242324534$1
+65$(sqrt (sqrt (sqr (sqr (neg (abs (neg (sqrt (abs rst_count)))))))))$\sqrt{\left|{\text\{rst count\}}\right|}$0.6775132242324534$1
+10$(neg (sqr (sqrt (sqrt rst_count))))$- \sqrt{\text\{rst count\}}$0.6775132242324534$0
+9$(neg (sqr (sqrt (sqr (neg (abs (neg (sqrt (sqrt rst_count)))))))))$- \left|{\sqrt[4]{\text\{rst count\}}}\right|^{2}$0.6775132242324534$0
+25$(sqrt (+ rst_count (neg (sqrt (neg (abs (sqrt (abs 5.3))))))))$1.23178378752334 \sqrt{0.65906922456072 \text\{rst count\} - i}$0.670927993209834$0
+57$(min urg_count (sqr (abs (sqr (sqr (abs (neg (sqrt -3.7))))))))$\min\left(187.4161, \text\{urg count\}\right)$0.6351513940044011$1
+29$(sqrt (sqrt (neg urg_count)))$\sqrt[4]{- \text\{urg count\}}$0.6324067553203832$0
+69$(sqrt (sqrt urg_count))$\sqrt[4]{\text\{urg count\}}$0.6324067553203832$1
+0$(* tcp variance)$\text\{tcp\} \text\{variance\}$0.6022821425768445$0
+3$(- (+ (sqr duration) rst_count) (* (max std rst_count) -9.7))$\text\{duration\}^{2} + \text\{rst count\} + 9.7 \max\left(\text\{rst count\}, \text\{std\}\right)$0.5931388867457493$0
+68$(sqrt (sqrt (sqr urg_count)))$\sqrt[4]{\text\{urg count\}^{2}}$0.5601722475182079$1
+106$(sqrt urg_count)$\sqrt{\text\{urg count\}}$0.5601722475182079$2
+105$(sqrt (sqrt (sqr urg_count)))$\sqrt[4]{\text\{urg count\}^{2}}$0.5601722475182079$2
+32$(sqrt (sqrt (sqrt (sqr (neg (sqr urg_count))))))$\sqrt[8]{\text\{urg count\}^{4}}$0.5601722475182079$0
+37$(abs (neg (abs (sqrt (sqrt duration)))))$\left|{\left|{\sqrt[4]{\text\{duration\}}}\right|}\right|$0.5541947888022664$1
+36$(abs (neg (abs (sqrt (sqrt (sqr duration))))))$\left|{\left|{\sqrt[4]{\text\{duration\}^{2}}}\right|}\right|$0.5520201135540583$1
+71$duration$\text\{duration\}$0.5383231613074864$1
+102$(sqr (abs (sqrt (abs (sqrt (sqr (neg (sqrt (sqr duration)))))))))$\left|{\sqrt{\text\{duration\}^{2}}}\right|$0.5383231613074864$2
+101$(sqr (abs (sqrt (abs (neg duration)))))$\left|{\text\{duration\}}\right|$0.5383231613074864$2
+107$duration$\text\{duration\}$0.5383231613074864$2
+6$(neg (sqr (abs (abs (sqr (sqrt (sqrt duration)))))))$- \left|{\sqrt{\text\{duration\}}}\right|^{2}$0.5383231613074861$0
+5$(- (sqr (sqrt -9.7)) (* (max std rst_count) -9.7))$9.7 \max\left(\text\{rst count\}, \text\{std\}\right) - 9.7$0.5196100363742755$0
+2$(- (* protocol_type rst_count) (sqrt fin_count))$- \sqrt{\text\{fin count\}} + \text\{protocol type\} \text\{rst count\}$0.5171576614871631$0
+1$(- (* protocol_type rst_count) (- -2.9 -6.5))$\text\{protocol type\} \text\{rst count\} - 3.6$0.5171535829905214$0
+35$variance$\text\{variance\}$0.5101597881073562$0
+67$(sqrt (sqrt (sqr (sqr (neg (abs (neg variance)))))))$\left|{\text\{variance\}}\right|$0.5101597881073562$1
+8$(neg (sqr (sqrt (sqr (neg (abs (neg (neg duration))))))))$- \left|{\text\{duration\}}\right|^{2}$0.4918128483306847$0
+4$(- (/ 3.7 -7.3) rst_count)$- \text\{rst count\} - 0.506849315068493$0.491654523633496$0
+7$(neg (sqr (sqrt (sqr (abs ack_flag_number)))))$- \left|{\text\{ack flag number\}}\right|^{2}$0.3418300518001354$0
