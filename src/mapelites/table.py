@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 from src.heuristic.generator import random_heuristic
 from src.heuristic.parsing import parse_heuristic
 
@@ -64,5 +65,12 @@ class Table:
             )
 
         return method()
-
+    
+    def get_heatmap_data(self):
+        """Get the data for a heatmap, returned with the axes labelled according indices"""
+        return pd.DataFrame(
+            np.flip(self.fitnesses, axis=0),
+            columns=self.bins[1],
+            index=np.flip(self.bins[0]),
+        )
         

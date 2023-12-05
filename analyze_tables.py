@@ -15,7 +15,7 @@ def main():
             file_location,
             "artifacts",
             "**",
-            "*.pkl",
+            "tables.pkl",
         )
     )
 
@@ -55,7 +55,7 @@ def main():
     df["latex"] = df["simplified"].apply(latex)
 
     fname = os.path.join("logs", "synthesized.csv")
-    df[["expressions", "latex", "fitnesses", "origins"]].to_csv(fname, sep="$", index=True)
+    # df[["expressions", "latex", "fitnesses", "origins"]].to_csv(fname, sep="$", index=True)
 
 
 if __name__ == "__main__":

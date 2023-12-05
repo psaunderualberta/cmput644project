@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import dask.dataframe as dd
 import numpy as np
 import wandb
@@ -98,6 +99,8 @@ def delayed_get_scores(y_true, y_pred):
 
 
 def main():
+    USE_HEURISTIC = False
+
     cluster = LocalCluster()  # Launches a scheduler and workers locally
     client = Client(cluster)
     print(client.dashboard_link)
@@ -112,7 +115,7 @@ def main():
         tables = pickle.load(f)
 
     # Get unique heuristics
-    heuristics, _ = tables.get_stored_data(strip_nan=True)
+    heuristics, _ = tables.get_stored_data(strip_nan=True, unique=True)
     heuristics = list(map(lambda h: parse_heuristic(h), heuristics))
 
     # Load parquet files
@@ -125,7 +128,7 @@ def main():
 
     # Execute heuristics
     for i, df in enumerate(dfs):
-        Xs[i], ys[i] = delayed_execute_heuristic(df, heuristics, use_heuristic=True)
+        Xs[i], ys[i] = delayed_execute_heuristic(df, heuristics, use_heuristic=USE_HEURISTIC)
 
     # Split data into train and test sets
     numfolds = 5
@@ -138,15 +141,18 @@ def main():
     delayed_models = []
     delayed_scores = []
 
+    # Get datasets in each fold
     for test_lower, test_upper in zip(splits, splits[1:]):
         X_trains.append(Xs[:test_lower] + Xs[test_upper:])
         y_trains.append(ys[:test_lower] + ys[test_upper:])
         X_tests.append(Xs[test_lower:test_upper])
         y_tests.append(ys[test_lower:test_upper])
 
-        lens = [df.shape[0] for df in X_trains[-1]]
-        means = [delayed_mean(df) for df in X_trains[-1]]
-        variances = [delayed_variance(df) for df in X_trains[-1]]
+    # Get means and variances for each fold & the entire dataset
+    for X_train in X_trains + [Xs]:
+        lens = [df.shape[0] for df in X_train]
+        means = [delayed_mean(df) for df in X_train]
+        variances = [delayed_variance(df) for df in X_train]
 
         delayed_means_variances.append(
             delayed_pooled_mean_and_var(means, variances, lens)
@@ -156,17 +162,19 @@ def main():
     means_variances = dask.compute(*delayed_means_variances)
     print("Time to compute means and variances: {}".format(time.time() - start))
 
+    # Form the models as a delayed computation
+    # NOTE: The last model is the model trained on the entire dataset
     for X_train, y_train, (means, variances) in zip(
         X_trains, y_trains, means_variances
     ):
         model = dask.delayed(LogisticRegression)(warm_start=True)
 
+        # Bind the current data to the 2nd previous model,
+        # making sure that data loaded into memory is used relatively soon.
+        # This is to prevent the memory from filling up and spilling to disk,
+        # which can be in excess of 100GB when using heuristics.
         model_history = []
         for X, Y in zip(X_train, y_train):
-            # Bind the current data to the 2nd previous model,
-            # making sure that data loaded into memory is used relatively soon.
-            # This is to prevent the memory from filling up and spilling to disk,
-            # which can be in excess of 100GB when using heuristics.
             if len(model_history) > 2:
                 X = bind(X, model_history[-2])
 
@@ -191,15 +199,34 @@ def main():
 
         delayed_scores.append(delayed_get_scores(truths, predictions))
 
+    # Make sure we have the correct number of scores
+    assert len(delayed_scores) == numfolds
+
     start = time.time()
     scores = dask.compute(*delayed_scores)
     means = pd.concat(scores, axis=1).T.mean()
+
     # Save the scores
-    fpath = os.path.join(os.path.dirname(artifact_path), "scores.csv")
-    means.to_csv(fpath)
+    if USE_HEURISTIC:
+        folder = os.path.dirname(artifact_path)
+    else:
+        folder = os.path.join(Path(artifact_path).parents[1], "baseline")
+
+    os.makedirs(folder, exist_ok=True)
+    scores_fpath = os.path.join(folder, "scores.csv")
+    means.to_csv(scores_fpath)
     print(means)
     print("Time to compute scores: {}".format(time.time() - start))
 
+    model_path = os.path.join(folder, "models.pkl")
+    data = {
+        "models": models,
+        "means": means,
+        "variances": variances,
+        "df": dask.compute(Xs[0]),
+    }
+    with open(model_path, "wb") as f:
+        pickle.dump(data, f)
 
 
 if __name__ == "__main__":
