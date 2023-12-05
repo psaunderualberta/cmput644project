@@ -1,5 +1,6 @@
 from src.heuristic.parsing import parse_heuristic
-from src.heuristic.transformer import Binary, Unary, Terminal, Number
+from src.heuristic.transformer import Binary, Number, Terminal, Unary
+
 
 # Numbers
 def test_heuristic_parsing_number_1():

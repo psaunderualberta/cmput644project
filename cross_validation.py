@@ -1,11 +1,13 @@
-import pandas as pd
-import numpy as np
-from dask_ml.model_selection import KFold
 from copy import deepcopy
-from src.utility.scores import get_metrics
-from dask_ml.preprocessing import StandardScaler
-import dask.dataframe as dd
+
 import dask.array as da
+import dask.dataframe as dd
+import numpy as np
+import pandas as pd
+from dask_ml.model_selection import KFold
+from dask_ml.preprocessing import StandardScaler
+
+from src.utility.scores import get_metrics
 
 
 def cross_validation(df, data_classes, target_class, k, learner, random_state=42):

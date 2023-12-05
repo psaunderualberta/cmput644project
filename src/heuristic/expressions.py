@@ -1,5 +1,6 @@
 from src.utility.util import operators
 
+
 # Abstract Base Class
 class __Heuristic:
     __abc_err_msg = "This is an abstract class"

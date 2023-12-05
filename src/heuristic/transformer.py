@@ -1,5 +1,6 @@
 from lark import Transformer
-from src.heuristic.expressions import Binary, Unary, Terminal, Number
+
+from src.heuristic.expressions import Binary, Number, Terminal, Unary
 
 
 class HeuristicTransformer(Transformer):

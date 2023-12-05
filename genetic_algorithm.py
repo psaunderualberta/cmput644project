@@ -1,16 +1,18 @@
-from src.utility.util import load_data
-from src.utility.constants import *
+import pickle
+import random
+import time
+
+import numpy as np
+import pandas as pd
+import wandb
+from dask import compute, delayed
+from dask.distributed import Client, LocalCluster, wait
+
 from src.heuristic.generator import random_heuristic
 from src.heuristic.mutator import mutate_heuristic
 from src.mapelites.table_array import TableArray
-from dask import delayed, compute
-import pandas as pd
-import numpy as np
-import wandb
-import random
-import time
-import pickle
-from dask.distributed import Client, LocalCluster, wait
+from src.utility.constants import *
+from src.utility.util import load_data
 
 
 def main():

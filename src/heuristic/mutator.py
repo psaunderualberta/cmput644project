@@ -1,9 +1,10 @@
-from src.heuristic.expressions import Binary, Unary, Terminal, Number
-from src.heuristic.generator import random_heuristic
-from src.utility.constants import MAX_TREE_SIZE
+from copy import deepcopy
+
 import numpy as np
 
-from copy import deepcopy
+from src.heuristic.expressions import Binary, Number, Terminal, Unary
+from src.heuristic.generator import random_heuristic
+from src.utility.constants import MAX_TREE_SIZE
 
 
 def mutate_heuristic(heuristic):

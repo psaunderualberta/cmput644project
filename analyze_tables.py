@@ -1,11 +1,13 @@
 import os
 import pickle
-from src.heuristic.simplifier import Simplifier
+from functools import reduce
 from glob import glob
+
 import numpy as np
 import pandas as pd
-from functools import reduce
 from sympy import *
+
+from src.heuristic.simplifier import Simplifier
 
 
 def main():

@@ -1,5 +1,7 @@
-import numpy as np
 from functools import reduce
+
+import numpy as np
+
 from src.mapelites.table import Table
 
 

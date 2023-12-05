@@ -1,11 +1,12 @@
 import os
 import pickle
 from glob import glob
+from pathlib import Path
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-import matplotlib.pyplot as plt
-from pathlib import Path
 
 
 def main():
