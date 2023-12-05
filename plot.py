@@ -41,8 +41,9 @@ def main():
                 cmap="viridis",
             )
 
-
-            title = "MAP-Elites Fitness | Resolution: {} | Run: {}".format(table.resolution, dirname)
+            title = "MAP-Elites Fitness | Resolution: {} | Run: {}".format(
+                table.resolution, dirname
+            )
 
             ax.set(
                 xlabel="Heuristic Depth",
@@ -50,8 +51,12 @@ def main():
                 title=title,
             )
 
-            fname = "map_elites_fitness_resolution_{}_run_{}".format(table.resolution, dirname)
-            plt.savefig(os.path.join(plot_dir, "{}.png".format(fname.replace(" ", "_").lower())))
+            fname = "map_elites_fitness_resolution_{}_run_{}".format(
+                table.resolution, dirname
+            )
+            plt.savefig(
+                os.path.join(plot_dir, "{}.png".format(fname.replace(" ", "_").lower()))
+            )
             plt.clf()
 
 

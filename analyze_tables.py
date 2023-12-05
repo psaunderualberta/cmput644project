@@ -56,7 +56,9 @@ def main():
     df["symbolic"] = df["symbolic"].apply(lambda s: f'"{latex(s)}"')
 
     fname = os.path.join("logs", "synthesized.csv")
-    df[["expressions", "symbolic", "simplified", "fitnesses", "origins"]].to_csv(fname, sep="$", index=True)
+    df[["expressions", "symbolic", "simplified", "fitnesses", "origins"]].to_csv(
+        fname, sep="$", index=True
+    )
 
 
 if __name__ == "__main__":

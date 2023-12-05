@@ -9,7 +9,7 @@ from src.utility.constants import (
     SHORTENED_DATA_FILES,
     X_COLUMNS,
     CLASSES_2_Y_COLUMN,
-    CLASSES_8_Y_COLUMN
+    CLASSES_8_Y_COLUMN,
 )
 
 from cross_validation import cross_validation

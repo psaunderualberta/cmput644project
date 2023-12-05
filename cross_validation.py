@@ -20,7 +20,12 @@ def cross_validation(df, data_classes, target_class, k, learner, random_state=42
     y = df[target_class].astype(np.int64).to_dask_array(lengths=True)
 
     # Create the results dataframe
-    scores = dd.from_pandas(pd.DataFrame(columns=["accuracy", "precision", "recall", "f1"], dtype=np.float64), npartitions=1)
+    scores = dd.from_pandas(
+        pd.DataFrame(
+            columns=["accuracy", "precision", "recall", "f1"], dtype=np.float64
+        ),
+        npartitions=1,
+    )
 
     # Train and evaluate the learner on each fold
     for i, (train_index, test_index) in enumerate(skf.split(X, y)):
@@ -31,7 +36,7 @@ def cross_validation(df, data_classes, target_class, k, learner, random_state=42
         y_test = y[test_index]
 
         # Remove columns that are all the same value
-        constant_cols = da.all(X_train == X_train[0,:], axis=0).compute()
+        constant_cols = da.all(X_train == X_train[0, :], axis=0).compute()
         X_train = X_train[:, ~constant_cols]
         X_test = X_test[:, ~constant_cols]
 

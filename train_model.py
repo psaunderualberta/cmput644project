@@ -128,7 +128,9 @@ def main():
 
     # Execute heuristics
     for i, df in enumerate(dfs):
-        Xs[i], ys[i] = delayed_execute_heuristic(df, heuristics, use_heuristic=USE_HEURISTIC)
+        Xs[i], ys[i] = delayed_execute_heuristic(
+            df, heuristics, use_heuristic=USE_HEURISTIC
+        )
 
     # Split data into train and test sets
     numfolds = 5
