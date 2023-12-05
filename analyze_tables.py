@@ -52,10 +52,11 @@ def main():
 
     df = simplifier.get_df()
     df = df.sort_values(by="fitnesses", ascending=False)
-    df["latex"] = df["simplified"].apply(latex)
+    df["simplified"] = df["simplified"].apply(lambda s: f'"{latex(s)}"')
+    df["symbolic"] = df["symbolic"].apply(lambda s: f'"{latex(s)}"')
 
     fname = os.path.join("logs", "synthesized.csv")
-    # df[["expressions", "latex", "fitnesses", "origins"]].to_csv(fname, sep="$", index=True)
+    df[["expressions", "symbolic", "simplified", "fitnesses", "origins"]].to_csv(fname, sep="$", index=True)
 
 
 if __name__ == "__main__":
