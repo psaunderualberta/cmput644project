@@ -16,8 +16,6 @@ COMBINED_DATA_FILES = glob(
 )
 SHORTENED_DATA_FILES = glob(
     os.path.join(".",
-        "CICIoT2023",
-        "data",
         "shortened_data",
         "*.parquet",
     )

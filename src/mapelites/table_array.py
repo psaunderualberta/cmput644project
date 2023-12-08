@@ -24,7 +24,13 @@ class TableArray(PopulationStorage):
         for table in self.tables:
             table.insert_heuristic_if_better(heuristic, fitness)
 
-    def get_random_heuristic(self, _):
+    def get_next_population(self, fitnesses):
+        """Creates the next population by sampling from the current mapelites tables"""
+        return [
+            self.get_random_mutated_heuristic(None) for _ in range(len(fitnesses))
+        ]
+
+    def get_random_mutated_heuristic(self, _):
         """Get a random heuristic from a random table"""
         table = np.random.choice(self.tables)
         return table.get_random_heuristic()

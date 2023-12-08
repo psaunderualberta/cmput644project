@@ -13,7 +13,8 @@ from src.heuristic.mutator import mutate_heuristic
 from src.mapelites.table_array import TableArray
 from src.utility.constants import *
 from src.utility.util import load_data
-
+from src.mapelites.traditional import TraditionalPopulation
+from src.mapelites.population import PopulationStorage
 
 def main():
     cluster = LocalCluster()  # Launches a scheduler and workers locally
@@ -22,12 +23,16 @@ def main():
 
     config = {
         "SEED": 69,
+        "POPULATION_SRC": SHORTENED_DATA_FILES,
         "POPULATION_SIZE": 20,
-        "TIMEOUT": 12 * 60 * 60,  # 12 hours
+        "TIMEOUT": 20,  # 12 hours
         "WANDB": False,
         "WANDB_PROJECT": "cmput644project",
         "WANDB_ENTITY": "psaunder",
+        "POPULATION_TYPE": "traditional"
     }
+
+    # TODO: Pretty print config
 
     # Set seed
     if "seed" in config:
@@ -41,33 +46,39 @@ def main():
             entity=config["WANDB_ENTITY"],
         )
 
-    # Create mapelites tables
-    methods = ["size", "depth"]
-    ranges = [[0, MAX_TREE_SIZE], [0, MAX_TREE_DEPTH]]
-    resolutions = [11, 6, 4, 3]
-    tables = TableArray(methods, ranges, resolutions)
+    # Create heuristic_storage
+    if config["POPULATION_TYPE"] == "mapelites":
+        methods = ["size", "depth"]
+        ranges = [[0, MAX_TREE_SIZE], [0, MAX_TREE_DEPTH]]
+        resolutions = [11, 6, 4, 3]
+        heuristic_storage: PopulationStorage = TableArray(methods, ranges, resolutions)
+    elif config["POPULATION_TYPE"] == "traditional":
+        elite_percentage = 0.25
+        num_elites = np.ceil(config["POPULATION_SIZE"] * elite_percentage).astype(np.int64)
+
+        # Approximately half of the mapelites table gets filled in
+        num_best_heuristics = (MAX_TREE_SIZE ** 2) // 2
+        heuristic_storage: PopulationStorage = TraditionalPopulation(num_elites, num_best_heuristics)
+    else:
+        raise ValueError(f"Heuristic Storage type '{config['POPULATION_TYPE']}' is not recognized.")
 
     # Load data
-    dfs = [delayed_load_data(file) for file in COMBINED_DATA_FILES]
-    delayed_targets = [df[CLASSES_2_Y_COLUMN] for df in dfs]
-    targets = np.concatenate(compute(*delayed_targets))
+    dfs = [delayed_load_data(file) for file in config["POPULATION_SRC"]]
+    targets = [df[CLASSES_2_Y_COLUMN] for df in dfs]
 
     # Create initial population
-    population = [
-        random_heuristic(MAX_TREE_SIZE) for _ in range(config["POPULATION_SIZE"])
-    ]
+    population = heuristic_storage.get_next_population([None] * config["POPULATION_SIZE"])
 
-    start = time.time()
+    evolution_start = time.time()
     # While the timeout has not been reached
-    while time.time() - start < config["TIMEOUT"]:
-        print("Time left: {:0.3f}s".format(config["TIMEOUT"] - (time.time() - start)))
+    while time.time() - evolution_start < config["TIMEOUT"]:
+        print("Time left: {:0.3f}s".format(config["TIMEOUT"] - (time.time() - evolution_start)))
 
         # Execute the population
         delayed_features = []
         for heuristic in population:
             new_feats = [delayed_execute_heuristic(df, heuristic) for df in dfs]
-            concat = delayed(np.concatenate)(new_feats)
-            delayed_features.append(concat)
+            delayed_features.append(new_feats)
 
         # Evaluate the population
         fitnesses = [
@@ -78,16 +89,15 @@ def main():
         start = time.time()
         fitnesses = compute(*fitnesses)
         print("Time to compute fitnesses: {}".format(time.time() - start))
-        exit()
 
         # Insert the population into MAP-Elites
         for heuristic, fitness in zip(population, fitnesses):
-            tables.insert_heuristic_if_better(heuristic, fitness)
+            heuristic_storage.insert_heuristic_if_better(heuristic, fitness)
 
         # log Statistics to wandb
         if config["WANDB"]:
             # Population specific statistics
-            mapelites_fitnesses = tables.get_fitnesses(len(resolutions) - 1)
+            mapelites_fitnesses = heuristic_storage.get_fitnesses(len(resolutions) - 1)
             wandb.log(
                 {
                     "Mean Population Fitness": np.nanmean(fitnesses),
@@ -103,12 +113,11 @@ def main():
             )
 
         # Select new population
-        population = [
-            tables.get_random_mutated_heuristic() for _ in range(config["POPULATION_SIZE"])
-        ]
+        population = heuristic_storage.get_next_population(fitnesses)
+        print(population)
 
     # Log final statistics to wandb
-    heuristics, fitnesses = tables.get_stored_data(True)
+    heuristics, fitnesses = heuristic_storage.get_stored_data(True)
     best_idx = np.argmax(fitnesses)
     best_heuristic = heuristics[best_idx]
     best_fitness = fitnesses[best_idx]
@@ -124,12 +133,12 @@ def main():
             }
         )
 
-    # Save the 'TablesArray' object to a pickle file, then upload to wandb
+    # Save the 'heuristic_storageArray' object to a pickle file, then upload to wandb
     if config["WANDB"]:
         os.mkdir("artifacts", exist_ok=True)
-        fname = os.path.join(os.path.join("tables.pkl"))
+        fname = os.path.join(os.path.join("heuristic_storage.pkl"))
         with open(fname, "wb") as f:
-            pickle.dump(tables, f)
+            pickle.dump(heuristic_storage, f)
 
         artifact = wandb.Artifact("map-elites", type="dataset")
         artifact.add_file(fname)
@@ -139,8 +148,8 @@ def main():
 
 @delayed
 def delayed_compute_fitness(features, targets):
-    print(features.shape)
-    print(targets.shape)
+    features = np.concatenate(features)
+    targets = np.concatenate(targets)
     # Remove nan values
     non_nan_idxs = ~np.isnan(features)
     non_nan_values = features[non_nan_idxs]
