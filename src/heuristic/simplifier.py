@@ -97,7 +97,7 @@ class Simplifier():
                     to_remove.append(j + i + 1)
         
         sym = self.df["symbolic"]
-        equiv = {latex(sym.loc[key]): [latex(sym.loc[j]) for j in vals] for key, vals in equiv_idxs.items()}
+        equiv = {latex(sym.loc[key]): [latex(sym.loc[j]) for j in vals] for key, vals in equiv_idxs.items() if key not in to_remove}
         
         return equiv
     
