@@ -104,12 +104,8 @@ def main():
 
         # Select new population
         population = [
-            tables.get_random_heuristic() for _ in range(config["POPULATION_SIZE"])
+            tables.get_random_mutated_heuristic() for _ in range(config["POPULATION_SIZE"])
         ]
-
-        # Mutate new population
-        for i, heuristic in enumerate(population):
-            population[i] = mutate_heuristic(heuristic)
 
     # Log final statistics to wandb
     heuristics, fitnesses = tables.get_stored_data(True)

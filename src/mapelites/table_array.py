@@ -3,9 +3,10 @@ from functools import reduce
 import numpy as np
 
 from src.mapelites.table import Table
+from src.mapelites.population import PopulationStorage
 
 
-class TableArray:
+class TableArray(PopulationStorage):
     def __init__(self, method_names, ranges, resolutions):
         """Create a table for MAP-Elites"""
         ranges = np.array(ranges)
@@ -23,7 +24,7 @@ class TableArray:
         for table in self.tables:
             table.insert_heuristic_if_better(heuristic, fitness)
 
-    def get_random_heuristic(self):
+    def get_random_heuristic(self, _):
         """Get a random heuristic from a random table"""
         table = np.random.choice(self.tables)
         return table.get_random_heuristic()

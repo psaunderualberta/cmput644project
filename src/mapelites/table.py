@@ -3,6 +3,7 @@ import pandas as pd
 
 from src.heuristic.generator import random_heuristic
 from src.heuristic.parsing import parse_heuristic
+from src.heuristic.mutator import mutate_heuristic
 
 
 class Table:
@@ -29,11 +30,13 @@ class Table:
         """Get a random heuristic from the table"""
         try:
             lengths = np.vectorize(lambda t: len(str(t)))(self.heuristics)
-            return parse_heuristic(np.random.choice(
+            heuristic = parse_heuristic(np.random.choice(
                 self.heuristics[lengths > 0].flatten()
             ))
         except ValueError:
-            return random_heuristic()
+            heuristic = random_heuristic()
+        
+        return mutate_heuristic(heuristic)
 
     def insert_heuristic_if_better(self, heuristic, fitness):
         """Insert a heuristic into the table if it is better than the current heuristic
