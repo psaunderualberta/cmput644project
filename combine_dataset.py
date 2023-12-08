@@ -1,21 +1,15 @@
-import dask.dataframe as dd
-from src.utility.constants import (
-    RAW_DATA_FILES,
-    COMBINED_DATA_FILES,
-    SHORTENED_DATA_FILES,
-    CLASSES_8_MAPPING,
-    CLASSES_2_MAPPING,
-    CLASSES_8_Y_COLUMN,
-    CLASSES_2_Y_COLUMN,
-    CLASSES_34_Y_COLUMN,
-    ATTACK_CLASS,
-    ATTACK,
-    BENIGN_CLASS,
-    NORMALIZED_COLUMN_NAMES_MAPPING as mapping,
-)
-import numpy as np
 import time
+
+import dask.dataframe as dd
+import numpy as np
 from dask.distributed import Client, LocalCluster
+
+from src.utility.constants import (ATTACK, ATTACK_CLASS, BENIGN_CLASS,
+                                   CLASSES_2_MAPPING, CLASSES_2_Y_COLUMN,
+                                   CLASSES_8_MAPPING, CLASSES_8_Y_COLUMN,
+                                   CLASSES_34_Y_COLUMN, COMBINED_DATA_FILES)
+from src.utility.constants import NORMALIZED_COLUMN_NAMES_MAPPING as mapping
+from src.utility.constants import RAW_DATA_FILES, SHORTENED_DATA_FILES
 
 if __name__ == "__main__":
     cluster = LocalCluster()  # Launches a scheduler and workers locally
@@ -31,14 +25,15 @@ if __name__ == "__main__":
         lambda x: CLASSES_8_MAPPING[x], meta=(CLASSES_8_Y_COLUMN, "object")
     )
 
-    df[CLASSES_2_Y_COLUMN] = df[CLASSES_34_Y_COLUMN].apply(
-        lambda x: CLASSES_2_MAPPING[x], meta=(CLASSES_2_Y_COLUMN, "int64")
-    ).astype(np.int64)
+    df[CLASSES_2_Y_COLUMN] = (
+        df[CLASSES_34_Y_COLUMN]
+        .apply(lambda x: CLASSES_2_MAPPING[x], meta=(CLASSES_2_Y_COLUMN, "int64"))
+        .astype(np.int64)
+    )
 
     df = df.categorize(
         columns=[CLASSES_8_Y_COLUMN, CLASSES_2_Y_COLUMN, CLASSES_34_Y_COLUMN]
     )
-
 
     print("Time to append columns: {:.2f}s".format(time.time() - t))
 

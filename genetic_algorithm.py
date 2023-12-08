@@ -1,16 +1,19 @@
-from src.utility.util import load_data
-from src.utility.constants import *
+import pickle
+import random
+import time
+
+import numpy as np
+import pandas as pd
+import wandb
+from dask import compute, delayed
+from dask.distributed import Client, LocalCluster, wait
+
 from src.heuristic.generator import random_heuristic
 from src.heuristic.mutator import mutate_heuristic
 from src.mapelites.table_array import TableArray
-from dask import delayed, compute
-import pandas as pd
-import numpy as np
-import wandb
-import random
-import time
-import pickle
-from dask.distributed import Client, LocalCluster, wait
+from src.utility.constants import *
+from src.utility.util import load_data
+
 
 def main():
     cluster = LocalCluster()  # Launches a scheduler and workers locally
@@ -50,8 +53,10 @@ def main():
     targets = np.concatenate(compute(*delayed_targets))
 
     # Create initial population
-    population = [random_heuristic(MAX_TREE_SIZE) for _ in range(config["POPULATION_SIZE"])]
-    
+    population = [
+        random_heuristic(MAX_TREE_SIZE) for _ in range(config["POPULATION_SIZE"])
+    ]
+
     start = time.time()
     # While the timeout has not been reached
     while time.time() - start < config["TIMEOUT"]:
@@ -65,7 +70,10 @@ def main():
             delayed_features.append(concat)
 
         # Evaluate the population
-        fitnesses = [delayed_compute_fitness(delayed_feature, targets) for delayed_feature in delayed_features]
+        fitnesses = [
+            delayed_compute_fitness(delayed_feature, targets)
+            for delayed_feature in delayed_features
+        ]
 
         start = time.time()
         fitnesses = compute(*fitnesses)
@@ -80,21 +88,24 @@ def main():
         if config["WANDB"]:
             # Population specific statistics
             mapelites_fitnesses = tables.get_fitnesses(len(resolutions) - 1)
-            wandb.log({
-                "Mean Population Fitness": np.nanmean(fitnesses),
-                "Max Population Fitness": np.nanmax(fitnesses),
-                "Min Population Fitness": np.nanmin(fitnesses),
-                "Std Population Fitness": np.nanstd(fitnesses),
-
-                # MAP-Elites specific statistics
-                "Mean MAP-Elites Fitness": np.nanmean(mapelites_fitnesses),
-                "Max MAP-Elites Fitness": np.nanmax(mapelites_fitnesses),
-                "Min MAP-Elites Fitness": np.nanmin(mapelites_fitnesses),
-                "Std MAP-Elites Fitness": np.nanstd(mapelites_fitnesses),
-            })
+            wandb.log(
+                {
+                    "Mean Population Fitness": np.nanmean(fitnesses),
+                    "Max Population Fitness": np.nanmax(fitnesses),
+                    "Min Population Fitness": np.nanmin(fitnesses),
+                    "Std Population Fitness": np.nanstd(fitnesses),
+                    # MAP-Elites specific statistics
+                    "Mean MAP-Elites Fitness": np.nanmean(mapelites_fitnesses),
+                    "Max MAP-Elites Fitness": np.nanmax(mapelites_fitnesses),
+                    "Min MAP-Elites Fitness": np.nanmin(mapelites_fitnesses),
+                    "Std MAP-Elites Fitness": np.nanstd(mapelites_fitnesses),
+                }
+            )
 
         # Select new population
-        population = [tables.get_random_heuristic() for _ in range(config["POPULATION_SIZE"])]
+        population = [
+            tables.get_random_heuristic() for _ in range(config["POPULATION_SIZE"])
+        ]
 
         # Mutate new population
         for i, heuristic in enumerate(population):
@@ -108,12 +119,14 @@ def main():
     print("Best Fitness: {:0.4f}".format(best_fitness))
     print("Best Heuristic: {}".format(best_heuristic))
     if config["WANDB"]:
-        wandb.log({
-            "Best Fitness": str(best_fitness),
-            "Best Heuristic": str(best_heuristic),
-            "All Heuristics": list(map(str, heuristics)),
-            "All Fitnesses": fitnesses,
-        })
+        wandb.log(
+            {
+                "Best Fitness": str(best_fitness),
+                "Best Heuristic": str(best_heuristic),
+                "All Heuristics": list(map(str, heuristics)),
+                "All Fitnesses": fitnesses,
+            }
+        )
 
     # Save the 'TablesArray' object to a pickle file, then upload to wandb
     if config["WANDB"]:
@@ -126,6 +139,7 @@ def main():
         artifact.add_file(fname)
         wandb.log_artifact(artifact)
         os.remove(fname)
+
 
 @delayed
 def delayed_compute_fitness(features, targets):

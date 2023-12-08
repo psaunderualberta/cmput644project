@@ -1,5 +1,6 @@
 from src.heuristic.parsing import parse_heuristic
 
+
 # Numbers
 def test_transformer_number_1():
     assert str(parse_heuristic("1.0")) == "1.0"

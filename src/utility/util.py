@@ -1,8 +1,9 @@
-import pandas as pd
-import numpy as np
-from tqdm import tqdm
-from src.utility.constants import NORMALIZED_COLUMN_NAMES_MAPPING as mapping
 import dask.dataframe as dd
+import numpy as np
+import pandas as pd
+from tqdm import tqdm
+
+from src.utility.constants import NORMALIZED_COLUMN_NAMES_MAPPING as mapping
 
 
 def load_data(files, dask=False):

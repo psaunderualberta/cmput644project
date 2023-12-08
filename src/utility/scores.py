@@ -1,8 +1,9 @@
 import dask.array as da
 import dask.dataframe as dd
 import numpy as np
-from .constants import *
 import pandas as pd
+
+from .constants import *
 
 
 def get_metrics(actual, pred):

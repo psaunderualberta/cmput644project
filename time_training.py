@@ -1,18 +1,13 @@
-from src.utility.util import load_data
+import time
 
 import numpy as np
 from dask_ml.linear_model import LogisticRegression
 
-import time
-from src.utility.constants import (
-    COMBINED_DATA_FILES,
-    SHORTENED_DATA_FILES,
-    X_COLUMNS,
-    CLASSES_2_Y_COLUMN,
-    CLASSES_8_Y_COLUMN
-)
-
 from cross_validation import cross_validation
+from src.utility.constants import (CLASSES_2_Y_COLUMN, CLASSES_8_Y_COLUMN,
+                                   COMBINED_DATA_FILES, SHORTENED_DATA_FILES,
+                                   X_COLUMNS)
+from src.utility.util import load_data
 
 if __name__ == "__main__":
     # Load the data

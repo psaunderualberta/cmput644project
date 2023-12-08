@@ -1,6 +1,7 @@
-from src.heuristic.transformer import Binary, Unary, Terminal, Number
-import pandas as pd
 import numpy as np
+import pandas as pd
+
+from src.heuristic.transformer import Binary, Number, Terminal, Unary
 
 __data = pd.DataFrame(
     {

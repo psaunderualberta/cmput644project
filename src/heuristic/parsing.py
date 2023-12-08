@@ -1,6 +1,7 @@
 from lark import Lark
-from src.utility.constants import HEURISTIC_GRAMMAR
+
 from src.heuristic.transformer import HeuristicTransformer
+from src.utility.constants import HEURISTIC_GRAMMAR
 
 
 def parse_heuristic(heuristic):

@@ -1,6 +1,7 @@
 import os
-from sympy import Symbol
 from glob import glob
+
+from sympy import Symbol
 
 MAX_TREE_SIZE = 10
 MAX_TREE_DEPTH = 10

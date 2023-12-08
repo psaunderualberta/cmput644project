@@ -1,5 +1,6 @@
 import numpy as np
-from src.heuristic.expressions import Binary, Unary, Terminal, Number
+
+from src.heuristic.expressions import Binary, Number, Terminal, Unary
 from src.utility.constants import MAX_TREE_SIZE, NORMALIZED_COLUMN_NAMES
 
 

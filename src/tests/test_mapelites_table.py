@@ -1,6 +1,7 @@
-from src.mapelites.table import Table
-from src.heuristic.expressions import Binary, Terminal, Unary, Number
 import numpy as np
+
+from src.heuristic.expressions import Binary, Number, Terminal, Unary
+from src.mapelites.table import Table
 
 
 def test_mapelites_table_1():

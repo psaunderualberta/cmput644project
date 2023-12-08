@@ -1,10 +1,15 @@
 from sympy import *
+
 init_printing() 
-from src.heuristic.parsing import parse_heuristic
-from src.utility.constants import *
-from src.heuristic.expressions import Binary, Terminal, Unary, Number as HeuristicNumber
 import numpy as np
 import pandas as pd
+
+from src.heuristic.expressions import Binary
+from src.heuristic.expressions import Number as HeuristicNumber
+from src.heuristic.expressions import Terminal, Unary
+from src.heuristic.parsing import parse_heuristic
+from src.utility.constants import *
+
 
 class Simplifier():
     def __init__(self, expressions, **kwargs):

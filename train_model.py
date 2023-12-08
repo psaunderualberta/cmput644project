@@ -1,21 +1,23 @@
 import os
+import pickle
+import time
 from pathlib import Path
+
+import dask
 import dask.dataframe as dd
 import numpy as np
-import wandb
-import pickle
-from src.utility.constants import *
-from src.utility.util import load_data
 import pandas as pd
-from src.heuristic.parsing import parse_heuristic
+import wandb
 from dask.distributed import Client, LocalCluster, wait
 from dask.graph_manipulation import bind
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (accuracy_score, f1_score, precision_score,
+                             recall_score)
 from sklearn.preprocessing import StandardScaler
-import time
-import dask
 
-from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
+from src.heuristic.parsing import parse_heuristic
+from src.utility.constants import *
+from src.utility.util import load_data
 
 
 @dask.delayed
@@ -128,7 +130,9 @@ def main():
 
     # Execute heuristics
     for i, df in enumerate(dfs):
-        Xs[i], ys[i] = delayed_execute_heuristic(df, heuristics, use_heuristic=USE_HEURISTIC)
+        Xs[i], ys[i] = delayed_execute_heuristic(
+            df, heuristics, use_heuristic=USE_HEURISTIC
+        )
 
     # Split data into train and test sets
     numfolds = 5

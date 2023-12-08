@@ -1,4 +1,4 @@
-from src.heuristic.expressions import Binary, Unary, Terminal, Number
+from src.heuristic.expressions import Binary, Number, Terminal, Unary
 
 
 def test_num_unique_terminals_1():
