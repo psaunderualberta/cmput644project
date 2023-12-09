@@ -14,6 +14,9 @@ class TraditionalPopulation(PopulationStorage):
         self.elites = np.array([])
 
     def insert_heuristic_if_better(self, h, f):
+        # Convert heuristic to string (if it isn't already)
+        h = str(h)
+
         # Append to the record
         self.best_heuristics = np.append(self.best_heuristics, h)
         self.best_fitnesses = np.append(self.best_fitnesses, f)
@@ -43,7 +46,7 @@ class TraditionalPopulation(PopulationStorage):
         
         return list(map(parse_heuristic, self.population))
     
-    def get_fitnesses(self):
+    def get_fitnesses(self, _):
         return np.array(self.best_fitnesses)
     
     def get_stored_data(self, strip_nan=False, unique=True):

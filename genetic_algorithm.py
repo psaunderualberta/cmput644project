@@ -47,10 +47,10 @@ def main():
         )
 
     # Create heuristic_storage
+    resolutions = [11, 6, 4, 3]
     if config["POPULATION_TYPE"] == "mapelites":
         methods = ["size", "depth"]
         ranges = [[0, MAX_TREE_SIZE], [0, MAX_TREE_DEPTH]]
-        resolutions = [11, 6, 4, 3]
         heuristic_storage: PopulationStorage = TableArray(methods, ranges, resolutions)
     elif config["POPULATION_TYPE"] == "traditional":
         elite_percentage = 0.25
@@ -62,13 +62,13 @@ def main():
     else:
         raise ValueError(f"Heuristic Storage type '{config['POPULATION_TYPE']}' is not recognized.")
 
+    # Create initial population
+    population = heuristic_storage.get_next_population([None] * config["POPULATION_SIZE"])
+
     # Load data
     dfs = [delayed_load_data(file) for file in config["POPULATION_SRC"]]
     delayed_targets = [df[CLASSES_2_Y_COLUMN] for df in dfs]
     delayed_targets = [delayed(lambda x: x.astype(np.float64))(target) for target in delayed_targets]
-
-    # Create initial population
-    population = heuristic_storage.get_next_population([None] * config["POPULATION_SIZE"])
 
     evolution_start = time.time()
     # While the timeout has not been reached
@@ -79,12 +79,13 @@ def main():
         # To parallize this, we use dask.delayed and a custom computation of the fitness
         delayed_fitnesses = []
         delayed_nan_counts = []
+        stats = []
         for heuristic in population:
-            delayed_feature_means = []
-            delayed_feature_variances = []
-            delayed_target_means = []
-            delayed_target_variances = []
-            delayed_products = []
+            feature_sums = []
+            feature_sum_squares = []
+            target_sum = []
+            target_sum_squares = []
+            product_sums = []
 
             # Execute the heuristic on each subset of the dataset
             new_feats = [delayed_execute_heuristic(df, heuristic) for df in dfs]
@@ -92,45 +93,49 @@ def main():
             # Calculate the mean, variance, and product sum for each subset
             non_nan_lens = []
             nan_counts = []
+            trimmed_feats = []
+            trimmed_targets = []
             assert len(new_feats) == len(delayed_targets)
             for new_feat, delayed_target in zip(new_feats, delayed_targets):
-                new_feat, delayed_target, new_feat_len, nan_count = delayed_trim_nans(new_feat, delayed_target)
-                nan_counts.append(nan_count)
+                trimmed_feat, trimmed_target, new_feat_len, nan_count = delayed_trim_nans(new_feat, delayed_target)
+                trimmed_feats.append(trimmed_feat)
+                trimmed_targets.append(trimmed_target)
                 non_nan_lens.append(new_feat_len)
-                delayed_feature_mean, delayed_target_mean = delayed_means(new_feat, delayed_target)
-                delayed_feature_var, delayed_target_var = delayed_variances(new_feat, delayed_target)
-                delayed_feature_means.append(delayed_feature_mean)
-                delayed_target_means.append(delayed_target_mean)
-                delayed_feature_variances.append(delayed_feature_var)
-                delayed_target_variances.append(delayed_target_var)
-                delayed_products.append(delayed_product_sum(new_feat, delayed_target))
+                nan_counts.append(nan_count)
+            
+            feature_sums = [delayed_sum(new_feat) for new_feat in trimmed_feats]
+            feature_sum_squares = [delayed_sum_squares(new_feat) for new_feat in trimmed_feats]
+            target_sum = [delayed_sum(delayed_target) for delayed_target in trimmed_targets]
+            target_sum_squares = [delayed_sum_squares(delayed_target) for delayed_target in trimmed_targets]
+            product_sums = [delayed_product_sum(new_feat, delayed_target) for new_feat, delayed_target in zip(trimmed_feats, trimmed_targets)]
 
-            # Calculate the overall mean and variance of the heuristic across the dataset
-            feature_mean, feature_var = delayed_pooled_mean_and_var(delayed_feature_means, delayed_feature_variances, non_nan_lens)
-            target_mean, target_var = delayed_pooled_mean_and_var(delayed_target_means, delayed_target_variances, non_nan_lens)
-            feature_std = feature_var ** 0.5
-            target_std = target_var ** 0.5
+            # Sum each vector
+            feature_sum = delayed(np.sum)(feature_sums)
+            feature_sum_square = delayed(np.sum)(feature_sum_squares)
+            target_sum = delayed(np.sum)(target_sum)
+            target_sum_square = delayed(np.sum)(target_sum_squares)
+            product_sum = delayed(np.sum)(product_sums)
 
-            # Calculate the correlation between the heuristic and the target
-            # https://en.wikipedia.org/wiki/Pearson_correlation_coefficient#For_a_sample
-            product_sum = delayed(np.sum)(delayed_products)
+            # Get the # of non-nan samples
             num_samples = delayed(np.sum)(non_nan_lens)
             delayed_nan_counts.append(delayed(np.sum)(nan_counts))
-            corr = (product_sum - num_samples * feature_mean * target_mean) / ((num_samples - 1) * feature_std * target_std)
+            
+            # Calculate the correlation between the heuristic and the target
+            # https://en.wikipedia.org/wiki/Pearson_correlation_coefficient#For_a_sample
+            numerator = num_samples * product_sum - (feature_sum * target_sum)
+            lhs_denominator = delayed(np.sqrt)(num_samples * feature_sum_square - feature_sum ** 2)
+            rhs_denominator = delayed(np.sqrt)(num_samples * target_sum_square - target_sum ** 2)
+
+            # Calculate the fitness of the heuristic
+            corr = numerator / (lhs_denominator * rhs_denominator)
             delayed_fitnesses.append(delayed(abs)(corr))
 
-        assert len(delayed_fitnesses) == len(delayed_nan_counts)
-        print(len(delayed_fitnesses), len(delayed_nan_counts))
         start = time.time()
-        fitnesses, nan_counts = compute(delayed_fitnesses, delayed_nan_counts)
-        print(len(fitnesses), len(nan_counts))
-        print(fitnesses, nan_counts)
+        assert len(delayed_fitnesses) == len(delayed_nan_counts)
+        fitnesses, nan_counts= compute(delayed_fitnesses, delayed_nan_counts)
         assert len(fitnesses) == len(nan_counts)
         fitnesses = np.where(np.isnan(fitnesses) | np.isinf(fitnesses), 0, fitnesses)
-
-        print(fitnesses)
         print("Time to compute fitnesses: {}".format(time.time() - start))
-        exit()
 
         # Insert the population into MAP-Elites
         for heuristic, fitness in zip(population, fitnesses):
@@ -177,7 +182,7 @@ def main():
 
     # Save the 'heuristic_storageArray' object to a pickle file, then upload to wandb
     if config["WANDB"]:
-        os.mkdir("artifacts", exist_ok=True)
+        os.makedirs("artifacts", exist_ok=True)
         fname = os.path.join(os.path.join("heuristic_storage.pkl"))
         with open(fname, "wb") as f:
             pickle.dump(heuristic_storage, f)
@@ -187,55 +192,31 @@ def main():
         wandb.log_artifact(artifact)
         os.remove(fname)
 
-# def compute_fitness(features, targets):
-#     # Remove nan values
-#     non_nan_idxs = ~np.isnan(features)
-#     non_nan_values = features[non_nan_idxs]
-#     non_nan_targets = targets[non_nan_idxs]
-
-#     # Calculate fitness
-#     return abs(np.corrcoef(non_nan_values, non_nan_targets)[0][1])
 
 @delayed(nout=4)
 def delayed_trim_nans(feats, targets):
+    assert len(feats) == len(targets)
     valid_idxs = ~(np.isnan(feats) | np.isinf(feats))
     feats = feats[valid_idxs]
     targets = targets[valid_idxs]
+    assert len(feats) == len(targets)
     return feats, targets, len(feats), np.sum(~valid_idxs)
 
-@delayed(nout=2)
-def delayed_means(feats, targets):
-    return (
-        np.mean(feats),
-        np.mean(targets)
-    )
+
+@delayed
+def delayed_sum(feats):
+    return np.sum(feats)
 
 
-@delayed(nout=2)
-def delayed_variances(feats, targets):
-    return (
-        np.var(feats),
-        np.var(targets)
-    )
+@delayed
+def delayed_sum_squares(feats):
+    return np.sum(feats ** 2)
 
-
-@delayed(nout=2)
-def delayed_pooled_mean_and_var(means, variances, lens):
-    means = np.array(means)
-    variances = np.array(variances)
-    lens = np.array(lens)
-
-    return (
-        np.sum(means * lens, axis=0) / np.sum(lens),
-        np.sum((lens - 1) * variances, axis=0) / (np.sum(lens) - 1),
-    )
 
 @delayed
 def delayed_product_sum(feats, targets):
-    print(feats.shape, targets.shape)
-    print(np.dot(feats, targets).shape)
-    print(np.dot(feats, targets))
     return np.dot(feats, targets)
+
 
 @delayed
 def delayed_load_data(file):
