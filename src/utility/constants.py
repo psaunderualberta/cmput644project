@@ -5,6 +5,7 @@ from sympy import Symbol
 
 MAX_TREE_SIZE = 10
 MAX_TREE_DEPTH = 10
+MAX_NAN_PERCENTAGE = 0.1
 
 COMBINED_DATA_FILES = glob(
     os.path.join(".",
