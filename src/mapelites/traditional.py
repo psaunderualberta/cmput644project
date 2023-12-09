@@ -53,5 +53,5 @@ class TraditionalPopulation(PopulationStorage):
         return self.best_heuristics, self.best_fitnesses
     
     def __select_elites(self, fitnesses):
-        sorted_idxs = np.argsort(fitnesses)
+        sorted_idxs = np.argsort(fitnesses)[::-1]
         self.elites = self.population[sorted_idxs[:self.num_elites]]

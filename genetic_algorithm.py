@@ -21,6 +21,9 @@ def main():
     client = Client(cluster)
     print(client.dashboard_link)
 
+    # Get today's date, to the hour, in a format that can be used as a filename
+    today = time.strftime("%Y-%m-%d_%H")
+
     config = {
         "SEED": 69,
         "POPULATION_SRC": COMBINED_DATA_FILES,
@@ -29,10 +32,14 @@ def main():
         "WANDB": False,
         "WANDB_PROJECT": "cmput644project",
         "WANDB_ENTITY": "psaunder",
-        "POPULATION_TYPE": "traditional"
-    }
+        "POPULATION_TYPE": "traditional",
+        "LOG_FILE": os.path.join("logs", "results", f"{today}-log.txt"),
+    }    
 
-    # TODO: Pretty print config
+    # Create the log file
+    os.makedirs(os.path.dirname(config["LOG_FILE"]), exist_ok=True)
+    with open(config["LOG_FILE"], "w") as f:
+        f.write("Population Number | Heuristic | Fitness | NaN Count | Number of valid samples\n")
 
     # Set seed
     if "seed" in config:
@@ -71,6 +78,7 @@ def main():
     delayed_targets = [delayed(lambda x: x.astype(np.float64))(target) for target in delayed_targets]
 
     evolution_start = time.time()
+    population_number = 1
     # While the timeout has not been reached
     while time.time() - evolution_start < config["TIMEOUT"]:
         print("Time left: {:0.3f}s".format(config["TIMEOUT"] - (time.time() - evolution_start)))
@@ -79,7 +87,7 @@ def main():
         # To parallize this, we use dask.delayed and a custom computation of the fitness
         delayed_fitnesses = []
         delayed_nan_counts = []
-        stats = []
+        delayed_num_samples = []
         for heuristic in population:
             feature_sums = []
             feature_sum_squares = []
@@ -118,6 +126,7 @@ def main():
 
             # Get the # of non-nan samples
             num_samples = delayed(np.sum)(non_nan_lens)
+            delayed_num_samples.append(num_samples)
             delayed_nan_counts.append(delayed(np.sum)(nan_counts))
             
             # Calculate the correlation between the heuristic and the target
@@ -131,10 +140,12 @@ def main():
             delayed_fitnesses.append(delayed(abs)(corr))
 
         start = time.time()
-        assert len(delayed_fitnesses) == len(delayed_nan_counts)
-        fitnesses, nan_counts= compute(delayed_fitnesses, delayed_nan_counts)
-        assert len(fitnesses) == len(nan_counts)
+        assert len(delayed_fitnesses) == len(delayed_nan_counts) == len(delayed_num_samples)
+        fitnesses, nan_counts, num_samples = compute(delayed_fitnesses, delayed_nan_counts, delayed_num_samples)
+        fitnesses, nan_counts, num_samples = np.array(fitnesses), np.array(nan_counts), np.array(num_samples)
+        assert len(fitnesses) == len(nan_counts) == len(delayed_num_samples)
         fitnesses = np.where(np.isnan(fitnesses) | np.isinf(fitnesses), 0, fitnesses)
+        fitnesses = np.where(nan_counts > MAX_NAN_PERCENTAGE * num_samples, 0, fitnesses)
         print("Time to compute fitnesses: {}".format(time.time() - start))
 
         # Insert the population into MAP-Elites
@@ -159,9 +170,14 @@ def main():
                 }
             )
 
+        # Write current population and results to log file
+        with open(config["LOG_FILE"], "a") as file:
+            for heuristic, fitness, nan_count, num_sample in zip(population, fitnesses, nan_counts, num_samples):
+                file.write(f"{population_number} | {heuristic} | {fitness} | {nan_count} | {num_sample}\n")
+
         # Select new population
         population = heuristic_storage.get_next_population(fitnesses)
-        print(population)
+        population_number += 1
 
     # Log final statistics to wandb
     heuristics, fitnesses = heuristic_storage.get_stored_data(True)
