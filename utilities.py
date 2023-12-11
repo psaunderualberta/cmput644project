@@ -3,7 +3,9 @@ import sys
 
 import numpy as np
 import pandas as pd
-from sympy import latex
+from sympy import *
+init_printing()
+import pickle
 
 from src.heuristic.parsing import parse_heuristic
 from src.heuristic.simplifier import Simplifier
@@ -34,20 +36,49 @@ def top_k_to_latex_table():
     for i in range(k):
         h = df.loc[i]["Heuristic"]
         parsed_h = parse_heuristic(h)
-        fitness = np.round(df.loc[i]["Fitness"], 2)
-        simplified = latex(simplifier.symbolic(h, True))
+        fitness = np.round(df.loc[i]["Fitness"], 3)
+        simplified = latex(simplifier.symbolic(h, False), full_prec=False, mul_symbol='dot')
         size = parsed_h.size()
         depth = parsed_h.depth()
         print(f"\t{i+1} & ${simplified}$ & {fitness} & {size} & {depth} \\\\")
 
 
-def main():
-    pass
+def mapelites_2_latex():
+    assert (
+        len(sys.argv) == 3
+    ), "Usage of top_k_to_latex_table: `python utilities.py mapelites_2_latex <pkl_file> "
+
+    fname = sys.argv[2]
+    assert os.path.isfile(fname), f"Error: file '{fname}' could not be found."
+
+
+    # Load the map-elites table
+    with open(fname, "rb") as f:
+        tables = pickle.load(f)
+
+    # Get unique heuristics
+    heuristics, fitnesses = tables.get_stored_data(strip_nan=True, unique=True)
+
+    # Sort based on fitness value
+    indxs = np.flip(np.argsort(fitnesses))[:20]
+    heuristics = heuristics[indxs]
+    fitnesses = fitnesses[indxs]
+
+    # Convert to simplified format
+    simplifier = Simplifier()
+    for i, (h, f) in enumerate(zip(heuristics, fitnesses)):
+        parsed_h = parse_heuristic(h)
+        fitness = np.round(f, 3)
+        size = parsed_h.size()
+        depth = parsed_h.depth()
+        # simplified = latex(simplifier.symbolic(h, False), full_prec=False, mul_symbol='dot')
+        print(f"\t{i+1} & {fitness} & {size} & {depth} \\\\")
 
 
 if __name__ == "__main__":
     utilities = {
         top_k_to_latex_table.__name__: top_k_to_latex_table,
+        mapelites_2_latex.__name__: mapelites_2_latex,
     }
     assert (
         len(sys.argv) > 1
