@@ -71,8 +71,8 @@ def mapelites_2_latex():
         fitness = np.round(f, 3)
         size = parsed_h.size()
         depth = parsed_h.depth()
-        # simplified = latex(simplifier.symbolic(h, False), full_prec=False, mul_symbol='dot')
-        print(f"\t{i+1} & {fitness} & {size} & {depth} \\\\")
+        simplified = latex(simplifier.symbolic(h, False), full_prec=False, mul_symbol='dot')
+        print(f"\t{i+1} & ${simplified}$ & {fitness} & {size} & {depth} \\\\")
 
 
 if __name__ == "__main__":

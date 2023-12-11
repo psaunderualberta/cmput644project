@@ -46,7 +46,7 @@ class Simplifier():
             "abs": lambda x: Abs(x, evaluate=evaluate),
             "neg": lambda x: -x,
             "sqr": lambda x: Pow(x, 2, evaluate=evaluate),
-            "sqrt": lambda x: sign(x) * sqrt(Abs(x, evaluate=evaluate), evaluate=evaluate)
+            "sqrt": lambda x: sqrt(x, evaluate=evaluate)
         }[heuristic.op](right_simplified)
 
     def symbolic(self, heuristic, evaluate=False):
