@@ -117,7 +117,7 @@ def main():
         tables = pickle.load(f)
 
     # Get unique heuristics
-    heuristics, _ = tables.get_stored_data(strip_nan=True, unique=True)
+    heuristics, fitnesses = tables.get_stored_data(strip_nan=True, unique=True)
     heuristics = list(map(lambda h: parse_heuristic(h), heuristics))
 
     # Load parquet files
@@ -227,7 +227,9 @@ def main():
         "models": models,
         "means": means,
         "variances": variances,
-        "df": dask.compute(Xs[0]),
+        "columns": dask.compute(Xs[0].columns),
+        "heuristics": heuristics,
+        "fitnesses": fitnesses,
     }
     with open(model_path, "wb") as f:
         pickle.dump(data, f)

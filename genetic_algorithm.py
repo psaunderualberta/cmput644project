@@ -25,14 +25,14 @@ def main():
     today = time.strftime("%Y-%m-%d_%H")
 
     config = {
-        "SEED": 69,
+        "SEED": 421,
         "POPULATION_SRC": COMBINED_DATA_FILES,
         "POPULATION_SIZE": 20,
-        "TIMEOUT": 20,  # 12 hours
-        "WANDB": False,
+        "TIMEOUT": 12 * 60 * 60,  # 12 hours
+        "WANDB": True,
         "WANDB_PROJECT": "cmput644project",
         "WANDB_ENTITY": "psaunder",
-        "POPULATION_TYPE": "traditional",
+        "POPULATION_TYPE": "mapelites",
         "LOG_FILE": os.path.join("logs", "results", f"{today}-log.txt"),
     }    
 

@@ -21,6 +21,11 @@ class TraditionalPopulation(PopulationStorage):
         self.best_heuristics = np.append(self.best_heuristics, h)
         self.best_fitnesses = np.append(self.best_fitnesses, f)
 
+        # Make sure the arrays are all unique
+        _, unique_idxs = np.unique(self.best_heuristics, return_index=True)
+        self.best_heuristics = self.best_heuristics[unique_idxs]
+        self.best_fitnesses = self.best_fitnesses[unique_idxs]
+
         # Sort the two arrays according to the fitness value (descending order)
         sorted_idxs = np.argsort(-self.best_fitnesses)
         self.best_heuristics = self.best_heuristics[sorted_idxs]
