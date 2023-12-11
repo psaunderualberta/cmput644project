@@ -34,7 +34,7 @@ def main():
         origins.extend([i] * len(arr))
 
     simplifier = Simplifier(
-        np.ravel(expressions), fitnesses=np.ravel(fitnesses), origins=origins
+        expressions=np.ravel(expressions), fitnesses=np.ravel(fitnesses), origins=origins
     )
 
     print("TOTAL # OF HEURISTICS:", len(simplifier.df))

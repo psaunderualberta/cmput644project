@@ -12,15 +12,19 @@ from src.utility.constants import *
 
 
 class Simplifier():
-    def __init__(self, expressions, **kwargs):
+    def __init__(self, **kwargs):
         self.cache = dict()
 
-        self.df = pd.DataFrame({
-            "expressions": expressions,
-            "symbolic": [self.symbolic(h, False) for h in expressions],
-            "simplified": [self.symbolic(h, True) for h in expressions]
-        })
-        self.df = self.df.assign(**kwargs)
+        if "expressions" in kwargs:
+            expressions = kwargs["expressions"]
+            self.df = pd.DataFrame({
+                "expressions": expressions,
+                "symbolic": [self.symbolic(h, False) for h in expressions],
+                "simplified": [self.symbolic(h, True) for h in expressions]
+            })
+            self.df = self.df.assign(**kwargs)
+        else:
+            self.df = None
 
     def __simplify_binary(self, binary, evaluate):
         left_simplified = self.symbolic(binary.left, evaluate)
@@ -42,7 +46,7 @@ class Simplifier():
             "abs": lambda x: Abs(x, evaluate=evaluate),
             "neg": lambda x: -x,
             "sqr": lambda x: Pow(x, 2, evaluate=evaluate),
-            "sqrt": lambda x: sqrt(x, evaluate=evaluate)
+            "sqrt": lambda x: sign(x) * sqrt(Abs(x, evaluate=evaluate), evaluate=evaluate)
         }[heuristic.op](right_simplified)
 
     def symbolic(self, heuristic, evaluate=False):
@@ -58,7 +62,7 @@ class Simplifier():
         elif isinstance(heuristic, Unary):
             simplified = self.__simplify_unary(heuristic, evaluate)
         elif isinstance(heuristic, Terminal):
-            name = "\\text\{" + heuristic.data.replace("_", " ") + "\}"
+            name = "\\text{" + heuristic.data.replace("_", " ") + "}"
             simplified = Symbol(name)
         elif isinstance(heuristic, HeuristicNumber):
             simplified = Number(heuristic.value)

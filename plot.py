@@ -56,7 +56,7 @@ def main():
                 table.resolution, dirname
             )
             plt.savefig(
-                os.path.join(plot_dir, "{}.png".format(fname.replace(" ", "_").lower()))
+                os.path.join(plot_dir, "{}.pdf".format(fname.replace(" ", "_").lower()))
             )
             plt.clf()
 
