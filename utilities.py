@@ -60,7 +60,7 @@ def mapelites_2_latex():
     heuristics, fitnesses = tables.get_stored_data(strip_nan=True, unique=True)
 
     # Sort based on fitness value
-    indxs = np.flip(np.argsort(fitnesses))[:20]
+    indxs = np.flip(np.argsort(fitnesses))
     heuristics = heuristics[indxs]
     fitnesses = fitnesses[indxs]
 
