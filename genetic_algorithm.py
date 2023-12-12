@@ -25,7 +25,7 @@ def main():
     today = time.strftime("%Y-%m-%d_%H")
 
     config = {
-        "SEED": 421,
+        "SEED": 1337,
         "POPULATION_SRC": COMBINED_DATA_FILES,
         "POPULATION_SIZE": 20,
         "TIMEOUT": 12 * 60 * 60,  # 12 hours
