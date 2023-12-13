@@ -43,6 +43,18 @@ def delayed_execute_heuristic(df, heuristics, use_heuristic=True):
     return new_df[x_cols], new_df[CLASSES_2_Y_COLUMN]
 
 
+@dask.delayed(nout=2)
+def delayed_trim_nans(X, y):
+    X = X.replace([np.inf, -np.inf], np.nan).reset_index(drop=True)
+    y = y.reset_index(drop=True)
+    idxs = np.where(pd.isnull(X).any(axis=1))[0]
+
+    X = X.drop(idxs)
+    y = y.drop(idxs)
+    assert X.shape[0] == y.shape[0]
+    return X, y
+
+
 @dask.delayed
 def delayed_mean(df):
     return df.mean()
@@ -50,7 +62,7 @@ def delayed_mean(df):
 
 @dask.delayed
 def delayed_variance(df):
-    variances = df.var()
+    variances = df.var(axis=0)
     variances[variances == 0] = 1
     return variances
 
@@ -105,9 +117,6 @@ def train_model(pkl_path, USE_HEURISTIC=False):
     # Get unique heuristics
     heuristics, fitnesses = tables.get_stored_data(strip_nan=True, unique=True)
     heuristics = list(map(lambda h: parse_heuristic(h), heuristics))
-    print(heuristics)
-    print(fitnesses)
-    return
 
     for h, f in zip(heuristics, fitnesses):
         print("Heuristic: {}, Fitness: {}".format(h, f))
@@ -126,8 +135,11 @@ def train_model(pkl_path, USE_HEURISTIC=False):
             df, heuristics, use_heuristic=USE_HEURISTIC
         )
 
+        Xs[i], ys[i] = delayed_trim_nans(Xs[i], ys[i])
+
+
     # Split data into train and test sets
-    numfolds = 5
+    numfolds = min(5, len(Xs) - 1)
     splits = np.linspace(0, len(Xs), numfolds + 1, dtype=int)
     X_trains = []
     y_trains = []
@@ -217,18 +229,21 @@ def train_model(pkl_path, USE_HEURISTIC=False):
     model_path = os.path.join(folder, "models.pkl")
     data = {
         "models": models,
-        "means": means,
+        "CV_score": means,
+        "scores": scores,
         "variances": variances,
         "columns": dask.compute(Xs[0].columns),
-        "heuristics": heuristics,
+        "heuristics": list(map(str, heuristics)),
         "fitnesses": fitnesses,
     }
+
+    print(model_path)
     with open(model_path, "wb") as f:
         pickle.dump(data, f)
 
 
 def main():
-    versions = list(map(lambda v: f"v{v}", range(1, 21)))
+    versions = list(map(lambda v: f"v{v}", range(10, 11)))
 
     DOWNLOAD_ARTIFACTS = False
     if DOWNLOAD_ARTIFACTS:
@@ -254,18 +269,18 @@ def main():
     file_location = os.path.dirname(os.path.realpath(__file__))
     pkl_root = os.path.join(file_location, "artifacts")
     paths = [
-        # "local",
-        "baseline",
+        "local",
     ] + [f"map-elites-{v}" for v in versions]
     full_paths = [os.path.join(pkl_root, p, "tables.pkl") for p in paths]
     exist_paths = [p for p in full_paths if os.path.exists(p)]
 
-    USE_HEURISTIC = False
+    USE_HEURISTIC = True
     cluster = LocalCluster()  # Launches a scheduler and workers locally
     client = Client(cluster)
     print(client.dashboard_link)
 
     for p in exist_paths:
+        client.restart()
         start = time.time()
         train_model(p, USE_HEURISTIC)
         print(p)

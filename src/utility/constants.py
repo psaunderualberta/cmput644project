@@ -3,6 +3,22 @@ from glob import glob
 
 from sympy import Symbol
 
+__base_dir = os.path.dirname(os.path.realpath(__file__))
+__artifact_base_dir = os.path.realpath(os.path.join(__base_dir, "..", "..", "artifacts"))
+MAPELITES_RESULTS = [
+    os.path.join(__artifact_base_dir, "map-elites-v1"),
+    os.path.join(__artifact_base_dir, "map-elites-v2"),
+    os.path.join(__artifact_base_dir, "map-elites-v3"),
+    os.path.join(__artifact_base_dir, "map-elites-v7"),
+    os.path.join(__artifact_base_dir, "map-elites-v8"),
+    os.path.join(__artifact_base_dir, "map-elites-v9"),
+]
+
+TRADITIONAL_RESULTS = [
+    os.path.join(__artifact_base_dir, "map-elites-v10"),
+    os.path.join(__artifact_base_dir, "map-elites-v6"),
+]
+
 MAX_TREE_SIZE = 10
 MAX_TREE_DEPTH = 10
 MAX_NAN_PERCENTAGE = 0.1
