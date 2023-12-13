@@ -22,7 +22,7 @@ def main():
     print(client.dashboard_link)
 
     # Get today's date, to the hour, in a format that can be used as a filename
-    today = time.strftime("%Y-%m-%d_%H")
+    prefix = "traditional-12hr-ga-2"
 
     config = {
         "SEED": 1337,
@@ -32,8 +32,8 @@ def main():
         "WANDB": True,
         "WANDB_PROJECT": "cmput644project",
         "WANDB_ENTITY": "psaunder",
-        "POPULATION_TYPE": "mapelites",
-        "LOG_FILE": os.path.join("logs", "results", f"{today}-log.txt"),
+        "POPULATION_TYPE": "traditional",
+        "LOG_FILE": os.path.join("logs", "results", f"{prefix}.txt"),
     }    
 
     # Create the log file
@@ -197,15 +197,18 @@ def main():
         )
 
     # Save the 'heuristic_storageArray' object to a pickle file, then upload to wandb
-    if config["WANDB"]:
-        os.makedirs("artifacts", exist_ok=True)
-        fname = os.path.join(os.path.join("heuristic_storage.pkl"))
-        with open(fname, "wb") as f:
-            pickle.dump(heuristic_storage, f)
+    dir_name = os.path.join(".", "artifacts", "local")
+    os.makedirs(dir_name, exist_ok=True)
+    fname = os.path.join(os.path.join(dir_name, "tables.pkl"))
+    with open(fname, "wb") as f:
+        pickle.dump(heuristic_storage, f)
 
+    if config["WANDB"]:
         artifact = wandb.Artifact("map-elites", type="dataset")
         artifact.add_file(fname)
         wandb.log_artifact(artifact)
+
+        # Remove the file once it has been uploaded to wandb
         os.remove(fname)
 
 

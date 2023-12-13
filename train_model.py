@@ -1,23 +1,20 @@
 import os
 import pickle
 import time
+import glob
 from pathlib import Path
 
 import dask
-import dask.dataframe as dd
 import numpy as np
 import pandas as pd
-import wandb
-from dask.distributed import Client, LocalCluster, wait
+from dask.distributed import Client, LocalCluster
 from dask.graph_manipulation import bind
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import (accuracy_score, f1_score, precision_score,
-                             recall_score)
-from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
+import wandb
 from src.heuristic.parsing import parse_heuristic
 from src.utility.constants import *
-from src.utility.util import load_data
 
 
 @dask.delayed
@@ -100,25 +97,20 @@ def delayed_get_scores(y_true, y_pred):
     ).T
 
 
-def main():
-    USE_HEURISTIC = False
-
-    cluster = LocalCluster()  # Launches a scheduler and workers locally
-    client = Client(cluster)
-    print(client.dashboard_link)
-
-    # Download the artifact from W&B
-    api = wandb.Api()
-    artifact = api.artifact("psaunder/cmput644project/map-elites:latest")
-    artifact_path = os.path.join(artifact.download(), "tables.pkl")
-
+def train_model(pkl_path, USE_HEURISTIC=False):
     # Load the map-elites table
-    with open(artifact_path, "rb") as f:
+    with open(pkl_path, "rb") as f:
         tables = pickle.load(f)
 
     # Get unique heuristics
     heuristics, fitnesses = tables.get_stored_data(strip_nan=True, unique=True)
     heuristics = list(map(lambda h: parse_heuristic(h), heuristics))
+    print(heuristics)
+    print(fitnesses)
+    return
+
+    for h, f in zip(heuristics, fitnesses):
+        print("Heuristic: {}, Fitness: {}".format(h, f))
 
     # Load parquet files
     dfs = []
@@ -212,9 +204,9 @@ def main():
 
     # Save the scores
     if USE_HEURISTIC:
-        folder = os.path.dirname(artifact_path)
+        folder = os.path.dirname(pkl_path)
     else:
-        folder = os.path.join(Path(artifact_path).parents[1], "baseline")
+        folder = os.path.join(Path(pkl_path).parents[1], "baseline")
 
     os.makedirs(folder, exist_ok=True)
     scores_fpath = os.path.join(folder, "scores.csv")
@@ -233,6 +225,51 @@ def main():
     }
     with open(model_path, "wb") as f:
         pickle.dump(data, f)
+
+
+def main():
+    versions = list(map(lambda v: f"v{v}", range(1, 21)))
+
+    DOWNLOAD_ARTIFACTS = False
+    if DOWNLOAD_ARTIFACTS:
+        # Download all artifacts
+        api = wandb.Api()
+        for v in versions:
+            try:
+                artifact = api.artifact(f"psaunder/cmput644project/map-elites:{v}")
+            except wandb.errors.CommError:
+                print(f"Artifact {v} does not exist")
+            else:
+                artifact.download()
+
+        # Replace all files called 'heuristic_storage.pkl' with 'tables.pkl'
+        for src in glob(f"./artifacts/**/heuristic_storage.pkl", recursive=True):
+            dest = src.replace("heuristic_storage.pkl", "tables.pkl")
+            try:
+                os.remove(dest)
+            except FileNotFoundError:
+                pass
+            os.rename(src, dest)
+
+    file_location = os.path.dirname(os.path.realpath(__file__))
+    pkl_root = os.path.join(file_location, "artifacts")
+    paths = [
+        # "local",
+        "baseline",
+    ] + [f"map-elites-{v}" for v in versions]
+    full_paths = [os.path.join(pkl_root, p, "tables.pkl") for p in paths]
+    exist_paths = [p for p in full_paths if os.path.exists(p)]
+
+    USE_HEURISTIC = False
+    cluster = LocalCluster()  # Launches a scheduler and workers locally
+    client = Client(cluster)
+    print(client.dashboard_link)
+
+    for p in exist_paths:
+        start = time.time()
+        train_model(p, USE_HEURISTIC)
+        print(p)
+        print("Time to run whole pipeline: {}".format(time.time() - start))
 
 
 if __name__ == "__main__":
