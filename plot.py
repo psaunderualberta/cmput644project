@@ -150,50 +150,6 @@ def fitness_vs_coefs_kde_1d():
     plt.clf()
 
 
-def fitness_vs_coefs_kde_2d():
-    file_location = os.path.dirname(os.path.realpath(__file__))
-    source = "Elitism"
-    if source == "MAP-Elites":
-        folders = MAPELITES_RESULTS
-    else:
-        folders = TRADITIONAL_RESULTS
-
-    table_files = list(map(lambda f: os.path.join(f, "models.pkl"), folders))
-
-    model_data = []
-    for table_file in table_files:
-        with open(table_file, "rb") as f:
-            model_data.append(pickle.load(f))
-    
-    # Get the fitnesses, coefs, and columns for each model
-    fitnesses = list(map(lambda d: d["fitnesses"], model_data))
-    coefs = list(map(lambda d: d["models"][-1].coef_[0], model_data))
-    columns = list(map(lambda d: d["columns"][0], model_data))
-
-    # Trim the columns to only include the synthesized features
-    num_x_cols = len(X_COLUMNS)
-    columns = list(map(lambda c: c[num_x_cols:], columns))
-    coefs = list(map(lambda c: c[num_x_cols:], coefs))
-
-    assert all(map(lambda col, coef, f: len(col) == len(coef) == len(f), columns, coefs, fitnesses))
-
-    fitnesses = np.array(fitnesses).flatten()
-    coefs = np.array(coefs).flatten()
-
-    # plot the data
-    ax = sns.kdeplot(x=fitnesses, y=coefs, fill=True)
-    ax.set(
-        xlabel="Fitness",
-        ylabel="Coefficient",
-        title=f"{source}: Fitness vs. Coefficient",
-    )
-
-    plot_dir = os.path.join(file_location, "plots")
-    os.makedirs(plot_dir, exist_ok=True)
-    plt.savefig(os.path.join(plot_dir, f"fitness_vs_coef_{source.lower()}.pdf"))
-    plt.clf()
-
-
 def feature_explain():
     # \sqrt{\min\left(5.6^{2}, \sqrt{\text{rst count} - 3.0}\right) - 5.1} in our heuristic grammar
     feature_str = "(sqrt (min (sqr 5.6) (sqrt (- rst_count 3.0)) -5.1))"
