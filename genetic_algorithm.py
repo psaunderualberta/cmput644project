@@ -6,13 +6,10 @@ import numpy as np
 import pandas as pd
 import wandb
 from dask import compute, delayed
-from dask.distributed import Client, LocalCluster, wait
+from dask.distributed import Client, LocalCluster
 
-from src.heuristic.generator import random_heuristic
-from src.heuristic.mutator import mutate_heuristic
 from src.mapelites.table_array import TableArray
 from src.utility.constants import *
-from src.utility.util import load_data
 from src.mapelites.traditional import TraditionalPopulation
 from src.mapelites.population import PopulationStorage
 
@@ -22,14 +19,14 @@ def main():
     print(client.dashboard_link)
 
     # Get today's date, to the hour, in a format that can be used as a filename
-    prefix = "traditional-12hr-ga-2"
+    prefix = "testing"
 
     config = {
         "SEED": 1337,
-        "POPULATION_SRC": COMBINED_DATA_FILES,
+        "POPULATION_SRC": SHORTENED_DATA_FILES,
         "POPULATION_SIZE": 20,
-        "TIMEOUT": 12 * 60 * 60,  # 12 hours
-        "WANDB": True,
+        "TIMEOUT": 3 * 60,  # 3 minutes
+        "WANDB": False,
         "WANDB_PROJECT": "cmput644project",
         "WANDB_ENTITY": "psaunder",
         "POPULATION_TYPE": "traditional",

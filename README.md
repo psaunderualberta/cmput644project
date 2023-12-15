@@ -44,9 +44,11 @@ Once the above config is set appropriately, simply run `python genetic_algorithm
 At the start of the output, you will see a local link appear (i.e. http://127.0.0.1:8787/). This site represents the status of the parallel workers operating on your machine. It is primarily a diagnostic tool to analyse worker status, but the main page is somewhat interesting to look at.
 
 ## Training Models
-Training of models takes place in the `train_model.py` directory. If one wishes to only train models on their most recent genetic algorithm output, then they should change line `271` in `train_model.py` to set `paths = ["local"]`. As is, models will be trained for all experiments over the course of the semester, which will take several hours. Training the models with the small dataset should take no more than 10 minutes, and likely far less.
+Training of models takes place in the `train_model.py` directory. If one wishes to only train models on their most recent genetic algorithm output, then they should change line `271` in `train_model.py` to set `paths = ["local"]`. As is, models will be trained for all experiments over the course of the semester, which will take several hours. Training the models with the small dataset should take no more than 2 minutes, and likely far less. Note that you may see some warning from scikit learn such as `ConvergenceWarning: lbfgs failed to converge (status=1): STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.`. This is normal, so do not panic.
 
 Evaluating the baseline model (one without any synthesized features) can be done by setting `USE_HEURISTIC = False` on line 277. To use the synthesized features, set `USE_HEURISTIC = True`. 
+
+To use the entire dataset (which is not included by default in the repository), set line 126 in `train_model.py` to `for file in COMBINED_DATA_FILES:`. To use the shortened data that comes with the repository, use `for file in SHORTENED_DATA_FILES:`
 
 ## Generating plots
 Scripts to generate plots are found within `plot.py`. This is by far the messiest python file I wrote within this repository, as there is a lot of experimentation that went into its design. The function within should be somewhat self-explanatory, or at least what must be changed to get the scripts running. All plots are placed within the `./plots/` folder. To change the type of plot, go into `plot.py` and comment/uncomment the specific plotting function you wish to run, before executing the script as `python plot.py`. 

@@ -123,7 +123,7 @@ def train_model(pkl_path, USE_HEURISTIC=False):
 
     # Load parquet files
     dfs = []
-    for file in COMBINED_DATA_FILES:
+    for file in SHORTENED_DATA_FILES:
         dfs.append(delayed_load_data(file))
 
     Xs = [None for _ in dfs]
@@ -237,7 +237,6 @@ def train_model(pkl_path, USE_HEURISTIC=False):
         "fitnesses": fitnesses,
     }
 
-    print(model_path)
     with open(model_path, "wb") as f:
         pickle.dump(data, f)
 
@@ -268,9 +267,7 @@ def main():
 
     file_location = os.path.dirname(os.path.realpath(__file__))
     pkl_root = os.path.join(file_location, "artifacts")
-    paths = [
-        "local",
-    ] + [f"map-elites-{v}" for v in versions]
+    paths = ["local"]
     full_paths = [os.path.join(pkl_root, p, "tables.pkl") for p in paths]
     exist_paths = [p for p in full_paths if os.path.exists(p)]
 
@@ -283,7 +280,6 @@ def main():
         client.restart()
         start = time.time()
         train_model(p, USE_HEURISTIC)
-        print(p)
         print("Time to run whole pipeline: {}".format(time.time() - start))
 
 

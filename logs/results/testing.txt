@@ -1,0 +1,1601 @@
+Population Number | Heuristic | Fitness | NaN Count | Number of valid samples
+1 | (abs (/ (sqrt 2.0) (sqrt (abs (abs (abs protocol_type)))))) | 0.05032520116518594 | 4 | 595117
+1 | (abs (max (sqrt (* rate (sqrt syn_flag_number))) (neg 0.7))) | 0.007747070677827744 | 0 | 595121
+1 | (+ (* 9.8 1.9) (min (sqr (sqr 6.0)) http)) | 0.008123659200683683 | 0 | 595121
+1 | (+ (abs dns) (sqr (+ 3.5 (abs (neg 2.2))))) | 0.02261289309127808 | 0 | 595121
+1 | (* (abs (sqrt 2.7)) (sqr (sqr (sqr (sqr -9.1))))) | 4.8147229884073015e-06 | 0 | 595121
+1 | (* (sqr (sqrt duration)) (+ (* header_length tot_sum) max)) | 0.14848746845488367 | 0 | 595121
+1 | (sqrt (sqrt (* (min ipv (- srate 9.7)) 5.2))) | 0.10828813597977484 | 0 | 595121
+1 | (+ (- (sqrt (neg (sqrt weight))) -8.3) (sqrt 8.6)) | 0.2195886431517575 | 0 | 595121
+1 | (max (sqr (neg duration)) (abs (+ dns (neg iat)))) | 0.004926157780192053 | 0 | 595121
+1 | (neg (min (neg (* (neg (sqr max)) http)) 2.8)) | 0.008123659239302508 | 0 | 595121
+1 | (* 0.7 (abs (- (sqrt (/ -3.0 1.0)) -7.4))) | 0.0 | 0 | 595121
+1 | (/ (sqrt syn_count) (neg (max dhcp (- http -5.5)))) | 0.12956425967234433 | 0 | 595121
+1 | (abs (min (+ (+ ipv ssh) (abs fin_flag_number)) 6.5)) | 0.04833086219498297 | 0 | 595121
+1 | (* 5.4 (sqr (- (neg dhcp) (max -2.5 -4.0)))) | 0.0 | 0 | 595121
+1 | (sqr (abs (min (sqrt (neg -6.6)) (abs (sqr drate))))) | 0.00020102085106023812 | 0 | 595121
+1 | (neg (+ (sqr (/ 0.6 rate)) (abs (sqr 0.1)))) | 0.0003759862926645895 | 11941 | 583180
+1 | (+ (/ psh_flag_number cwr_flag_number) (sqr (sqr (/ -2.6 std)))) | 0.0 | 595121 | 0
+1 | (min (sqr (- (neg 4.8) fin_flag_number)) (neg (sqrt tcp))) | 0.08934228621314644 | 0 | 595121
+1 | (/ (/ (sqr variance) flow_duration) (max -2.7 (abs srate))) | 0.0 | 322606 | 272515
+1 | (/ (max -5.1 (sqrt -2.5)) (sqrt (sqrt (sqr radius)))) | 0.0 | 408821 | 186300
+2 | (+ (- (sqrt (neg (sqrt weight))) -8.3) (sqrt 8.6)) | 0.2195886431517575 | 0 | 595121
+2 | (* (sqr (sqrt duration)) (+ (* header_length tot_sum) max)) | 0.14848746845488367 | 0 | 595121
+2 | (/ (sqrt syn_count) (neg (max dhcp (- http -5.5)))) | 0.12956425967234433 | 0 | 595121
+2 | (sqrt (sqrt (* (min ipv (- srate 9.7)) 5.2))) | 0.10828813597977484 | 0 | 595121
+2 | (min (sqr (- (neg 4.8) fin_flag_number)) (neg (sqrt tcp))) | 0.08934228621314644 | 0 | 595121
+2 | magnitue | 0.30103721102763076 | 0 | 595121
+2 | (min (sqr (- (neg 4.8) (sqr dns))) (neg (sqrt tcp))) | 0.08934228621314644 | 0 | 595121
+2 | (sqrt (sqrt (* (min ipv (neg (sqrt 7.0))) 5.2))) | 3.785028817097054e-05 | 0 | 595121
+2 | (sqrt (sqrt (* (min ipv (+ (sqrt drate) 2.7)) 5.2))) | 0.0158561801604042 | 0 | 595121
+2 | (neg (/ (neg (* (sqr number) (sqr (sqr 5.0)))) 5.5)) | 0.1438097103541782 | 0 | 595121
+2 | (min (sqr (- (neg (abs 0.1)) fin_flag_number)) (neg (sqrt tcp))) | 0.08934228621314644 | 0 | 595121
+2 | (sqrt (sqrt (* (min ipv (abs (abs http))) 5.2))) | 0.008123659239305988 | 0 | 595121
+2 | (sqrt ssh) | 0.0012223673883033782 | 0 | 595121
+2 | (+ (sqr (sqr (/ 9.0 protocol_type))) (neg -1.8)) | 0.06669623452222691 | 4 | 595117
+2 | (/ (sqrt syn_count) (neg (sqrt irc))) | 0.0 | 595121 | 0
+2 | (min (sqr (/ (abs (neg 0.7)) max)) (neg (sqrt tcp))) | 0.08934228621314644 | 0 | 595121
+2 | (+ (- (sqrt (neg (sqrt weight))) -8.3) (sqrt (sqrt llc))) | 0.21817369618387666 | 0 | 595121
+2 | (* (sqr (sqrt duration)) (+ (* 9.6 tot_sum) max)) | 0.3348416492763171 | 0 | 595121
+2 | (+ (min 8.7 (abs (/ -2.1 psh_flag_number))) (sqrt 8.6)) | 0.03950611278221655 | 0 | 595121
+2 | (min (abs (sqrt (abs -2.8))) (neg (sqrt tcp))) | 0.08934228621314644 | 0 | 595121
+3 | (* (sqr (sqrt duration)) (+ (* 9.6 tot_sum) max)) | 0.3348416492763171 | 0 | 595121
+3 | magnitue | 0.30103721102763076 | 0 | 595121
+3 | (+ (- (sqrt (neg (sqrt weight))) -8.3) (sqrt 8.6)) | 0.2195886431517575 | 0 | 595121
+3 | (+ (- (sqrt (neg (sqrt weight))) -8.3) (sqrt (sqrt llc))) | 0.21817369618387666 | 0 | 595121
+3 | (* (sqr (sqrt duration)) (+ (* header_length tot_sum) max)) | 0.14848746845488367 | 0 | 595121
+3 | (* 8.6 (/ fin_count min)) | 0.04726916548741957 | 0 | 595121
+3 | (+ (- -7.5 -8.3) (sqrt 8.6)) | 0.0 | 0 | 595121
+3 | (+ (- (+ (neg protocol_type) srate) -8.3) (sqrt 8.6)) | 0.011417209142559993 | 0 | 595121
+3 | (+ (- (sqrt (neg (sqrt weight))) -8.3) (/ radius llc)) | 0.44010760403470206 | 69 | 595052
+3 | (+ (- (- magnitue drate) -8.3) (sqrt 8.6)) | 0.30103722629275576 | 0 | 595121
+3 | (min (neg (/ telnet radius)) (sqrt 0.3)) | 0.0 | 408821 | 186300
+3 | (neg (neg (sqr (+ -6.2 (sqr (neg (neg ssh))))))) | 0.0012223672523438295 | 0 | 595121
+3 | (+ (- (sqrt (neg (sqrt weight))) -8.3) (sqrt http)) | 0.12353066697613449 | 0 | 595121
+3 | (* (max (sqrt fin_flag_number) -2.4) (sqr (sqrt 7.1))) | 0.04774692348273627 | 0 | 595121
+3 | (* (sqr (sqrt duration)) (+ (* (sqrt 9.7) tot_sum) max)) | 0.34230948181236676 | 0 | 595121
+3 | (* (sqr (abs (abs 7.6))) (+ (* header_length tot_sum) max)) | 0.2106597451210393 | 0 | 595121
+3 | (+ (neg -2.7) (sqrt 8.6)) | 3.60745857571291e-05 | 0 | 595121
+3 | (* (sqr (sqrt duration)) (+ (* tcp tot_sum) max)) | 0.4003542377562566 | 0 | 595121
+3 | (neg (neg (sqr (sqrt (min -5.6 (sqr -3.1)))))) | 2.2054301507027145e-05 | 0 | 595121
+3 | (+ iat (sqrt 8.6)) | 0.004996132858505687 | 0 | 595121
+4 | (+ (- (sqrt (neg (sqrt weight))) -8.3) (/ radius llc)) | 0.44010760403470206 | 69 | 595052
+4 | (* (sqr (sqrt duration)) (+ (* tcp tot_sum) max)) | 0.4003542377562566 | 0 | 595121
+4 | (* (sqr (sqrt duration)) (+ (* (sqrt 9.7) tot_sum) max)) | 0.34230948181236676 | 0 | 595121
+4 | (* (sqr (sqrt duration)) (+ (* 9.6 tot_sum) max)) | 0.3348416492763171 | 0 | 595121
+4 | (+ (- (- magnitue drate) -8.3) (sqrt 8.6)) | 0.30103722629275576 | 0 | 595121
+4 | (+ (- (- magnitue drate) (abs irc)) (sqrt 8.6)) | 0.3010372262920405 | 0 | 595121
+4 | (min (- (abs (sqrt ipv)) radius) (sqr syn_flag_number)) | 0.438642716116796 | 0 | 595121
+4 | (* (sqr (sqrt duration)) (+ (* (sqrt 9.7) tot_sum) -6.1)) | 0.3309202175301492 | 0 | 595121
+4 | (* (sqr (sqrt duration)) (+ (* (abs 6.0) tot_sum) max)) | 0.33707608508720266 | 0 | 595121
+4 | (+ (- (- magnitue drate) -4.2) (sqrt 8.6)) | 0.30103722629215457 | 0 | 595121
+4 | -1.6 | 0.0 | 0 | 595121
+4 | (+ (- (sqrt (neg (sqrt weight))) -8.3) (sqrt (sqrt 1.0))) | 0.2195886431643834 | 0 | 595121
+4 | (* (sqr (sqrt (abs -2.5))) (+ (* tcp tot_sum) max)) | 0.45613845139911086 | 0 | 595121
+4 | (+ (- std -8.3) (sqrt 8.6)) | 0.4393682953181289 | 0 | 595121
+4 | (+ (abs -6.7) (/ radius llc)) | 0.4399646729493963 | 69 | 595052
+4 | (+ (- (- (sqrt (sqrt irc)) drate) -8.3) (sqrt 8.6)) | 0.0003576352740007451 | 0 | 595121
+4 | (- rate (/ ssh (* (max 9.0 5.3) (sqrt tot_size)))) | 0.011419684708273807 | 0 | 595121
+4 | (* (abs duration) (+ (* tcp tot_sum) max)) | 0.4003542377562571 | 0 | 595121
+4 | (+ (- (- magnitue drate) (sqrt (neg 4.2))) (sqrt 8.6)) | 0.3010372262925037 | 0 | 595121
+4 | (+ (sqrt (+ (neg (sqr -6.8)) (sqrt syn_flag_number))) (sqrt 8.6)) | 0.07923584795698438 | 0 | 595121
+5 | (* (sqr (sqrt (abs -2.5))) (+ (* tcp tot_sum) max)) | 0.45613845139911086 | 0 | 595121
+5 | (+ (- (sqrt (neg (sqrt weight))) -8.3) (/ radius llc)) | 0.44010760403470206 | 69 | 595052
+5 | (+ (abs -6.7) (/ radius llc)) | 0.4399646729493963 | 69 | 595052
+5 | (+ (- std -8.3) (sqrt 8.6)) | 0.4393682953181289 | 0 | 595121
+5 | (min (- (abs (sqrt ipv)) radius) (sqr syn_flag_number)) | 0.438642716116796 | 0 | 595121
+5 | (+ (abs (abs (abs -0.7))) (/ radius llc)) | 0.439964672949424 | 69 | 595052
+5 | (+ (- (sqrt (neg (sqrt weight))) -8.3) (/ radius 7.1)) | 0.4397849145464615 | 0 | 595121
+5 | (abs (sqr (sqr (sqrt 2.5)))) | 0.0 | 0 | 595121
+5 | (+ (- std 6.5) (sqrt 8.6)) | 0.4393682953181797 | 0 | 595121
+5 | (+ (abs -6.7) (/ radius (neg min))) | 0.45742979415373614 | 0 | 595121
+5 | (+ (- (sqrt (neg (sqrt weight))) -1.9) (/ radius llc)) | 0.4401076040347981 | 69 | 595052
+5 | (min (- (sqr (max tot_sum -9.2)) 8.4) (sqr syn_flag_number)) | 0.0792358479804712 | 0 | 595121
+5 | (+ (- (sqrt (neg (sqrt weight))) number) (/ radius llc)) | 0.44032751902842193 | 69 | 595052
+5 | (+ (- (sqrt (neg (sqrt -5.5))) -8.3) (/ radius llc)) | 0.4399646729494653 | 69 | 595052
+5 | (sqrt radius) | 0.4691139136389934 | 0 | 595121
+5 | (+ (- std -8.3) (neg (sqrt -6.1))) | 0.4393682953182785 | 0 | 595121
+5 | (+ (abs -6.7) (/ (+ udp 7.7) llc)) | 0.054813587381340165 | 69 | 595052
+5 | (min (- (abs (- 0.1 fin_flag_number)) radius) (sqr syn_flag_number)) | 0.43876960223040373 | 0 | 595121
+5 | (* (sqr (sqrt (abs -2.5))) (+ (* tcp variance) max)) | 0.44855885481311064 | 0 | 595121
+5 | (+ (abs (sqr drate)) (/ radius llc)) | 0.4399646725943853 | 69 | 595052
+6 | (sqrt radius) | 0.4691139136389934 | 0 | 595121
+6 | (+ (abs -6.7) (/ radius (neg min))) | 0.45742979415373614 | 0 | 595121
+6 | (* (sqr (sqrt (abs -2.5))) (+ (* tcp tot_sum) max)) | 0.45613845139911086 | 0 | 595121
+6 | (* (sqr (sqrt (abs -2.5))) (+ (* tcp variance) max)) | 0.44855885481311064 | 0 | 595121
+6 | (+ (- (sqrt (neg (sqrt weight))) number) (/ radius llc)) | 0.44032751902842193 | 69 | 595052
+6 | (* (- -5.6 (sqr 6.5)) (+ (* tcp variance) max)) | 0.44855885481318514 | 0 | 595121
+6 | (+ (- (neg -9.9) number) (/ radius llc)) | 0.44018555586539676 | 69 | 595052
+6 | (* (sqr (sqrt (abs -2.5))) (+ (- -7.5 3.4) max)) | 0.44844120017249356 | 0 | 595121
+6 | (* (sqr (sqrt (abs -2.5))) (neg -6.7)) | 0.0 | 0 | 595121
+6 | (* (sqr (sqrt (abs 5.3))) (+ (* tcp variance) max)) | 0.44855885481302776 | 0 | 595121
+6 | (sqr (min -9.4 (sqrt (sqr -2.0)))) | 0.0 | 0 | 595121
+6 | (* (sqr (sqrt (abs -2.5))) (+ (neg (neg tcp)) max)) | 0.44853931666904123 | 0 | 595121
+6 | (/ (max tcp fin_count) (- 2.6 dns)) | 0.08611596100984556 | 0 | 595121
+6 | (* (sqr (abs 6.5)) (+ (* tcp variance) max)) | 0.44855885481311136 | 0 | 595121
+6 | (/ -7.8 ack_count) | 0.0 | 521311 | 73810
+6 | (+ (abs -6.7) (/ (min (abs protocol_type) -9.2) (neg min))) | 0.1141757556831953 | 0 | 595121
+6 | (* (sqr (sqrt max)) (+ (* tcp variance) max)) | 0.2624883914499551 | 0 | 595121
+6 | (* rst_flag_number (/ 8.9 telnet)) | 0.0 | 595121 | 0
+6 | (* (/ icmp (neg -3.6)) (+ (* tcp variance) max)) | 0.022574299085209762 | 0 | 595121
+6 | (+ (abs -6.7) (/ (max -9.2 (neg -0.0)) (neg min))) | 2.4772759672630045e-05 | 0 | 595121
+7 | (sqrt radius) | 0.4691139136389934 | 0 | 595121
+7 | (+ (abs -6.7) (/ radius (neg min))) | 0.45742979415373614 | 0 | 595121
+7 | (* (sqr (sqrt (abs -2.5))) (+ (* tcp tot_sum) max)) | 0.45613845139911086 | 0 | 595121
+7 | (* (- -5.6 (sqr 6.5)) (+ (* tcp variance) max)) | 0.44855885481318514 | 0 | 595121
+7 | (* (sqr (abs 6.5)) (+ (* tcp variance) max)) | 0.44855885481311136 | 0 | 595121
+7 | (sqr (neg -4.4)) | 0.0 | 0 | 595121
+7 | (* (sqr (abs 6.5)) (sqr (sqrt -7.5))) | 0.0 | 0 | 595121
+7 | (+ fin_flag_number (/ radius (neg min))) | 0.45798009300744086 | 0 | 595121
+7 | (neg (neg std)) | 0.4393682953182005 | 0 | 595121
+7 | (abs icmp) | 0.06841709530573648 | 0 | 595121
+7 | (* (sqr (sqrt (abs -2.5))) (+ (* tcp tot_sum) std)) | 0.44121795754763155 | 0 | 595121
+7 | (* (sqr (abs 6.5)) (+ (* tcp (neg syn_count)) max)) | 0.44833271732445096 | 0 | 595121
+7 | (* (sqr (abs 6.5)) (abs (/ -5.7 9.4))) | 2.3587264572784718e-05 | 0 | 595121
+7 | (/ (abs (sqrt (* -0.7 -3.6))) -5.5) | 0.0 | 0 | 595121
+7 | (* (sqr (sqrt (abs -2.5))) (+ (max weight 5.3) max)) | 0.4455242737840217 | 0 | 595121
+7 | (+ variance (* (* arp urg_count) psh_flag_number)) | 0.5068465600252443 | 0 | 595121
+7 | (max (neg (+ (abs (sqr smtp)) 3.0)) (neg (sqrt -8.5))) | 5.3408598205100914e-05 | 0 | 595121
+7 | (sqrt (abs (sqrt ssh))) | 0.0012223673883033782 | 0 | 595121
+7 | (* (sqr (sqrt (abs -2.5))) (+ (* tcp ipv) max)) | 0.44853931666904123 | 0 | 595121
+7 | (* (sqr (sqrt (abs -2.5))) (sqrt 3.3)) | 1.8724878010506587e-05 | 0 | 595121
+8 | (+ variance (* (* arp urg_count) psh_flag_number)) | 0.5068465600252443 | 0 | 595121
+8 | (sqrt radius) | 0.4691139136389934 | 0 | 595121
+8 | (+ fin_flag_number (/ radius (neg min))) | 0.45798009300744086 | 0 | 595121
+8 | (+ (abs -6.7) (/ radius (neg min))) | 0.45742979415373614 | 0 | 595121
+8 | (* (sqr (sqrt (abs -2.5))) (+ (* tcp tot_sum) max)) | 0.45613845139911086 | 0 | 595121
+8 | (+ (/ syn_flag_number (sqr rate)) (/ radius (neg min))) | 0.00028255268354087303 | 11941 | 583180
+8 | (+ (sqrt 1.3) (/ radius (neg min))) | 0.457429794154156 | 0 | 595121
+8 | (+ (abs -6.7) (/ radius (* (neg 6.3) (neg -9.6)))) | 0.4387787135897749 | 0 | 595121
+8 | (neg (sqr (sqr (sqrt (sqrt (neg (neg 1.0))))))) | 0.0 | 0 | 595121
+8 | (abs (sqr -3.7)) | 0.0 | 0 | 595121
+8 | (* (sqrt (+ fin_flag_number weight)) (+ (neg -9.5) ack_flag_number)) | 0.022279666379330328 | 0 | 595121
+8 | (neg -5.2) | 0.0 | 0 | 595121
+8 | (- -1.3 (sqrt (sqrt avg))) | 0.2998630566468376 | 0 | 595121
+8 | (* (sqr (sqrt (abs -2.5))) (+ (* syn_flag_number tot_sum) max)) | 0.39264199343841993 | 0 | 595121
+8 | (sqrt -4.5) | 0.0 | 0 | 595121
+8 | (+ (abs -6.7) (/ (sqrt (/ protocol_type -3.8)) (neg min))) | 0.051903358320930675 | 0 | 595121
+8 | (* (sqr (sqrt (abs -2.5))) (+ (* arp tot_sum) max)) | 0.44437674205125816 | 0 | 595121
+8 | (sqrt (/ duration (neg (- -5.4 (sqr 2.1))))) | 0.5518599225307779 | 0 | 595121
+8 | (* (sqr -0.2) (+ (* tcp tot_sum) max)) | 0.4561384513992222 | 0 | 595121
+8 | (+ variance (* (sqr (neg (sqr 5.3))) psh_flag_number)) | 0.03898054607172005 | 0 | 595121
+9 | (sqrt (/ duration (neg (- -5.4 (sqr 2.1))))) | 0.5518599225307779 | 0 | 595121
+9 | (+ variance (* (* arp urg_count) psh_flag_number)) | 0.5068465600252443 | 0 | 595121
+9 | (sqrt radius) | 0.4691139136389934 | 0 | 595121
+9 | (+ fin_flag_number (/ radius (neg min))) | 0.45798009300744086 | 0 | 595121
+9 | (+ (sqrt 1.3) (/ radius (neg min))) | 0.457429794154156 | 0 | 595121
+9 | (+ variance (* urg_count psh_flag_number)) | 0.010782726214296297 | 0 | 595121
+9 | (sqr (neg (* number (max (sqr magnitue) -9.8)))) | 0.253885199393271 | 0 | 595121
+9 | (sqr (sqr (+ cwr_flag_number 2.5))) | 0.0 | 0 | 595121
+9 | (+ fin_flag_number (abs (min (neg psh_flag_number) psh_flag_number))) | 0.06485818547772934 | 0 | 595121
+9 | (sqrt (/ duration (neg (- -5.4 (sqr (* ssh rst_flag_number)))))) | 0.5518599225248502 | 0 | 595121
+9 | (sqrt -9.6) | 1.2230462514726105e-05 | 0 | 595121
+9 | (+ fin_flag_number (/ (/ (neg (sqr syn_flag_number)) -7.5) (neg min))) | 0.04743957390826773 | 0 | 595121
+9 | (/ (- -8.6 (neg srate)) (neg (sqr (min -5.6 syn_flag_number)))) | 0.011419684709241719 | 0 | 595121
+9 | (+ variance (sqr (+ (min 5.7 (sqr -0.0)) -2.6))) | 0.5068465600261638 | 0 | 595121
+9 | (sqrt (/ (sqrt weight) (neg (- -5.4 (sqr 2.1))))) | 0.21958864313035548 | 0 | 595121
+9 | (+ (sqr (/ (sqr 3.3) -9.8)) (/ radius (neg min))) | 0.4574297941541865 | 0 | 595121
+9 | (+ variance (* (neg fin_flag_number) https)) | 0.4843002717241275 | 0 | 595121
+9 | (sqrt (/ duration (neg (- -5.4 (sqr (min -1.6 min)))))) | 0.5518599225278048 | 0 | 595121
+9 | (+ variance (+ (- (+ 1.2 -6.0) 0.0) 7.4)) | 0.5068465600236893 | 0 | 595121
+9 | (sqrt (/ duration (neg (- -5.4 (abs (sqr variance)))))) | 0.46680534667339685 | 0 | 595121
+10 | (sqrt (/ duration (neg (- -5.4 (sqr 2.1))))) | 0.5518599225307779 | 0 | 595121
+10 | (sqrt (/ duration (neg (- -5.4 (sqr (min -1.6 min)))))) | 0.5518599225278048 | 0 | 595121
+10 | (sqrt (/ duration (neg (- -5.4 (sqr (* ssh rst_flag_number)))))) | 0.5518599225248502 | 0 | 595121
+10 | (+ variance (sqr (+ (min 5.7 (sqr -0.0)) -2.6))) | 0.5068465600261638 | 0 | 595121
+10 | (+ variance (* (* arp urg_count) psh_flag_number)) | 0.5068465600252443 | 0 | 595121
+10 | (+ variance (sqr (+ (min 5.7 -4.6) -2.6))) | 0.5068465599708389 | 0 | 595121
+10 | (+ variance (* (* arp max) psh_flag_number)) | 0.5068465600252443 | 0 | 595121
+10 | (+ variance (sqr (neg (/ (sqrt ssh) -1.7)))) | 0.5066274541658948 | 0 | 595121
+10 | (+ variance (min (min icmp fin_flag_number) (- rate (sqrt syn_count)))) | 0.39818144625665797 | 0 | 595121
+10 | (sqrt (/ duration (* header_length 0.8))) | 0.0 | 95058 | 500063
+10 | (+ variance (sqr (+ (min 5.7 (abs 1.8)) -2.6))) | 0.5068465600248954 | 0 | 595121
+10 | (+ variance (* (* (+ radius 7.4) urg_count) psh_flag_number)) | 0.0028062470445484504 | 0 | 595121
+10 | (sqrt (/ duration (sqrt (sqrt (sqr (sqr (* urg_count variance))))))) | 0.0 | 518197 | 76924
+10 | (sqrt (/ duration (neg (- icmp (sqr (* ssh rst_flag_number)))))) | 0.0 | 498100 | 97021
+10 | (sqrt (neg (sqr icmp))) | 0.06841709530573648 | 0 | 595121
+10 | (sqrt (/ duration (sqrt (- (sqrt 6.3) (+ 6.7 iat))))) | 0.5278844000224264 | 0 | 595121
+10 | (sqrt (/ -1.9 (neg (- -5.4 (sqr (min -1.6 min)))))) | 1.673652656520653e-05 | 0 | 595121
+10 | (+ variance (* (* arp urg_count) (+ dns flow_duration))) | 0.00562545427183639 | 0 | 595121
+10 | (sqrt (/ duration (neg (- -5.4 (sqr (min -1.6 avg)))))) | 0.5518599225278048 | 0 | 595121
+10 | (sqrt (/ duration (neg (- -5.4 (sqr (* tot_size rst_flag_number)))))) | 0.20386907660630654 | 0 | 595121
+11 | (sqrt (/ duration (neg (- -5.4 (sqr 2.1))))) | 0.5518599225307779 | 0 | 595121
+11 | (sqrt (/ duration (neg (- -5.4 (sqr (min -1.6 min)))))) | 0.5518599225278048 | 0 | 595121
+11 | (sqrt (/ duration (neg (- -5.4 (sqr (min -1.6 avg)))))) | 0.5518599225278048 | 0 | 595121
+11 | (sqrt (/ duration (neg (- -5.4 (sqr (* ssh rst_flag_number)))))) | 0.5518599225248502 | 0 | 595121
+11 | (sqrt (/ duration (sqrt (- (sqrt 6.3) (+ 6.7 iat))))) | 0.5278844000224264 | 0 | 595121
+11 | (sqrt 7.7) | 0.0 | 0 | 595121
+11 | (sqrt (/ duration (sqr (max (* -5.4 header_length) (sqrt 6.1))))) | 0.5518599225387983 | 0 | 595121
+11 | (sqrt (/ duration (neg (- -5.4 (sqr (min -1.6 dns)))))) | 0.5518599225278048 | 0 | 595121
+11 | max | 0.4484412001724941 | 0 | 595121
+11 | (max weight -7.5) | 0.006342678390936211 | 0 | 595121
+11 | (sqrt (/ duration (neg (- -5.4 (neg (sqr 0.6)))))) | 0.5518599225394035 | 0 | 595121
+11 | (sqrt (/ duration (neg (sqr -8.1)))) | 0.5518599225358859 | 0 | 595121
+11 | (sqrt (/ duration (neg (- -5.4 (/ (sqrt 0.3) -5.9))))) | 0.5518599225266324 | 0 | 595121
+11 | (sqr (abs (- (max (neg -7.5) (sqrt icmp)) llc))) | 0.015856180115860003 | 0 | 595121
+11 | (abs (sqr (neg variance))) | 0.5255528179685661 | 0 | 595121
+11 | (sqrt (/ duration (neg (- -5.4 (sqr (sqr srate)))))) | 0.09321442663160683 | 0 | 595121
+11 | (sqrt (/ duration (* (/ 8.0 std) rst_flag_number))) | 0.0 | 541182 | 53939
+11 | (sqrt (/ duration (+ (sqrt (sqrt (/ header_length -1.3))) 0.6))) | 0.002345862679513699 | 0 | 595121
+11 | (sqrt (/ duration (neg (- -5.4 (max duration telnet))))) | 0.4023596148596977 | 0 | 595121
+11 | (sqrt (/ duration (sqr (abs -4.0)))) | 0.5518599225312094 | 0 | 595121
+12 | (sqrt (/ duration (neg (- -5.4 (neg (sqr 0.6)))))) | 0.5518599225394035 | 0 | 595121
+12 | (sqrt (/ duration (sqr (max (* -5.4 header_length) (sqrt 6.1))))) | 0.5518599225387983 | 0 | 595121
+12 | (sqrt (/ duration (neg (sqr -8.1)))) | 0.5518599225358859 | 0 | 595121
+12 | (sqrt (/ duration (sqr (abs -4.0)))) | 0.5518599225312094 | 0 | 595121
+12 | (sqrt (/ duration (neg (- -5.4 (sqr 2.1))))) | 0.5518599225307779 | 0 | 595121
+12 | (sqrt (/ duration (sqrt srate))) | 0.018758770935590842 | 11941 | 583180
+12 | (sqrt (/ duration (neg (- -5.4 (neg (sqr header_length)))))) | 0.041927782865855266 | 0 | 595121
+12 | (sqrt (/ duration (sqr (max (* -5.4 header_length) (sqrt protocol_type))))) | 0.020637641356123757 | 4 | 595117
+12 | (/ (sqrt -4.8) (- (abs -0.2) telnet)) | 3.273595221951018e-05 | 0 | 595121
+12 | (sqrt (/ (sqrt (sqr 1.6)) (neg (- -5.4 (sqr 2.1))))) | 0.0 | 0 | 595121
+12 | (sqrt (sqrt (min -2.5 (max covariance dhcp)))) | 0.0 | 0 | 595121
+12 | (sqrt (/ duration (sqr (/ telnet (sqrt (abs 6.2)))))) | 0.0 | 595121 | 0
+12 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+12 | (abs (* (neg (sqr 9.3)) (/ -6.1 2.7))) | 0.0 | 0 | 595121
+12 | (sqrt (sqrt (sqr (+ -0.8 fin_flag_number)))) | 0.047746923485809493 | 0 | 595121
+12 | (sqrt (sqrt (sqr (+ -6.0 -6.6)))) | 4.3358877111934016e-07 | 0 | 595121
+12 | (+ (sqrt -2.2) (max -9.6 (neg -9.0))) | 1.4659353573532047e-05 | 0 | 595121
+12 | (sqrt (/ duration (neg (max -5.9 (sqrt -3.0))))) | 0.5518599225352476 | 0 | 595121
+12 | (sqrt (/ duration (+ rst_count (/ (abs variance) 9.5)))) | 0.0 | 357947 | 237174
+12 | (sqrt (min (abs 0.9) (neg -7.5))) | 2.7838695275678316e-05 | 0 | 595121
+13 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+13 | (sqrt (/ duration (neg (- -5.4 (neg (sqr 0.6)))))) | 0.5518599225394035 | 0 | 595121
+13 | (sqrt (/ duration (sqr (max (* -5.4 header_length) (sqrt 6.1))))) | 0.5518599225387983 | 0 | 595121
+13 | (sqrt (/ duration (neg (sqr -8.1)))) | 0.5518599225358859 | 0 | 595121
+13 | (sqrt (/ duration (neg (max -5.9 (sqrt -3.0))))) | 0.5518599225352476 | 0 | 595121
+13 | (max (- (neg 5.8) (sqr 8.7)) (abs (sqr (sqrt flow_duration)))) | 0.017002441175048535 | 0 | 595121
+13 | (sqrt (/ duration (neg (- -5.4 telnet)))) | 0.5518599225248502 | 0 | 595121
+13 | (sqrt (/ duration (sqr (sqr (- -3.0 (* protocol_type -3.4)))))) | 0.005623455740257606 | 0 | 595121
+13 | (sqrt (/ duration (sqr (max (* icmp header_length) (sqrt 6.1))))) | 0.37805540766369805 | 0 | 595121
+13 | (sqrt 1.3) | 8.842149774511393e-06 | 0 | 595121
+13 | (sqrt -2.2) | 7.576108231758547e-06 | 0 | 595121
+13 | (sqrt (* (- (abs -7.7) (abs (* 9.2 fin_count))) -4.9)) | 0.047927298384325585 | 0 | 595121
+13 | (sqrt (/ ece_flag_number (neg (sqr -8.1)))) | 0.0 | 0 | 595121
+13 | 2.8 | 2.2054301507027145e-05 | 0 | 595121
+13 | (sqrt (- weight -5.4)) | 0.1460434980868005 | 0 | 595121
+13 | (sqrt (/ duration (sqr (max covariance (sqrt 6.1))))) | 0.2879839388193419 | 0 | 595121
+13 | (sqrt (/ 5.3 (sqr (max (* -5.4 header_length) (sqrt 6.1))))) | 1.0178906202120265e-05 | 0 | 595121
+13 | (sqrt (/ duration (neg (+ udp -4.2)))) | 0.41910400658810537 | 0 | 595121
+13 | (+ rst_flag_number (/ udp -0.7)) | 0.026015796510108463 | 0 | 595121
+13 | -4.6 | 5.445874965258912e-05 | 0 | 595121
+14 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+14 | (sqrt (/ duration (neg (- -5.4 (neg (sqr 0.6)))))) | 0.5518599225394035 | 0 | 595121
+14 | (sqrt (/ duration (sqr (max (* -5.4 header_length) (sqrt 6.1))))) | 0.5518599225387983 | 0 | 595121
+14 | (sqrt (/ duration (neg (sqr -8.1)))) | 0.5518599225358859 | 0 | 595121
+14 | (sqrt (/ duration (neg (max -5.9 (sqrt -3.0))))) | 0.5518599225352476 | 0 | 595121
+14 | (sqrt (/ duration (min (neg smtp) (sqrt -1.2)))) | 0.551859922538552 | 0 | 595121
+14 | (sqrt (/ duration (neg (- -6.6 (neg (sqr 0.6)))))) | 0.5518599225306152 | 0 | 595121
+14 | (sqrt (abs (abs (- (- -4.2 0.3) -7.7)))) | 0.0 | 0 | 595121
+14 | (neg (sqr dhcp)) | 0.0 | 0 | 595121
+14 | (+ ece_flag_number 3.8) | 1.9436304553530407e-05 | 0 | 595121
+14 | (sqrt (/ duration (sqrt (- (- -5.2 -1.8) covariance)))) | 0.33465580404673595 | 0 | 595121
+14 | (sqrt (/ duration (sqr (max (* -5.4 header_length) (sqrt -6.7))))) | 0.0 | 95058 | 500063
+14 | (sqrt (/ duration (neg (max (neg psh_flag_number) urg_count)))) | 0.0 | 472724 | 122397
+14 | (sqrt (/ duration (neg (- -5.4 (sqr (min -3.5 duration)))))) | 0.5518599225269903 | 0 | 595121
+14 | (sqrt (/ duration 7.3)) | 0.5518599225398461 | 0 | 595121
+14 | (sqrt (/ (neg (sqr 0.5)) (neg (sqr -8.1)))) | 0.0 | 0 | 595121
+14 | (sqrt (sqrt (max smtp 7.4))) | 5.7784224403605155e-06 | 0 | 595121
+14 | (sqrt (/ duration (sqr (/ 2.6 (abs -5.2))))) | 0.5518599225312094 | 0 | 595121
+14 | (sqrt (/ duration -2.9)) | 0.5518599225360272 | 0 | 595121
+14 | (sqrt (/ duration (sqr (max (* -5.4 cwr_flag_number) (sqrt 6.1))))) | 0.5518599225387983 | 0 | 595121
+15 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+15 | (sqrt (/ duration 7.3)) | 0.5518599225398461 | 0 | 595121
+15 | (sqrt (/ duration (neg (- -5.4 (neg (sqr 0.6)))))) | 0.5518599225394035 | 0 | 595121
+15 | (sqrt (/ duration (sqr (max (* -5.4 header_length) (sqrt 6.1))))) | 0.5518599225387983 | 0 | 595121
+15 | (sqrt (/ duration (sqr (max (* -5.4 cwr_flag_number) (sqrt 6.1))))) | 0.5518599225387983 | 0 | 595121
+15 | (sqrt (/ duration (sqr (max (* ipv header_length) (sqrt 6.1))))) | 0.08470948929420051 | 0 | 595121
+15 | (sqrt (max (sqr (sqr 4.5)) (sqrt ack_flag_number))) | 0.0 | 0 | 595121
+15 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg 1.0))))))) | 0.5518599225286265 | 0 | 595121
+15 | (sqrt (/ tot_size (sqr (max (* -5.4 header_length) (sqrt 6.1))))) | 0.3017578452182871 | 0 | 595121
+15 | (sqrt (/ duration (neg (- rst_count (neg (sqr (neg ack_flag_number))))))) | 0.0 | 437905 | 157216
+15 | (sqrt (neg (- (/ -5.6 (sqr icmp)) (neg 7.8)))) | 0.0 | 498100 | 97021
+15 | (sqrt (/ duration (sqr (max (* -5.4 header_length) ece_flag_number)))) | 0.0 | 595121 | 0
+15 | (sqrt (/ duration (neg (- -5.4 (neg (neg drate)))))) | 0.5518597351335899 | 0 | 595121
+15 | (sqrt (/ duration (abs (max -4.3 (neg ece_flag_number))))) | 0.0 | 595121 | 0
+15 | (sqrt (/ duration (neg (- -5.4 (neg 6.3))))) | 0.5518599225262648 | 0 | 595121
+15 | (sqrt (/ 9.5 7.3)) | 0.0 | 0 | 595121
+15 | (sqrt (/ duration (neg (- -7.2 (neg (sqr (neg ack_flag_number))))))) | 0.5812041117857522 | 0 | 595121
+15 | (min (* -2.8 (max (sqrt (sqr (sqr 4.4))) 2.3)) 3.8) | 7.358245447315855e-06 | 0 | 595121
+15 | -0.5 | 0.0 | 0 | 595121
+15 | (sqrt (/ duration (neg (- -5.4 (neg (sqr -6.9)))))) | 0.5518599225374473 | 0 | 595121
+16 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+16 | (sqrt (/ duration (neg (- -7.2 (neg (sqr (neg ack_flag_number))))))) | 0.5812041117857522 | 0 | 595121
+16 | (sqrt (/ duration 7.3)) | 0.5518599225398461 | 0 | 595121
+16 | (sqrt (/ duration (neg (- -5.4 (neg (sqr 0.6)))))) | 0.5518599225394035 | 0 | 595121
+16 | (sqrt (/ duration (sqr (max (* -5.4 cwr_flag_number) (sqrt 6.1))))) | 0.5518599225387983 | 0 | 595121
+16 | (sqrt (/ duration (sqr (max max (sqrt 6.1))))) | 0.3054973737601161 | 0 | 595121
+16 | (sqrt (+ (* -2.1 7.9) tot_size)) | 0.3022062360962056 | 0 | 595121
+16 | (sqrt (/ duration (neg (max ack_flag_number (neg (- -0.3 6.0)))))) | 0.5518599225248004 | 0 | 595121
+16 | (sqr (+ (* (neg (+ tot_size (sqr avg))) ack_count) duration)) | 0.015433003811000063 | 0 | 595121
+16 | (- (neg number) -8.2) | 0.006316680168071064 | 0 | 595121
+16 | (sqrt (/ duration (neg (- (sqr -2.3) (neg (sqr 0.6)))))) | 0.5518599225329683 | 0 | 595121
+16 | (sqrt std) | 0.46969493147328817 | 0 | 595121
+16 | (sqrt (/ duration (neg (sqrt (abs -0.2))))) | 0.5518599225325629 | 0 | 595121
+16 | (sqrt (sqrt (min (sqrt (abs (sqrt (sqr -0.6)))) tot_size))) | 0.0 | 0 | 595121
+16 | (sqrt (/ duration (neg radius))) | 0.0 | 408821 | 186300
+16 | (min llc (neg udp)) | 0.05486868955576992 | 0 | 595121
+16 | (sqrt (/ (max fin_count (sqr (sqr dhcp))) 7.3)) | 0.049417467162853314 | 0 | 595121
+16 | (sqrt (min -5.5 header_length)) | 2.283453182001992e-05 | 0 | 595121
+16 | (min (max max (sqrt iat)) 8.1) | 3.0941108584206074e-05 | 0 | 595121
+16 | (sqrt (/ duration (neg (sqr 1.4)))) | 0.5518599225329096 | 0 | 595121
+17 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+17 | (sqrt (/ duration (neg (- -7.2 (neg (sqr (neg ack_flag_number))))))) | 0.5812041117857522 | 0 | 595121
+17 | (sqrt (/ duration 7.3)) | 0.5518599225398461 | 0 | 595121
+17 | (sqrt (/ duration (neg (- -5.4 (neg (sqr 0.6)))))) | 0.5518599225394035 | 0 | 595121
+17 | (sqrt (/ duration (sqr (max (* -5.4 cwr_flag_number) (sqrt 6.1))))) | 0.5518599225387983 | 0 | 595121
+17 | (sqrt (sqr urg_count)) | 0.236146352841267 | 0 | 595121
+17 | (sqrt (/ duration (sqr (sqr (min (sqrt (sqr weight)) -7.5))))) | 0.551859922525758 | 0 | 595121
+17 | (sqrt (/ udp (neg (- -5.4 (neg (sqr 0.6)))))) | 0.05486868955581285 | 0 | 595121
+17 | (sqrt (sqr -8.5)) | 0.0 | 0 | 595121
+17 | (sqrt (/ duration (abs (abs tcp)))) | 0.0 | 253458 | 341663
+17 | (sqrt (/ duration (max 8.3 (sqrt (min smtp ipv))))) | 0.5518599225285172 | 0 | 595121
+17 | (sqrt (sqrt (sqrt (abs (+ flow_duration ssh))))) | 0.33720075770442426 | 0 | 595121
+17 | (sqrt (/ duration (neg (- -5.4 (min 7.3 (abs -8.9)))))) | 0.5518599225348481 | 0 | 595121
+17 | (abs (neg (sqrt -1.6))) | 2.7576245843190035e-05 | 0 | 595121
+17 | (sqrt -9.7) | 0.0 | 0 | 595121
+17 | (sqrt (/ duration (neg (- (neg 5.1) (neg (sqr 0.6)))))) | 0.551859922525887 | 0 | 595121
+17 | (sqrt (sqr (/ (sqrt syn_flag_number) (- (sqrt -10.0) (neg http))))) | 0.07852667461409925 | 0 | 595121
+17 | (sqrt (- (* avg 7.0) (max 6.4 ack_flag_number))) | 0.30515472093169493 | 0 | 595121
+17 | (sqrt (abs (sqr 0.3))) | 1.950670857803252e-05 | 0 | 595121
+17 | (sqrt (abs (/ (abs -5.4) (neg (sqrt (sqr (neg 5.6))))))) | 0.0 | 0 | 595121
+18 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+18 | (sqrt (/ duration (neg (- -7.2 (neg (sqr (neg ack_flag_number))))))) | 0.5812041117857522 | 0 | 595121
+18 | (sqrt (/ duration 7.3)) | 0.5518599225398461 | 0 | 595121
+18 | (sqrt (/ duration (neg (- -5.4 (neg (sqr 0.6)))))) | 0.5518599225394035 | 0 | 595121
+18 | (sqrt (/ duration (sqr (max (* -5.4 cwr_flag_number) (sqrt 6.1))))) | 0.5518599225387983 | 0 | 595121
+18 | (sqrt (neg number)) | 0.08465029911391284 | 0 | 595121
+18 | (sqrt (/ duration (/ -8.6 -8.0))) | 0.5518599225237986 | 0 | 595121
+18 | (sqrt (/ duration (sqr (max (* -5.4 header_length) (sqrt 6.1))))) | 0.5518599225387983 | 0 | 595121
+18 | (sqrt (/ duration (neg (+ (+ -3.3 radius) -4.2)))) | 0.17781520543305038 | 0 | 595121
+18 | (min (neg arp) (- (abs 10.0) (neg syn_flag_number))) | 0.009714672576893403 | 0 | 595121
+18 | (sqrt (/ duration (neg (- -5.4 (abs (abs -7.3)))))) | 0.5518599225348481 | 0 | 595121
+18 | (sqrt (/ duration (- (+ https -5.9) psh_flag_number))) | 0.5892390808825902 | 0 | 595121
+18 | (/ -1.3 (sqrt (sqrt (sqr (abs (abs drate)))))) | 0.0 | 595087 | 34
+18 | (sqrt (max fin_flag_number (/ -5.4 (max duration (* 5.6 ece_flag_number))))) | 0.04774692348274653 | 0 | 595121
+18 | (sqrt (/ cwr_flag_number (neg (- -7.2 (neg (sqr (neg ack_flag_number))))))) | 0.0 | 0 | 595121
+18 | (sqrt (/ (abs irc) (neg (- -5.4 (neg (sqr 0.6)))))) | 0.0 | 0 | 595121
+18 | (sqrt (/ duration (neg (- -5.4 (neg 4.0))))) | 0.5518599225346487 | 0 | 595121
+18 | (sqrt (/ duration (neg (- -5.4 (sqrt (sqrt (sqrt 4.4))))))) | 0.5518599225354422 | 0 | 595121
+18 | (sqrt ece_flag_number) | 0.0 | 0 | 595121
+18 | (sqrt (/ duration (neg (- -5.4 (* llc (abs 7.6)))))) | 0.5523969872555271 | 0 | 595121
+19 | (sqrt (/ duration (- (+ https -5.9) psh_flag_number))) | 0.5892390808825902 | 0 | 595121
+19 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+19 | (sqrt (/ duration (neg (- -7.2 (neg (sqr (neg ack_flag_number))))))) | 0.5812041117857522 | 0 | 595121
+19 | (sqrt (/ duration (neg (- -5.4 (* llc (abs 7.6)))))) | 0.5523969872555271 | 0 | 595121
+19 | (sqrt (/ duration 7.3)) | 0.5518599225398461 | 0 | 595121
+19 | (sqrt (/ duration (- (* (neg number) -0.6) ipv))) | 0.4906239683443571 | 0 | 595121
+19 | (- (* (sqrt (+ -9.5 header_length)) ipv) psh_flag_number) | 0.4211865182643803 | 0 | 595121
+19 | (abs (sqr (abs (neg -1.9)))) | 2.18790686914208e-05 | 0 | 595121
+19 | (sqrt (/ duration (sqr (abs 3.5)))) | 0.5518599225342211 | 0 | 595121
+19 | (sqr (sqr (- (max 6.2 -7.5) ack_count))) | 0.022040932831784456 | 0 | 595121
+19 | (sqrt (/ duration (neg (- -5.4 (neg (neg 4.8)))))) | 0.5518599225253393 | 0 | 595121
+19 | (sqrt (/ duration (- (neg flow_duration) psh_flag_number))) | 0.0 | 280720 | 314401
+19 | (sqrt (/ duration (sqrt (sqrt (neg 5.4))))) | 0.5518599225327269 | 0 | 595121
+19 | (- (sqr (sqrt (sqr -0.6))) (- -2.8 variance)) | 0.5068465600273954 | 0 | 595121
+19 | (sqrt (/ duration (neg (- -5.4 (* -0.8 (abs 7.6)))))) | 0.5518599225279607 | 0 | 595121
+19 | (sqrt (- std (abs max))) | 0.4235502805069584 | 0 | 595121
+19 | (abs (neg (min (sqrt ipv) 5.5))) | 0.01585618011573686 | 0 | 595121
+19 | (sqrt (neg (neg (neg (max (max -9.9 (sqrt -0.7)) 0.9))))) | 2.7838695275678316e-05 | 0 | 595121
+19 | (sqrt (/ duration (- 1.7 drate))) | 0.5518475411192305 | 0 | 595121
+19 | (- 8.0 flow_duration) | 0.01700244117504846 | 0 | 595121
+20 | (sqrt (/ duration (- (+ https -5.9) psh_flag_number))) | 0.5892390808825902 | 0 | 595121
+20 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+20 | (sqrt (/ duration (neg (- -7.2 (neg (sqr (neg ack_flag_number))))))) | 0.5812041117857522 | 0 | 595121
+20 | (sqrt (/ duration (neg (- -5.4 (* llc (abs 7.6)))))) | 0.5523969872555271 | 0 | 595121
+20 | (sqrt (/ duration 7.3)) | 0.5518599225398461 | 0 | 595121
+20 | (sqrt (/ (+ fin_flag_number https) (- (+ https -5.9) psh_flag_number))) | 0.27141925179817056 | 0 | 595121
+20 | -9.1 | 3.918265700695693e-05 | 0 | 595121
+20 | flow_duration | 0.01700244117504853 | 0 | 595121
+20 | (sqrt (neg rst_flag_number)) | 0.04894065789940479 | 0 | 595121
+20 | (sqrt (/ duration (neg (- syn_count (+ -9.8 (abs ipv)))))) | 0.4811206596226497 | 0 | 595121
+20 | (sqrt (/ duration (- (+ (- 2.1 weight) -5.9) psh_flag_number))) | 0.5022361141963487 | 0 | 595121
+20 | (sqrt (/ duration (neg 8.1))) | 0.5518599225291126 | 0 | 595121
+20 | (sqrt (/ duration (neg (- -5.4 (max ipv (sqrt http)))))) | 0.5520663821247748 | 0 | 595121
+20 | (sqrt (/ duration (neg (- -5.4 (* llc (abs 6.9)))))) | 0.5524188591357194 | 0 | 595121
+20 | (neg 2.3) | 5.445874965258912e-05 | 0 | 595121
+20 | (sqrt (/ duration (neg (- dhcp (neg (sqr (neg ack_flag_number))))))) | 0.0 | 521262 | 73859
+20 | (sqrt (abs -0.7)) | 0.0 | 0 | 595121
+20 | (sqrt (sqr 6.5)) | 0.0 | 0 | 595121
+20 | arp | 0.009714672576893403 | 0 | 595121
+20 | (max (neg (abs (neg (sqr telnet)))) (sqr (max -5.3 -3.5))) | 0.0 | 0 | 595121
+21 | (sqrt (/ duration (- (+ https -5.9) psh_flag_number))) | 0.5892390808825902 | 0 | 595121
+21 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+21 | (sqrt (/ duration (neg (- -7.2 (neg (sqr (neg ack_flag_number))))))) | 0.5812041117857522 | 0 | 595121
+21 | (sqrt (/ duration (neg (- -5.4 (* llc (abs 6.9)))))) | 0.5524188591357194 | 0 | 595121
+21 | (sqrt (/ duration (neg (- -5.4 (* llc (abs 7.6)))))) | 0.5523969872555271 | 0 | 595121
+21 | (sqrt (/ duration (neg (- -5.4 (* llc https))))) | 0.4720458946961321 | 0 | 595121
+21 | (neg (max -0.9 (neg (sqr (min rst_count (neg telnet)))))) | 0.0 | 0 | 595121
+21 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt dhcp))))) | 0.592889481916492 | 0 | 595121
+21 | (sqrt (- (sqrt covariance) (sqr srate))) | 0.01143017870213845 | 0 | 595121
+21 | (sqrt (+ (sqr 9.6) (min 1.6 (abs 0.5)))) | 6.837036394797648e-06 | 0 | 595121
+21 | (sqrt (/ protocol_type (neg (- -5.4 (* llc (abs 6.9)))))) | 0.004447880548895287 | 0 | 595121
+21 | (sqrt (/ duration (neg (- smtp (neg (sqr (neg ack_flag_number))))))) | 0.0 | 521262 | 73859
+21 | (sqrt (/ duration (- (+ -9.0 -5.9) psh_flag_number))) | 0.5526350561174762 | 0 | 595121
+21 | -8.2 | 1.9945083471489648e-05 | 0 | 595121
+21 | (sqrt (sqr icmp)) | 0.06841709530573648 | 0 | 595121
+21 | (sqr 2.1) | 4.654056828114843e-06 | 0 | 595121
+21 | (sqrt (/ -7.8 (neg (- -5.4 (* llc (abs 7.6)))))) | 0.015856180060170668 | 0 | 595121
+21 | (sqrt (/ duration (- (+ https (abs flow_duration)) psh_flag_number))) | 0.0 | 274059 | 321062
+21 | (* (neg (sqrt (abs 6.9))) (sqr (max 0.5 -6.5))) | 0.0 | 0 | 595121
+21 | (sqrt (/ -3.5 (neg (- -5.4 (* llc (abs 7.6)))))) | 0.015856180036155108 | 0 | 595121
+22 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt dhcp))))) | 0.592889481916492 | 0 | 595121
+22 | (sqrt (/ duration (- (+ https -5.9) psh_flag_number))) | 0.5892390808825902 | 0 | 595121
+22 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+22 | (sqrt (/ duration (neg (- -7.2 (neg (sqr (neg ack_flag_number))))))) | 0.5812041117857522 | 0 | 595121
+22 | (sqrt (/ duration (- (+ -9.0 -5.9) psh_flag_number))) | 0.5526350561174762 | 0 | 595121
+22 | (sqrt (/ duration (- (neg arp) (sqrt (sqrt dhcp))))) | 0.0 | 595082 | 39
+22 | (- 9.1 (sqrt 2.3)) | 0.0 | 0 | 595121
+22 | (sqrt (min tot_size (max (neg 4.8) (- rate ece_flag_number)))) | 0.11105595155974798 | 0 | 595121
+22 | (sqrt (/ duration (neg (- -7.2 (neg (sqr 7.6)))))) | 0.5518599225329837 | 0 | 595121
+22 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+22 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt 5.1))))) | 0.5870673307114639 | 0 | 595121
+22 | (sqrt (/ duration (neg (sqrt (neg ssh))))) | 0.0 | 595084 | 37
+22 | min | 0.09977661733943162 | 0 | 595121
+22 | (sqrt (/ duration (- rst_count psh_flag_number))) | 0.0 | 478766 | 116355
+22 | (sqrt (/ duration (- (+ -0.5 -5.9) (sqrt (sqrt dhcp))))) | 0.5518599225273328 | 0 | 595121
+22 | (sqrt (sqrt (max (+ (sqrt ssh) iat) (sqrt 1.9)))) | 0.41272086263834157 | 0 | 595121
+22 | (sqrt (/ duration (- (+ (neg 6.2) -5.9) psh_flag_number))) | 0.5519242705877248 | 0 | 595121
+22 | (sqrt (/ duration (sqrt max))) | 0.21899011365746232 | 0 | 595121
+22 | (sqrt (sqr (min (abs min) (neg 9.1)))) | 3.918265700695693e-05 | 0 | 595121
+22 | (max (min (sqrt (sqrt 8.2)) arp) (sqr (max 4.7 https))) | 0.0 | 0 | 595121
+23 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+23 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt dhcp))))) | 0.592889481916492 | 0 | 595121
+23 | (sqrt (/ duration (- (+ https -5.9) psh_flag_number))) | 0.5892390808825902 | 0 | 595121
+23 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt 5.1))))) | 0.5870673307114639 | 0 | 595121
+23 | (sqrt (/ duration (neg (- -5.4 (neg (sqr (neg ack_flag_number))))))) | 0.5828147997266249 | 0 | 595121
+23 | (max urg_count (* variance 10.0)) | 0.23602892396102917 | 0 | 595121
+23 | (abs (- telnet (/ 1.3 urg_count))) | 0.0 | 472724 | 122397
+23 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+23 | (sqrt (/ duration (neg (* (min magnitue max) (sqrt iat))))) | 0.31517608894449534 | 8 | 595113
+23 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.5992381045999277 | 0 | 595121
+23 | (sqrt (/ duration (- (+ https -5.0) psh_flag_number))) | 0.5916835465548328 | 0 | 595121
+23 | (sqrt covariance) | 0.4430188084084385 | 0 | 595121
+23 | (sqrt (sqrt (neg (sqrt (abs (- (sqrt 8.2) tcp)))))) | 0.08934228622890773 | 0 | 595121
+23 | (sqrt (sqrt (+ drate (sqrt tot_size)))) | 0.2925749205949103 | 0 | 595121
+23 | (sqrt (/ duration (neg (- 6.5 (neg (sqr (neg ack_flag_number))))))) | 0.47121310547199013 | 0 | 595121
+23 | (sqrt (/ duration (max (sqrt 6.1) 3.2))) | 0.5518599225348078 | 0 | 595121
+23 | (sqrt (min (max (sqrt iat) magnitue) (sqrt fin_flag_number))) | 0.04774692348274653 | 0 | 595121
+23 | (sqrt (/ duration (abs (/ -3.6 (sqr dhcp))))) | 0.0 | 0 | 595121
+23 | (sqrt (/ duration (sqr protocol_type))) | 0.040093928628555674 | 4 | 595117
+23 | (sqrt (sqr (* (sqr -2.4) avg))) | 0.31728099625200945 | 0 | 595121
+24 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+24 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+24 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.5992381045999277 | 0 | 595121
+24 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt dhcp))))) | 0.592889481916492 | 0 | 595121
+24 | (sqrt (/ duration (- (+ https -5.0) psh_flag_number))) | 0.5916835465548328 | 0 | 595121
+24 | (sqrt (sqrt (max (abs drate) (abs (/ -8.2 (sqr protocol_type)))))) | 0.05032536164251796 | 4 | 595117
+24 | (sqrt (/ duration (- (+ https -5.9) (sqr protocol_type)))) | 0.018150010399424293 | 0 | 595121
+24 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqr -8.6))))) | 0.5723593230568389 | 0 | 595121
+24 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt cwr_flag_number))))) | 0.592889481916492 | 0 | 595121
+24 | (sqrt (/ duration (- (+ https udp) (sqrt (sqrt -3.2))))) | 0.14271713127498337 | 0 | 595121
+24 | (sqrt (/ duration (- (+ https (sqr irc)) (sqrt -2.6)))) | 0.22642075540445789 | 0 | 595121
+24 | (sqrt (sqr (neg (abs ack_flag_number)))) | 0.3404562060178378 | 0 | 595121
+24 | (sqrt (sqrt (sqr 8.7))) | 0.0 | 0 | 595121
+24 | (sqrt (/ duration (min -8.2 -2.5))) | 0.5518599225327916 | 0 | 595121
+24 | (+ smtp (max (neg (neg -9.1)) weight)) | 0.006342678390936211 | 0 | 595121
+24 | (sqrt (/ duration (- (+ https (abs syn_flag_number)) psh_flag_number))) | 0.0 | 401023 | 194098
+24 | (sqrt (sqr (/ (sqrt dhcp) (sqrt header_length)))) | 0.0 | 95058 | 500063
+24 | (sqrt (min (sqr srate) (abs (* 9.0 4.2)))) | 0.1036359946294501 | 0 | 595121
+24 | (sqrt (/ duration (* 0.9 (/ 6.2 4.5)))) | 0.551859922532094 | 0 | 595121
+24 | (sqrt (/ duration (- (sqrt syn_flag_number) (sqrt (sqrt dhcp))))) | 0.0 | 471781 | 123340
+25 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+25 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+25 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.5992381045999277 | 0 | 595121
+25 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt cwr_flag_number))))) | 0.592889481916492 | 0 | 595121
+25 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt dhcp))))) | 0.592889481916492 | 0 | 595121
+25 | (sqrt (/ https (- (+ https -5.9) (sqrt -2.6)))) | 0.44583081706362815 | 0 | 595121
+25 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt udp))))) | 0.5746293185831859 | 0 | 595121
+25 | (sqrt (/ duration (- (+ https -5.9) number))) | 0.5523362052269297 | 0 | 595121
+25 | (max avg (sqrt tcp)) | 0.3172809962520342 | 0 | 595121
+25 | (sqrt (min avg https)) | 0.44583081706363104 | 0 | 595121
+25 | (sqrt (abs -0.2)) | 0.0 | 0 | 595121
+25 | (abs (neg protocol_type)) | 0.02769931043806357 | 0 | 595121
+25 | (sqrt (/ -9.4 (- (+ https -5.9) (sqrt (sqrt dhcp))))) | 0.4458308170871463 | 0 | 595121
+25 | (min telnet -8.0) | 0.0 | 0 | 595121
+25 | (abs (sqrt (/ -9.1 (min 5.0 (+ rate irc))))) | 0.04666977389566108 | 11941 | 583180
+25 | (sqrt (sqrt (sqrt -0.9))) | 2.007516010282545e-05 | 0 | 595121
+25 | (sqrt (/ duration (- (+ https 3.6) (sqrt (sqrt dhcp))))) | 0.42180401242206056 | 0 | 595121
+25 | (sqrt (/ duration (- (sqrt flow_duration) (sqrt (sqrt -3.2))))) | 0.30815720914908556 | 0 | 595121
+25 | (sqrt (/ duration (- (+ https -5.9) (sqrt 6.6)))) | 0.5837351491156106 | 0 | 595121
+25 | (sqrt (neg (sqrt (sqr (abs 6.4))))) | 2.7576245843190035e-05 | 0 | 595121
+26 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+26 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+26 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.5992381045999277 | 0 | 595121
+26 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt cwr_flag_number))))) | 0.592889481916492 | 0 | 595121
+26 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt dhcp))))) | 0.592889481916492 | 0 | 595121
+26 | (neg tot_size) | 0.31770127867858333 | 0 | 595121
+26 | (sqrt (/ duration (- https (sqrt (sqrt dhcp))))) | 0.0 | 562209 | 32912
+26 | (sqrt (/ tcp (- (+ https -5.9) (sqrt -2.6)))) | 0.11677293192675758 | 0 | 595121
+26 | (sqrt (/ duration (- (- -9.7 (neg -2.4)) (sqrt -2.6)))) | 0.5518599225297454 | 0 | 595121
+26 | (sqrt (neg 3.5)) | 0.0 | 0 | 595121
+26 | (sqrt (/ duration (- (+ https (abs rate)) (sqrt -2.6)))) | 0.06038583696784423 | 0 | 595121
+26 | (sqrt (/ duration (sqr (sqrt psh_flag_number)))) | 0.0 | 542596 | 52525
+26 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt https))))) | 0.5518599225326999 | 0 | 595121
+26 | (sqrt (/ irc (- (+ https -5.9) (sqrt (sqrt cwr_flag_number))))) | 0.0 | 0 | 595121
+26 | (sqrt (/ (abs rate) (- (+ https -5.9) (sqrt -2.6)))) | 0.026139072728151802 | 0 | 595121
+26 | udp | 0.05486868955576992 | 0 | 595121
+26 | (sqrt (/ duration (- (+ https 5.1) (sqrt (sqrt cwr_flag_number))))) | 0.4664040714455713 | 0 | 595121
+26 | (sqrt (/ duration (- (+ 6.7 -5.9) (sqrt (sqrt cwr_flag_number))))) | 0.5518599225347967 | 0 | 595121
+26 | (sqrt (/ min (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.1218425492221649 | 0 | 595121
+26 | (sqrt (sqrt (sqr magnitue))) | 0.29627983662754276 | 0 | 595121
+27 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+27 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+27 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.5992381045999277 | 0 | 595121
+27 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt cwr_flag_number))))) | 0.592889481916492 | 0 | 595121
+27 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt dhcp))))) | 0.592889481916492 | 0 | 595121
+27 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt fin_count))))) | 0.5881109380431357 | 0 | 595121
+27 | (sqrt (/ 1.9 (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.44583081707989275 | 0 | 595121
+27 | (sqrt (min -9.2 (neg (min udp -9.1)))) | 0.0 | 0 | 595121
+27 | (sqrt (/ duration (max -9.9 udp))) | 0.0 | 468864 | 126257
+27 | (sqrt (/ duration (- (+ https -5.9) (neg avg)))) | 0.20349435255958842 | 0 | 595121
+27 | (sqrt (/ duration (- (+ https -0.6) (sqrt (sqrt dhcp))))) | 0.4774376043487281 | 0 | 595121
+27 | (sqrt (/ duration (- (+ 1.3 -5.9) (sqrt (sqrt dhcp))))) | 0.5518599225306335 | 0 | 595121
+27 | (sqrt (/ duration (- (+ -5.5 -5.9) (sqrt -2.6)))) | 0.5518599225405743 | 0 | 595121
+27 | (sqr (min (* -8.5 telnet) (abs 5.0))) | 0.0 | 0 | 595121
+27 | (sqrt (/ duration (- (+ https syn_flag_number) (sqrt (sqrt -3.2))))) | 0.15677275299507842 | 0 | 595121
+27 | (sqrt (/ duration (- (+ tot_sum -5.9) (sqrt -2.6)))) | 0.14544809372225853 | 0 | 595121
+27 | (sqrt (/ duration (- (+ https tcp) (sqrt (sqrt dhcp))))) | 0.0 | 253458 | 341663
+27 | -0.1 | 0.0 | 0 | 595121
+27 | (sqrt (/ duration (- (+ https -5.9) (/ smtp variance)))) | 0.0 | 408821 | 186300
+27 | (sqrt (/ duration (- (+ (sqrt 8.6) -5.9) (sqrt -2.6)))) | 0.5518599225365385 | 0 | 595121
+28 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+28 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+28 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.5992381045999277 | 0 | 595121
+28 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt cwr_flag_number))))) | 0.592889481916492 | 0 | 595121
+28 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt dhcp))))) | 0.592889481916492 | 0 | 595121
+28 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -1.2))))) | 0.5977864566123006 | 0 | 595121
+28 | (sqrt (sqrt (neg avg))) | 0.2998630566464214 | 0 | 595121
+28 | (neg (max (abs http) 1.5)) | 0.0 | 0 | 595121
+28 | (sqrt (/ duration (- (+ -5.2 -5.9) (sqrt -2.6)))) | 0.5518599225290323 | 0 | 595121
+28 | (abs (/ covariance (sqr (sqr -8.0)))) | 0.25758195370544673 | 0 | 595121
+28 | (sqrt (/ duration (- (max -7.8 fin_flag_number) (sqrt (sqrt cwr_flag_number))))) | 0.0 | 543556 | 51565
+28 | (sqrt (/ duration (+ tot_sum (max (abs radius) (sqr flow_duration))))) | 0.26798369032981384 | 0 | 595121
+28 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+28 | (sqrt (/ 8.7 (- (+ https -5.9) (sqrt (sqrt cwr_flag_number))))) | 0.445830817084485 | 0 | 595121
+28 | (sqr (min (sqrt 8.2) (sqr 5.9))) | 1.9945083471489648e-05 | 0 | 595121
+28 | header_length | 0.3096625228370063 | 0 | 595121
+28 | (sqrt (abs -3.5)) | 0.0 | 0 | 595121
+28 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt weight))))) | 0.589959390438889 | 0 | 595121
+28 | (sqrt (/ (+ (max -4.2 0.6) -7.0) (- urg_count https))) | 0.0 | 460704 | 134417
+28 | (sqrt (neg (neg ack_flag_number))) | 0.3404562060178378 | 0 | 595121
+29 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+29 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+29 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+29 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.5992381045999277 | 0 | 595121
+29 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -1.2))))) | 0.5977864566123006 | 0 | 595121
+29 | (sqrt (/ duration -2.1)) | 0.5518599225324902 | 0 | 595121
+29 | (sqrt (/ duration (neg (sqr (neg (+ flow_duration -8.6)))))) | 0.002587802819055681 | 0 | 595121
+29 | (neg (* (sqr (sqrt rst_flag_number)) 4.5)) | 0.048940657899404785 | 0 | 595121
+29 | (sqrt (/ duration (- (+ https -5.9) (- ack_flag_number 3.1)))) | 0.43653757542110005 | 0 | 595121
+29 | (sqrt (/ 6.4 (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.4458308170805003 | 0 | 595121
+29 | drate | 0.0003576335570549163 | 0 | 595121
+29 | (sqrt (/ duration (- (+ https 5.8) (sqrt (sqrt -1.2))))) | 0.49157197920975715 | 0 | 595121
+29 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqr -9.6))))) | 0.5711974225268562 | 0 | 595121
+29 | (sqrt (/ (sqr variance) (- (+ https -5.9) (sqrt -9.2)))) | 0.5527897850952156 | 0 | 595121
+29 | (sqrt (/ duration (- -8.9 (sqrt (sqrt -1.2))))) | 0.551859922538592 | 0 | 595121
+29 | (sqrt (/ duration (- (+ https -5.9) (- smtp -0.2)))) | 0.5920306217796077 | 0 | 595121
+29 | (sqrt 9.9) | 0.0 | 0 | 595121
+29 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.6))))) | 0.5994388768914599 | 0 | 595121
+29 | (sqrt (/ (neg -2.1) (- (+ https -5.9) (sqrt -9.2)))) | 0.4458308170497338 | 0 | 595121
+29 | (sqrt (/ srate (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.026256530155636885 | 0 | 595121
+30 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+30 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+30 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+30 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.6))))) | 0.5994388768914599 | 0 | 595121
+30 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.5992381045999277 | 0 | 595121
+30 | (sqrt (/ duration (- (+ https syn_count) (sqrt -9.2)))) | 0.18918642390010323 | 0 | 595121
+30 | (sqrt (sqrt (abs (* (sqrt (min (sqr -10.0) iat)) smtp)))) | 0.0 | 0 | 595121
+30 | (sqrt (/ duration (- (sqrt 0.9) (sqrt -9.2)))) | 0.55185992252636 | 0 | 595121
+30 | (sqrt (sqrt (sqrt (* (min header_length ack_flag_number) (neg -1.2))))) | 0.340456206017813 | 0 | 595121
+30 | (sqrt (/ 9.9 (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.44583081706025274 | 0 | 595121
+30 | (sqrt (+ (min iat syn_flag_number) psh_flag_number)) | 0.0948344052134274 | 0 | 595121
+30 | (sqrt (neg (sqr (neg (neg (neg (min (sqr dhcp) tot_sum))))))) | 0.0 | 0 | 595121
+30 | (abs (neg (sqrt (max -7.8 (/ -0.0 (sqr 0.6)))))) | 0.0 | 0 | 595121
+30 | (sqrt (/ (abs rate) (- (+ https -5.9) (sqrt -9.2)))) | 0.02503320463229101 | 0 | 595121
+30 | (min (abs flow_duration) (sqrt http)) | 0.017338655465063173 | 0 | 595121
+30 | (sqrt (sqrt (sqr (abs avg)))) | 0.3051307343446046 | 0 | 595121
+30 | (neg (abs (/ (sqr 3.9) (neg 4.9)))) | 0.0 | 0 | 595121
+30 | (sqrt (max (- radius (neg llc)) (/ fin_flag_number avg))) | 0.4684317724075514 | 0 | 595121
+30 | (sqrt (sqrt (sqrt (max 6.4 (/ ack_count ipv))))) | 0.0 | 69 | 595052
+30 | 9.2 | 5.445874965258912e-05 | 0 | 595121
+31 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+31 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+31 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+31 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.6))))) | 0.5994388768914599 | 0 | 595121
+31 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.5992381045999277 | 0 | 595121
+31 | (sqrt (/ duration (- (+ https -5.9) (sqr -3.4)))) | 0.5692589632901393 | 0 | 595121
+31 | (sqr (sqr (max 2.4 -2.0))) | 2.353126380999491e-05 | 0 | 595121
+31 | (min (sqrt ece_flag_number) (neg -6.4)) | 0.0 | 0 | 595121
+31 | (sqrt (/ duration ipv)) | 0.5535368348590124 | 69 | 595052
+31 | (sqrt (max -8.1 (neg (min 2.8 telnet)))) | 0.0 | 0 | 595121
+31 | (sqrt (/ duration (- (+ https -3.9) (sqrt -9.2)))) | 0.49474264616320157 | 0 | 595121
+31 | (sqrt (/ (neg number) (- (+ https -5.9) (sqrt -9.2)))) | 0.27524535309734804 | 0 | 595121
+31 | (sqrt (/ duration (+ (abs (min (sqrt -8.3) -5.0)) -4.1))) | 0.5518599225262072 | 0 | 595121
+31 | (sqrt (/ duration ack_flag_number)) | 0.0 | 521262 | 73859
+31 | (sqrt (sqrt (/ (neg (/ covariance (sqr covariance))) (abs fin_flag_number)))) | 0.0 | 585992 | 9129
+31 | (sqrt (sqrt (abs (sqrt iat)))) | 0.46677310802793354 | 0 | 595121
+31 | (sqrt (+ (+ fin_count -3.7) tot_size)) | 0.3017546036808277 | 0 | 595121
+31 | (sqrt (/ duration (- (+ covariance -5.9) (sqrt (sqrt -3.2))))) | 0.10990449772921342 | 0 | 595121
+31 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt syn_flag_number))))) | 0.5802524451505519 | 0 | 595121
+31 | (sqrt (/ (sqrt 0.7) (- (+ https -5.9) (sqrt -9.2)))) | 0.4458308170616551 | 0 | 595121
+32 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+32 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+32 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+32 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.6))))) | 0.5994388768914599 | 0 | 595121
+32 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -3.2))))) | 0.5992381045999277 | 0 | 595121
+32 | (sqrt (/ duration (- (+ -5.5 -5.9) (sqrt (sqrt -3.2))))) | 0.5518599225286942 | 0 | 595121
+32 | (sqrt (sqr 0.7)) | 2.2054301507027145e-05 | 0 | 595121
+32 | (sqrt (/ duration (- (+ rst_count -5.9) (sqrt -9.2)))) | 0.46020778214506075 | 0 | 595121
+32 | (sqrt (/ duration (- (+ https -3.5) (sqrt (sqrt -3.2))))) | 0.6027641168353544 | 0 | 595121
+32 | (sqrt (+ ece_flag_number -7.4)) | 1.0263636342657355e-06 | 0 | 595121
+32 | (sqrt (sqrt (abs 2.7))) | 0.0 | 0 | 595121
+32 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -9.8))))) | 0.6013996747797564 | 0 | 595121
+32 | (sqrt (/ duration (- (+ https -5.9) (sqrt (abs 9.5))))) | 0.582328146428496 | 0 | 595121
+32 | (sqrt (max llc rate)) | 0.027842011102707245 | 0 | 595121
+32 | (sqrt (/ duration (- (+ https 5.1) (sqrt (sqrt -3.2))))) | 0.4870500434069959 | 0 | 595121
+32 | (abs (sqrt (min (sqr (abs (sqr ssh))) (abs (neg 9.9))))) | 0.0012223673883033782 | 0 | 595121
+32 | (sqrt -3.3) | 1.4387884062911083e-05 | 0 | 595121
+32 | (sqrt (sqr (abs (sqr llc)))) | 0.01585618011573686 | 0 | 595121
+32 | (sqrt (/ duration (- (+ syn_count -5.9) (sqrt (sqrt -3.6))))) | 0.25926387476955165 | 0 | 595121
+32 | (sqrt (abs (/ 0.5 -3.9))) | 0.0 | 0 | 595121
+33 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+33 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+33 | (sqrt (/ duration (- (+ https -3.5) (sqrt (sqrt -3.2))))) | 0.6027641168353544 | 0 | 595121
+33 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -9.8))))) | 0.6013996747797564 | 0 | 595121
+33 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+33 | (sqrt (abs (max (- -9.2 (neg ack_flag_number)) -3.3))) | 1.4387884062911083e-05 | 0 | 595121
+33 | (sqrt (sqr (abs (* covariance (neg syn_count))))) | 0.22363087595744044 | 0 | 595121
+33 | (sqrt (* (sqr -5.1) (/ 5.4 (neg iat)))) | 0.09553444657119901 | 8 | 595113
+33 | (sqrt (/ duration (min (neg rate) -6.7))) | 0.025087542283559888 | 0 | 595121
+33 | (sqrt (/ duration (- (+ https fin_count) (sqrt (sqrt -3.2))))) | 0.151046374122689 | 0 | 595121
+33 | (sqrt (sqr (sqr (neg (sqr (abs (abs (* 9.7 -8.4)))))))) | 0.0 | 0 | 595121
+33 | (sqrt (/ duration (abs (* min -1.7)))) | 0.08916897405328654 | 0 | 595121
+33 | (sqrt 4.5) | 0.0 | 0 | 595121
+33 | (sqrt (/ duration (- ipv (sqrt (sqrt -3.2))))) | 0.552389865251043 | 0 | 595121
+33 | (sqrt (/ (sqr magnitue) (- (+ https -5.9) (sqrt -9.2)))) | 0.3634847070190327 | 0 | 595121
+33 | (sqrt (+ (sqr srate) (* min (abs -9.0)))) | 0.011421720338815021 | 0 | 595121
+33 | (sqrt (sqrt (neg (neg covariance)))) | 0.45658145326805716 | 0 | 595121
+33 | (sqrt (/ duration (- (abs radius) (sqrt -9.2)))) | 0.3737216898738882 | 0 | 595121
+33 | (sqrt (/ (sqr dhcp) (- (+ https -5.9) (sqrt -9.2)))) | 0.0 | 0 | 595121
+33 | (sqrt (abs ece_flag_number)) | 0.0 | 0 | 595121
+34 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+34 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+34 | (sqrt (/ duration (- (+ https -3.5) (sqrt (sqrt -3.2))))) | 0.6027641168353544 | 0 | 595121
+34 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -9.8))))) | 0.6013996747797564 | 0 | 595121
+34 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+34 | (sqrt (/ duration (- (+ https -5.9) (sqrt -0.5)))) | 0.5961308792411163 | 0 | 595121
+34 | (sqrt (abs 3.9)) | 0.0 | 0 | 595121
+34 | (abs (/ ack_flag_number (sqr rst_count))) | 0.0 | 437905 | 157216
+34 | (sqrt (/ duration (- (+ https -3.5) (* srate -4.3)))) | 0.0024761234490673196 | 0 | 595121
+34 | (max (+ icmp (neg irc)) irc) | 0.06841709530573648 | 0 | 595121
+34 | (sqrt (/ duration (sqr fin_count))) | 0.0 | 516238 | 78883
+34 | (max icmp (neg 6.8)) | 0.06841709530573648 | 0 | 595121
+34 | (neg (- (abs (sqr (max (sqr 8.7) 7.4))) (sqr -4.4))) | 3.678306753643519e-05 | 0 | 595121
+34 | (sqrt (sqrt (sqrt (* (neg radius) (+ 5.3 (sqr ece_flag_number)))))) | 0.36236779964382004 | 0 | 595121
+34 | (sqrt (/ duration (- (+ https ssh) (sqrt (sqrt -9.8))))) | 0.25602038884974504 | 0 | 595121
+34 | (sqrt (/ duration (- (+ https -5.9) (sqrt (neg min))))) | 0.06697400102324448 | 0 | 595121
+34 | (sqrt (sqrt (abs (sqr (+ (sqr (- 8.1 -2.9)) 3.7))))) | 1.0270884270211714e-05 | 0 | 595121
+34 | (sqrt (/ duration (min 0.4 telnet))) | 0.0 | 595121 | 0
+34 | (sqrt (/ (neg http) (- (+ https -5.9) (sqrt -2.6)))) | 0.008123659239310289 | 0 | 595121
+34 | (sqrt (/ duration (sqr (sqrt (max -7.5 (neg 4.7)))))) | 0.5518599225315111 | 0 | 595121
+35 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+35 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+35 | (sqrt (/ duration (- (+ https -3.5) (sqrt (sqrt -3.2))))) | 0.6027641168353544 | 0 | 595121
+35 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -9.8))))) | 0.6013996747797564 | 0 | 595121
+35 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+35 | (sqr 0.8) | 0.0 | 0 | 595121
+35 | (neg (sqr (abs (sqrt (abs cwr_flag_number))))) | 0.0 | 0 | 595121
+35 | (neg -8.5) | 0.0 | 0 | 595121
+35 | (min -9.8 (+ (+ (sqr (abs flow_duration)) 6.5) tot_sum)) | 0.0 | 0 | 595121
+35 | (sqrt (sqrt (max (- -1.1 tcp) srate))) | 0.021612910190304774 | 0 | 595121
+35 | (max (/ smtp (sqrt (sqrt ack_count))) llc) | 0.0 | 521311 | 73810
+35 | (sqrt (/ duration (- (+ udp -5.9) (sqrt -9.2)))) | 0.31744251833608356 | 0 | 595121
+35 | (sqrt (/ duration (abs (sqrt fin_flag_number)))) | 0.0 | 543556 | 51565
+35 | (sqrt (/ duration (min -6.3 weight))) | 0.5518599225248004 | 0 | 595121
+35 | -4.9 | 0.0 | 0 | 595121
+35 | (sqrt (/ duration (- (+ 9.6 -5.9) (sqrt -2.6)))) | 0.5518599225361777 | 0 | 595121
+35 | (* (/ (sqrt (sqrt -0.5)) -0.1) https) | 0.4458308170636283 | 0 | 595121
+35 | (sqrt (* 7.8 (abs udp))) | 0.05486868955582476 | 0 | 595121
+35 | (sqrt (/ -9.0 (- (+ https -3.5) (sqrt (sqrt -3.2))))) | 0.44583081705471994 | 0 | 595121
+35 | (sqr (sqr (- 4.1 (sqrt (abs 0.4))))) | 0.0 | 0 | 595121
+36 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+36 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+36 | (sqrt (/ duration (- (+ https -3.5) (sqrt (sqrt -3.2))))) | 0.6027641168353544 | 0 | 595121
+36 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -9.8))))) | 0.6013996747797564 | 0 | 595121
+36 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+36 | (sqrt (/ duration (- (+ https (neg -9.9)) (sqrt -2.6)))) | 0.518596598714707 | 0 | 595121
+36 | (neg 0.9) | 1.7659789073558052e-05 | 0 | 595121
+36 | (sqrt (/ duration (- (sqrt -9.7) (sqrt -9.2)))) | 0.5518599225345279 | 0 | 595121
+36 | (sqrt (sqrt syn_flag_number)) | 0.0792358479804712 | 0 | 595121
+36 | (sqrt (sqrt (abs min))) | 0.08636851252476607 | 0 | 595121
+36 | (sqrt (/ duration (- (- -4.6 flow_duration) (sqrt (sqrt -3.2))))) | 0.41439528452002966 | 0 | 595121
+36 | (sqrt (/ duration (- smtp (sqrt -2.6)))) | 0.551859922536258 | 0 | 595121
+36 | (sqrt (sqrt (* (neg 3.4) 8.6))) | 4.1905676189288806e-05 | 0 | 595121
+36 | dns | 0.02261289222008236 | 0 | 595121
+36 | (sqrt (/ duration (- (+ ipv -5.9) (sqrt -2.6)))) | 0.5514930716805475 | 0 | 595121
+36 | (+ (/ -7.6 (sqr arp)) (sqr 4.5)) | 0.0 | 595082 | 39
+36 | (sqrt (/ duration fin_count)) | 0.0 | 516238 | 78883
+36 | ack_count | 0.02511849933894129 | 0 | 595121
+36 | (sqrt (sqrt radius)) | 0.44116499715199603 | 0 | 595121
+36 | (sqrt (/ duration (- std (sqrt (sqrt -9.8))))) | 0.3695041295981597 | 0 | 595121
+37 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+37 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+37 | (sqrt (/ duration (- (+ https -3.5) (sqrt (sqrt -3.2))))) | 0.6027641168353544 | 0 | 595121
+37 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -9.8))))) | 0.6013996747797564 | 0 | 595121
+37 | (sqrt (/ duration (- (+ https -5.9) (sqrt -2.6)))) | 0.6006189028282861 | 0 | 595121
+37 | (sqr (abs (/ (neg (sqr (abs fin_count))) -6.6))) | 0.00019259277667046015 | 0 | 595121
+37 | (neg (neg (min (neg -3.6) (sqrt -2.7)))) | 3.5135622010933206e-05 | 0 | 595121
+37 | (sqrt (/ duration (- (sqrt (/ tot_size rst_flag_number)) (sqrt -9.2)))) | 0.04888568597565357 | 0 | 595121
+37 | (sqrt (min -4.9 (abs (sqr -2.8)))) | 0.0 | 0 | 595121
+37 | (sqrt (/ duration (- (+ https -5.9) (sqr -6.2)))) | 0.5591499579863587 | 0 | 595121
+37 | (sqrt (/ duration (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6696543452787284 | 0 | 595121
+37 | (sqrt (/ duration (- (+ https 9.3) (sqrt (sqrt -3.2))))) | 0.5155106060635771 | 0 | 595121
+37 | (max (neg 5.4) -4.9) | 0.0 | 0 | 595121
+37 | (sqrt (* (max -7.0 (max 9.9 (abs psh_flag_number))) -6.9)) | 0.0 | 0 | 595121
+37 | (abs -1.8) | 1.7659789073558052e-05 | 0 | 595121
+37 | (sqrt -3.4) | 0.0 | 0 | 595121
+37 | (sqrt (/ duration (- (+ https -3.5) (sqrt -2.9)))) | 0.5957626067973467 | 0 | 595121
+37 | (abs (- (sqr 1.1) (neg syn_flag_number))) | 0.0792358479790643 | 0 | 595121
+37 | (sqrt (/ duration (- -5.4 (sqrt (sqrt -3.2))))) | 0.5518599225314016 | 0 | 595121
+37 | (sqrt (min (min max -3.8) (sqr (abs (sqr 1.8))))) | 0.0 | 0 | 595121
+38 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+38 | (sqrt (/ duration (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6696543452787284 | 0 | 595121
+38 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+38 | (sqrt (/ duration (- (+ https -3.5) (sqrt (sqrt -3.2))))) | 0.6027641168353544 | 0 | 595121
+38 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -9.8))))) | 0.6013996747797564 | 0 | 595121
+38 | (sqrt (/ duration (max (sqrt avg) variance))) | 0.08145726010078329 | 0 | 595121
+38 | (sqrt (/ 7.6 (- (+ https -5.9) (sqrt (sqrt -9.8))))) | 0.4458308170636561 | 0 | 595121
+38 | (sqrt (neg (+ rst_flag_number (* -1.7 7.4)))) | 0.0489406578697454 | 0 | 595121
+38 | (sqrt (sqrt (sqrt (+ 4.9 std)))) | 0.46834577122002097 | 0 | 595121
+38 | (sqrt (/ duration (- (+ https -0.3) (sqrt (sqrt -3.2))))) | 0.0739636912195332 | 0 | 595121
+38 | (sqrt (sqrt (sqrt (/ (neg radius) 5.1)))) | 0.3623677996438234 | 0 | 595121
+38 | (sqrt (/ duration (+ syn_count (neg 0.2)))) | 0.1346187459373659 | 1434 | 593687
+38 | (sqrt (neg (+ (neg radius) (neg 1.2)))) | 0.4683082711749218 | 0 | 595121
+38 | (sqrt (/ 0.9 (- (+ https -5.9) (sqrt (sqrt -9.8))))) | 0.44583081707708533 | 0 | 595121
+38 | (sqrt (neg (neg -1.0))) | 0.0 | 0 | 595121
+38 | (sqrt (/ duration (- (+ std -5.9) (sqrt (sqrt -9.8))))) | 0.12799298062131276 | 0 | 595121
+38 | (sqrt (/ duration (- (neg -4.8) (sqrt (sqrt -3.2))))) | 0.5518599225307032 | 0 | 595121
+38 | (sqrt (/ duration (- (abs 0.6) (sqrt (sqrt -3.2))))) | 0.551859922532472 | 0 | 595121
+38 | (sqrt (/ duration (- (+ https -5.9) tot_size))) | 0.167454633363568 | 0 | 595121
+38 | (sqrt (/ duration (- (neg (neg (abs ssh))) (sqrt -9.2)))) | 0.5518554246570558 | 0 | 595121
+39 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+39 | (sqrt (/ duration (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6696543452787284 | 0 | 595121
+39 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+39 | (sqrt (/ duration (- (+ https -3.5) (sqrt (sqrt -3.2))))) | 0.6027641168353544 | 0 | 595121
+39 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -9.8))))) | 0.6013996747797564 | 0 | 595121
+39 | (sqrt (neg (sqrt (sqrt duration)))) | 0.5486577132519184 | 0 | 595121
+39 | (sqrt (/ duration (- (+ https -5.9) (sqr 7.3)))) | 0.5573744372423592 | 0 | 595121
+39 | (abs (* (max magnitue (sqr (sqr magnitue))) std)) | 0.13595354088234335 | 0 | 595121
+39 | (sqrt (sqrt (abs (abs (abs (+ (sqr tot_size) rst_count)))))) | 0.30467515841837833 | 0 | 595121
+39 | (sqrt (/ duration (neg 4.5))) | 0.5518599225257602 | 0 | 595121
+39 | (neg tot_sum) | 0.30580051741412917 | 0 | 595121
+39 | (sqrt -6.1) | 0.0 | 0 | 595121
+39 | (sqrt (abs (- (sqrt ipv) (abs (sqrt (abs covariance)))))) | 0.4578222966998773 | 0 | 595121
+39 | (sqrt (/ duration (- (+ https -5.9) dhcp))) | 0.592889481916492 | 0 | 595121
+39 | (sqrt (neg (* (neg rst_count) (- (neg (neg srate)) 0.9)))) | 0.23532573475011925 | 0 | 595121
+39 | (sqrt (/ (abs (abs number)) (sqrt (+ 9.7 std)))) | 0.47587779971760363 | 0 | 595121
+39 | (sqr (/ -4.4 8.8)) | 0.0 | 0 | 595121
+39 | (sqrt (/ duration (- (+ -3.6 -5.9) (sqrt (sqrt -9.8))))) | 0.551859922536251 | 0 | 595121
+39 | (sqrt (sqrt (abs (neg (+ (abs max) (neg rate)))))) | 0.050896458519236756 | 0 | 595121
+39 | (sqrt (/ duration (- (+ 0.6 -5.9) (sqrt -9.2)))) | 0.5518599225232662 | 0 | 595121
+40 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+40 | (sqrt (/ duration (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6696543452787284 | 0 | 595121
+40 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+40 | (sqrt (/ duration (- (+ https -3.5) (sqrt (sqrt -3.2))))) | 0.6027641168353544 | 0 | 595121
+40 | (sqrt (/ duration (- (+ https -5.9) (sqrt (sqrt -9.8))))) | 0.6013996747797564 | 0 | 595121
+40 | (sqrt (/ protocol_type (- (+ https -5.9) (sqrt -9.2)))) | 0.045979574189740705 | 0 | 595121
+40 | (neg (abs header_length)) | 0.3096625228370063 | 0 | 595121
+40 | (sqrt (- ipv telnet)) | 0.01585618011573686 | 0 | 595121
+40 | (sqrt (/ duration (- (+ https weight) (sqrt -9.2)))) | 0.4993558370388333 | 0 | 595121
+40 | (neg (neg (abs fin_count))) | 0.043654106884872694 | 0 | 595121
+40 | (sqrt (/ duration (- (+ srate rst_count) (sqrt (sqrt -3.2))))) | 0.14713935676045842 | 0 | 595121
+40 | (sqrt (/ (abs tot_size) (max -1.9 (/ -1.6 7.4)))) | 0.30175784521740745 | 0 | 595121
+40 | (sqrt (/ duration (- (+ https rst_count) (sqrt (sqrt 6.1))))) | 0.3140612371705454 | 0 | 595121
+40 | (sqrt (/ 7.6 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307793853 | 0 | 595121
+40 | (sqrt (neg (+ (sqr (/ syn_count http)) ssh))) | 0.0 | 566216 | 28905
+40 | (sqrt (/ duration (- (+ (abs -6.1) -5.9) (sqrt -9.2)))) | 0.5518599225389595 | 0 | 595121
+40 | (sqrt (/ duration (- (+ https -5.9) (sqrt (abs -9.3))))) | 0.582414156549474 | 0 | 595121
+40 | (sqrt (sqr (/ (sqrt (abs rate)) -9.5))) | 0.02775372657789198 | 0 | 595121
+40 | (sqrt (sqr (min (neg (- (sqr -1.5) ssh)) (abs smtp)))) | 0.0012223673883033782 | 0 | 595121
+40 | (sqrt (+ -7.1 (sqr tcp))) | 0.08934228620774659 | 0 | 595121
+41 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+41 | (sqrt (/ 7.6 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307793853 | 0 | 595121
+41 | (sqrt (/ duration (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6696543452787284 | 0 | 595121
+41 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+41 | (sqrt (/ duration (- (+ https -3.5) (sqrt (sqrt -3.2))))) | 0.6027641168353544 | 0 | 595121
+41 | (neg (abs (- (/ 1.1 (min 4.6 (sqrt drate))) -8.2))) | 0.0 | 595087 | 34
+41 | (sqrt (/ 7.6 (- (+ https rst_count) (sqrt (sqrt header_length))))) | 0.0 | 95058 | 500063
+41 | (sqrt (/ duration (- (+ https header_length) (sqrt (sqrt -3.2))))) | 0.11629746915542082 | 0 | 595121
+41 | (max (sqr (max syn_count udp)) icmp) | 0.04023613460618768 | 0 | 595121
+41 | (sqrt (/ duration (- (+ https -5.9) (/ 6.4 dhcp)))) | 0.0 | 0 | 595121
+41 | (sqrt (/ duration (- (+ dhcp -5.9) (sqrt -9.2)))) | 0.5518599225265385 | 0 | 595121
+41 | (sqrt (/ duration (- (+ https rst_count) smtp))) | 0.0 | 425024 | 170097
+41 | (+ (min drate -3.6) (/ -4.0 -8.0)) | 4.981618615094667e-06 | 0 | 595121
+41 | (sqrt (neg 6.2)) | 1.9468691079356532e-05 | 0 | 595121
+41 | (sqrt (/ duration (- (+ https -3.5) (sqrt (neg -3.4))))) | 0.5954132200219266 | 0 | 595121
+41 | (sqrt (+ -5.9 (/ (sqr http) (neg 2.5)))) | 0.008123659286730662 | 0 | 595121
+41 | (sqrt (/ duration (- (+ https rst_count) (sqrt std)))) | 0.0 | 343929 | 251192
+41 | (sqrt (sqrt (* 9.3 (sqr 3.0)))) | 0.0 | 0 | 595121
+41 | (sqrt (/ duration (- (+ std rst_count) (sqrt (sqrt -3.2))))) | 0.4161271163456672 | 0 | 595121
+41 | (sqrt (/ -0.4 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307789504 | 0 | 595121
+42 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+42 | (sqrt (/ 7.6 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307793853 | 0 | 595121
+42 | (sqrt (/ -0.4 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307789504 | 0 | 595121
+42 | (sqrt (/ duration (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6696543452787284 | 0 | 595121
+42 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+42 | (sqrt (/ duration (- (sqrt 2.6) (sqrt -9.2)))) | 0.5518599225335923 | 0 | 595121
+42 | (sqrt (/ duration (- (+ -2.5 -5.9) (sqrt -9.2)))) | 0.5518599225381184 | 0 | 595121
+42 | (sqrt (neg (sqr (- (sqr syn_count) http)))) | 0.07229251790272 | 0 | 595121
+42 | covariance | 0.25758195370544673 | 0 | 595121
+42 | -8.0 | 0.0 | 0 | 595121
+42 | (sqrt (/ duration (- (+ https rst_count) (sqrt (sqr -3.4))))) | 0.488834057683593 | 31 | 595090
+42 | (sqrt (/ duration (- (+ https -5.9) (abs covariance)))) | 0.31968098105053294 | 0 | 595121
+42 | (sqrt (/ -0.4 (abs dhcp))) | 0.0 | 595121 | 0
+42 | (sqrt (/ duration (- (sqr (max ece_flag_number cwr_flag_number)) (sqrt -9.2)))) | 0.551859922526174 | 0 | 595121
+42 | (sqrt (/ duration (- (+ https http) (sqrt (sqrt -3.2))))) | 0.13480033241995473 | 0 | 595121
+42 | (sqrt (/ 7.6 (- (+ https rst_count) (neg -6.1)))) | 0.5068725468351101 | 14 | 595107
+42 | (sqrt (/ -0.4 (- (+ https 5.0) (sqrt (sqrt -3.2))))) | 0.44583081702019745 | 0 | 595121
+42 | (sqrt (sqrt (abs (* (sqr min) (- arp rate))))) | 0.01442148866579162 | 0 | 595121
+42 | (sqrt (/ duration (- (sqr -6.0) (sqrt (sqrt -3.2))))) | 0.5518599225219937 | 0 | 595121
+42 | (sqrt (/ -0.4 (- ack_count (sqrt (sqrt -3.2))))) | 0.019990589685395386 | 0 | 595121
+43 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+43 | (sqrt (/ 7.6 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307793853 | 0 | 595121
+43 | (sqrt (/ -0.4 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307789504 | 0 | 595121
+43 | (sqrt (/ duration (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6696543452787284 | 0 | 595121
+43 | (sqrt (/ duration (- (+ https -5.9) (sqrt -9.2)))) | 0.6059245338901359 | 0 | 595121
+43 | (sqrt (/ 7.6 (- (+ https rst_count) (abs (abs header_length))))) | 0.0 | 95058 | 500063
+43 | (sqrt (/ duration (- (+ https rst_count) (sqrt (sqrt 2.5))))) | 0.2925735953953578 | 0 | 595121
+43 | (sqrt (/ 7.6 (- (+ https rst_count) (sqrt (neg -9.2))))) | 0.453266897826018 | 0 | 595121
+43 | (sqrt (neg (* (neg (sqrt -4.6)) -9.3))) | 0.0 | 0 | 595121
+43 | (abs (* -10.0 -7.7)) | 0.0 | 0 | 595121
+43 | (sqrt (abs 0.5)) | 0.0 | 0 | 595121
+43 | (neg (neg (- (* ipv -3.3) 0.2))) | 0.015856180115671397 | 0 | 595121
+43 | (sqrt (/ -0.4 (- (+ https rst_count) (sqrt (sqrt telnet))))) | 0.0 | 425024 | 170097
+43 | -6.4 | 0.0 | 0 | 595121
+43 | (sqrt (/ 7.6 (- (+ 0.1 rst_count) (sqrt (sqrt -3.2))))) | 0.6961637253275018 | 0 | 595121
+43 | (sqrt (sqrt (+ http llc))) | 0.011903676424248688 | 0 | 595121
+43 | (sqrt (/ duration (- (+ https min) (sqrt (sqrt -3.2))))) | 0.08792721974910947 | 0 | 595121
+43 | (sqr (neg (neg (sqr -7.4)))) | 1.5053743810967018e-05 | 0 | 595121
+43 | (sqrt (sqrt (sqr (min (abs magnitue) (sqr rst_flag_number))))) | 0.04894065789940479 | 0 | 595121
+43 | (sqrt (/ -0.4 (- (+ -5.8 rst_count) (sqrt (sqrt -3.2))))) | 0.4798418008498848 | 0 | 595121
+44 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+44 | (sqrt (/ 7.6 (- (+ 0.1 rst_count) (sqrt (sqrt -3.2))))) | 0.6961637253275018 | 0 | 595121
+44 | (sqrt (/ 7.6 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307793853 | 0 | 595121
+44 | (sqrt (/ -0.4 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307789504 | 0 | 595121
+44 | (sqrt (/ duration (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6696543452787284 | 0 | 595121
+44 | (+ 0.2 (- (max urg_count (max syn_count -8.9)) -8.0)) | 0.23560195181486085 | 0 | 595121
+44 | (sqrt (/ -0.4 (sqrt (sqrt (min (neg cwr_flag_number) (neg -7.2)))))) | 0.0 | 595121 | 0
+44 | (sqrt (neg (abs (min 4.5 irc)))) | 0.0 | 0 | 595121
+44 | (sqrt (abs 8.5)) | 5.3408598205100914e-05 | 0 | 595121
+44 | (min (sqrt (- 3.5 (sqr -8.2))) srate) | 0.0 | 0 | 595121
+44 | (sqrt (/ duration (- (+ https syn_flag_number) (sqrt (sqrt -3.2))))) | 0.15677275299507842 | 0 | 595121
+44 | (sqrt 8.7) | 0.0 | 0 | 595121
+44 | (sqrt (sqrt (/ drate urg_count))) | 0.0 | 472724 | 122397
+44 | (sqrt (/ srate (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.04672825895295944 | 0 | 595121
+44 | (* (neg (sqrt variance)) (abs (sqr (- 3.6 (abs -1.2))))) | 0.42980601647551225 | 0 | 595121
+44 | (sqrt (sqrt (neg 6.0))) | 2.790001398773928e-05 | 0 | 595121
+44 | (sqrt (- (sqrt dns) (sqrt (abs (sqrt (* flow_duration -4.9)))))) | 0.33702493002288564 | 0 | 595121
+44 | (sqrt (/ 7.6 (- (+ https rate) (sqrt (sqrt -3.2))))) | 0.08909348309947557 | 0 | 595121
+44 | (sqrt (/ 7.6 (- urg_count (sqrt (sqrt -3.2))))) | 0.6927406974703438 | 0 | 595121
+44 | (sqrt (/ 7.6 (- ece_flag_number (sqrt (sqrt -3.2))))) | 0.0 | 0 | 595121
+45 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+45 | (sqrt (/ 7.6 (- (+ 0.1 rst_count) (sqrt (sqrt -3.2))))) | 0.6961637253275018 | 0 | 595121
+45 | (sqrt (/ 7.6 (- urg_count (sqrt (sqrt -3.2))))) | 0.6927406974703438 | 0 | 595121
+45 | (sqrt (/ 7.6 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307793853 | 0 | 595121
+45 | (sqrt (/ -0.4 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307789504 | 0 | 595121
+45 | (sqrt (/ 7.6 (neg (sqrt 5.7)))) | 0.0 | 0 | 595121
+45 | (sqrt (/ 7.6 (- (+ dhcp rst_count) (sqrt (sqrt -3.2))))) | 0.6906611598464131 | 0 | 595121
+45 | (sqrt (sqrt (+ (neg llc) smtp))) | 0.01585618011573686 | 0 | 595121
+45 | (sqrt (/ -1.0 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307803809 | 0 | 595121
+45 | (abs (abs (max (sqr 7.8) (+ ssh (abs duration))))) | 0.543566413512151 | 0 | 595121
+45 | (sqrt (/ 7.6 (- urg_count (sqrt (- -7.7 (abs min)))))) | 0.54434477533327 | 0 | 595121
+45 | (sqrt (min std (+ (abs std) fin_count))) | 0.46969493147328817 | 0 | 595121
+45 | (sqrt (/ -0.4 (- (+ https tot_size) (sqrt (sqrt -3.2))))) | 0.29100632730330195 | 0 | 595121
+45 | (sqrt (/ (sqr (sqrt 3.5)) -4.2)) | 3.5467561477562026e-05 | 0 | 595121
+45 | (sqrt (/ 7.6 (- (+ 0.1 rst_count) (sqrt max)))) | 0.522833634276334 | 0 | 595121
+45 | (abs (neg (+ (sqr 6.1) 8.4))) | 0.0 | 0 | 595121
+45 | (sqrt -9.7) | 0.0 | 0 | 595121
+45 | (sqrt (/ -0.4 (sqrt (abs (* (* rst_flag_number flow_duration) iat))))) | 0.0 | 587449 | 7672
+45 | (sqrt (/ 7.6 (- header_length (sqrt (sqrt -3.2))))) | 0.11653484971085831 | 0 | 595121
+45 | (sqrt (sqrt (sqrt (sqr (abs 8.6))))) | 0.0 | 0 | 595121
+46 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+46 | (sqrt (/ 7.6 (- (+ 0.1 rst_count) (sqrt (sqrt -3.2))))) | 0.6961637253275018 | 0 | 595121
+46 | (sqrt (/ 7.6 (- urg_count (sqrt (sqrt -3.2))))) | 0.6927406974703438 | 0 | 595121
+46 | (sqrt (/ 7.6 (- (+ dhcp rst_count) (sqrt (sqrt -3.2))))) | 0.6906611598464131 | 0 | 595121
+46 | (sqrt (/ -1.0 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307803809 | 0 | 595121
+46 | (sqrt (/ 7.6 (* -9.9 (abs (+ (abs icmp) arp))))) | 0.0 | 498061 | 97060
+46 | (* -9.1 dhcp) | 0.0 | 0 | 595121
+46 | (sqrt (/ -1.0 (- (+ https rst_count) -7.2))) | 0.7626043328818772 | 0 | 595121
+46 | (sqrt (/ 7.6 (- (+ 0.1 rst_count) (sqrt -0.9)))) | 0.6704857404365298 | 0 | 595121
+46 | (abs (neg (min variance (neg -9.4)))) | 0.5068465600252443 | 0 | 595121
+46 | (sqrt (/ 7.6 (- (+ dhcp rst_count) (sqrt -5.6)))) | 0.7277796617088099 | 0 | 595121
+46 | (+ dhcp (abs 7.1)) | 1.9896134702094877e-05 | 0 | 595121
+46 | (sqrt (/ 7.6 (- (+ 0.1 rst_count) (sqrt (sqrt ack_count))))) | 0.21028647188053112 | 0 | 595121
+46 | (sqrt (+ (neg -3.7) (/ http ipv))) | 0.008089923210435558 | 69 | 595052
+46 | (sqrt (/ 7.6 (+ flow_duration 9.5))) | 0.5577893864335436 | 0 | 595121
+46 | (sqrt fin_flag_number) | 0.04774692348274653 | 0 | 595121
+46 | (sqrt (/ 7.6 (- (+ 0.1 rst_count) (sqrt tcp)))) | 0.07432913606181381 | 249 | 594872
+46 | (sqrt (/ 7.6 (/ -6.9 (sqrt 1.3)))) | 2.7630362122472397e-05 | 0 | 595121
+46 | (sqrt (/ -1.0 (- (neg (abs -5.9)) (sqrt (sqrt -3.2))))) | 0.0 | 0 | 595121
+46 | (sqrt (/ 3.5 (- (+ https rst_count) (sqrt (sqrt -3.2))))) | 0.6766185307832837 | 0 | 595121
+47 | (sqrt (/ -1.0 (- (+ https rst_count) -7.2))) | 0.7626043328818772 | 0 | 595121
+47 | (sqrt (/ 7.6 (- (+ dhcp rst_count) (sqrt -5.6)))) | 0.7277796617088099 | 0 | 595121
+47 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+47 | (sqrt (/ 7.6 (- (+ 0.1 rst_count) (sqrt (sqrt -3.2))))) | 0.6961637253275018 | 0 | 595121
+47 | (sqrt (/ 7.6 (- urg_count (sqrt (sqrt -3.2))))) | 0.6927406974703438 | 0 | 595121
+47 | (sqrt (/ 7.6 (sqr (max (abs 9.3) (max duration 0.6))))) | 0.4995681524704381 | 0 | 595121
+47 | (sqrt (/ 7.6 (- (+ 0.1 0.8) (sqrt (sqrt -3.2))))) | 0.0 | 0 | 595121
+47 | (max -0.3 (abs (abs (sqr (sqrt (neg (abs -0.6))))))) | 1.5109831492408259e-05 | 0 | 595121
+47 | (sqrt (/ 7.6 (- (sqrt drate) (sqrt (sqrt -3.2))))) | 0.0009452781995915565 | 0 | 595121
+47 | (sqrt (sqrt (sqr min))) | 0.08761955423390126 | 0 | 595121
+47 | (+ (* (abs (sqr tcp)) 6.9) (abs -7.3)) | 0.08934228621346127 | 0 | 595121
+47 | (sqrt (/ 7.6 (- (+ arp covariance) (sqrt -5.6)))) | 0.3200851509205013 | 0 | 595121
+47 | (sqrt (neg (abs (abs (- (* avg 2.7) magnitue))))) | 0.30518546523127965 | 0 | 595121
+47 | (sqrt arp) | 0.009714672576893403 | 0 | 595121
+47 | (sqrt (sqrt (min (abs (abs (abs iat))) 1.4))) | 0.5053678766250844 | 0 | 595121
+47 | (sqrt (/ 7.6 (- (abs avg) (sqrt (sqrt -3.2))))) | 0.2975973069097032 | 0 | 595121
+47 | (sqrt (sqrt (sqrt -9.1))) | 8.75849317661067e-06 | 0 | 595121
+47 | (sqrt (/ -1.0 (- (+ https rst_count) -7.7))) | 0.7639249612056022 | 0 | 595121
+47 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) -7.2))) | 0.7707664289605151 | 0 | 595121
+47 | (sqrt (/ 7.6 (- urg_count (sqrt (sqrt 5.7))))) | 0.44598717140070004 | 0 | 595121
+48 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) -7.2))) | 0.7707664289605151 | 0 | 595121
+48 | (sqrt (/ -1.0 (- (+ https rst_count) -7.7))) | 0.7639249612056022 | 0 | 595121
+48 | (sqrt (/ -1.0 (- (+ https rst_count) -7.2))) | 0.7626043328818772 | 0 | 595121
+48 | (sqrt (/ 7.6 (- (+ dhcp rst_count) (sqrt -5.6)))) | 0.7277796617088099 | 0 | 595121
+48 | (sqrt (sqrt rst_count)) | 0.7115362404170222 | 0 | 595121
+48 | (sqrt (/ -1.0 (- (+ ack_count rst_count) -7.2))) | 0.7606517435409994 | 0 | 595121
+48 | (sqrt (/ -1.0 (- (+ https rst_count) (abs (sqrt 5.4))))) | 0.4423151239441566 | 0 | 595121
+48 | (/ (abs avg) (abs (sqrt (neg (neg 0.2))))) | 0.3172809962519326 | 0 | 595121
+48 | (sqrt (/ 7.6 (- (sqr https) (sqrt -5.6)))) | 0.44583081708929817 | 0 | 595121
+48 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289605151 | 0 | 595121
+48 | (abs 5.8) | 0.0 | 0 | 595121
+48 | (sqrt (/ -1.0 (abs (sqrt (+ (sqr 9.1) (sqrt telnet)))))) | 0.0 | 0 | 595121
+48 | (sqrt (/ -1.0 (- (+ https (sqr -1.0)) -7.2))) | 0.44583081704607946 | 0 | 595121
+48 | (- 4.1 (neg (sqrt (neg (neg fin_flag_number))))) | 0.047746923474746135 | 0 | 595121
+48 | (min fin_count (min -0.1 -7.9)) | 0.0 | 0 | 595121
+48 | (sqr (sqr (sqrt (/ (sqrt -1.9) (- irc -7.3))))) | 0.0 | 0 | 595121
+48 | (sqrt (sqrt -10.0)) | 2.5246664487749633e-05 | 0 | 595121
+48 | (sqrt (/ -3.9 (- (+ https rst_count) -7.2))) | 0.762604332883473 | 0 | 595121
+48 | (max (min (/ covariance 7.1) (sqrt (sqr covariance))) -9.8) | 0.2575819537054466 | 0 | 595121
+48 | (sqrt (/ 7.6 (- (sqr 0.9) (sqrt -5.6)))) | 2.7164189443007698e-05 | 0 | 595121
+49 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289605151 | 0 | 595121
+49 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) -7.2))) | 0.7707664289605151 | 0 | 595121
+49 | (sqrt (/ -1.0 (- (+ https rst_count) -7.7))) | 0.7639249612056022 | 0 | 595121
+49 | (sqrt (/ -3.9 (- (+ https rst_count) -7.2))) | 0.762604332883473 | 0 | 595121
+49 | (sqrt (/ -1.0 (- (+ https rst_count) -7.2))) | 0.7626043328818772 | 0 | 595121
+49 | (sqrt (/ -1.0 (/ 7.6 (max 5.8 -0.2)))) | 5.952991188950045e-06 | 0 | 595121
+49 | (sqrt (/ (sqrt -3.3) (- (+ https rst_count) -7.7))) | 0.7639249612068444 | 0 | 595121
+49 | (sqrt (/ -1.0 9.6)) | 0.0 | 0 | 595121
+49 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) (neg cwr_flag_number)))) | 0.7534051325207547 | 0 | 595121
+49 | (sqrt (/ -3.9 (- (+ https (/ arp header_length)) -7.2))) | 0.0 | 95054 | 500067
+49 | (sqrt (/ fin_flag_number (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.04772202312934017 | 0 | 595121
+49 | (sqrt (/ 4.2 (- (+ https rst_count) -7.2))) | 0.7626043328861045 | 0 | 595121
+49 | (sqrt (sqrt (sqrt (max drate -5.8)))) | 0.001158206132732816 | 0 | 595121
+49 | (sqrt (sqr min)) | 0.09977661733943162 | 0 | 595121
+49 | (sqrt (sqrt -4.1)) | 1.4090145216074307e-05 | 0 | 595121
+49 | (sqrt (/ -1.0 (- (+ (abs flow_duration) rst_count) -7.7))) | 0.7003686290111616 | 0 | 595121
+49 | (abs (+ 2.7 (neg (neg (sqr -8.2))))) | 0.0 | 0 | 595121
+49 | (sqrt (sqrt (neg tcp))) | 0.08934228621314644 | 0 | 595121
+49 | (neg (min (max (abs (neg 3.8)) 9.7) rate)) | 0.10903158482728462 | 0 | 595121
+49 | (sqrt (/ -3.9 (max 1.6 (sqrt llc)))) | 0.0 | 0 | 595121
+50 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289605151 | 0 | 595121
+50 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) -7.2))) | 0.7707664289605151 | 0 | 595121
+50 | (sqrt (/ (sqrt -3.3) (- (+ https rst_count) -7.7))) | 0.7639249612068444 | 0 | 595121
+50 | (sqrt (/ -1.0 (- (+ https rst_count) -7.7))) | 0.7639249612056022 | 0 | 595121
+50 | (sqrt (/ 4.2 (- (+ https rst_count) -7.2))) | 0.7626043328861045 | 0 | 595121
+50 | (sqrt (/ -1.0 (- (abs -3.0) -7.7))) | 0.0 | 0 | 595121
+50 | (abs (neg (sqr -9.5))) | 0.0 | 0 | 595121
+50 | (sqrt (/ -1.0 (abs (* icmp min)))) | 0.0 | 498100 | 97021
+50 | (sqrt (/ (- 6.7 rst_flag_number) (- (+ https rst_count) -7.7))) | 0.7569882569313481 | 0 | 595121
+50 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.77162616199599 | 0 | 595121
+50 | (sqrt (max (abs (sqrt radius)) (sqr syn_flag_number))) | 0.430655561849965 | 0 | 595121
+50 | (abs (neg smtp)) | 0.0 | 0 | 595121
+50 | (sqrt (/ (sqrt -3.3) (/ (sqr udp) 5.7))) | 0.0 | 468864 | 126257
+50 | (sqrt (/ -1.0 (- (+ (neg 3.0) rst_count) (neg 7.2)))) | 0.7513320302368769 | 0 | 595121
+50 | (sqrt (+ (neg -0.4) (neg 9.8))) | 2.78693546317088e-05 | 0 | 595121
+50 | (sqrt (/ (sqrt -3.3) (- (+ ack_count rst_count) -7.7))) | 0.7621702245484274 | 0 | 595121
+50 | (sqrt (abs (/ (sqr -9.0) (min (neg (sqrt 2.8)) flow_duration)))) | 0.0 | 0 | 595121
+50 | (sqrt (/ (sqrt -3.3) (- (+ 3.4 rst_count) -7.7))) | 0.7702447360439596 | 0 | 595121
+50 | (sqrt (/ -1.0 (- (+ (neg tcp) rst_count) -7.2))) | 0.7501117977432049 | 0 | 595121
+50 | (sqrt (/ -1.0 (- (+ (neg -4.5) -6.7) (neg 7.2)))) | 0.0 | 0 | 595121
+51 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.77162616199599 | 0 | 595121
+51 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) -7.2))) | 0.7707664289605151 | 0 | 595121
+51 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289605151 | 0 | 595121
+51 | (sqrt (/ (sqrt -3.3) (- (+ 3.4 rst_count) -7.7))) | 0.7702447360439596 | 0 | 595121
+51 | (sqrt (/ (sqrt -3.3) (- (+ https rst_count) -7.7))) | 0.7639249612068444 | 0 | 595121
+51 | (sqrt (/ -1.0 (- (+ (neg -0.0) rst_count) (neg 7.2)))) | 0.7642417435160506 | 0 | 595121
+51 | (sqrt (/ -1.0 (- (+ (neg -5.7) 1.4) (neg 7.2)))) | 2.1678802616442117e-05 | 0 | 595121
+51 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg psh_flag_number)))) | 0.7450693310874535 | 0 | 595121
+51 | (sqrt (/ -1.0 (- (+ (sqrt ack_count) rst_count) (neg 7.2)))) | 0.7606526439195059 | 0 | 595121
+51 | (sqrt header_length) | 0.42122229443647907 | 0 | 595121
+51 | (min (- 6.1 max) (/ 2.1 (sqrt covariance))) | 0.44844120017236466 | 0 | 595121
+51 | (sqrt (/ (sqrt (abs -8.8)) (- (+ 3.4 rst_count) -7.7))) | 0.7702447360402128 | 0 | 595121
+51 | (sqrt (/ -1.0 (- (+ (neg arp) rst_count) (neg 7.2)))) | 0.7642274101232823 | 0 | 595121
+51 | (sqrt (/ (abs (neg max)) (- (+ 3.4 rst_count) -7.7))) | 0.0765286124931291 | 0 | 595121
+51 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.7722912003360903 | 0 | 595121
+51 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) (abs srate)))) | 0.012796844075784122 | 0 | 595121
+51 | (abs (+ (abs https) (neg protocol_type))) | 0.03900811887016466 | 0 | 595121
+51 | (sqrt (sqrt 3.1)) | 1.7221368742708507e-05 | 0 | 595121
+51 | (sqrt (abs -2.6)) | 0.0 | 0 | 595121
+51 | (sqrt (- (sqr -7.9) (+ (abs llc) (sqrt 6.4)))) | 0.015856184963545076 | 0 | 595121
+52 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.7722912003360903 | 0 | 595121
+52 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.77162616199599 | 0 | 595121
+52 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) -7.2))) | 0.7707664289605151 | 0 | 595121
+52 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289605151 | 0 | 595121
+52 | (sqrt (/ (sqrt -3.3) (- (+ 3.4 rst_count) -7.7))) | 0.7702447360439596 | 0 | 595121
+52 | (sqrt min) | 0.08761955423390126 | 0 | 595121
+52 | (neg (sqr -5.5)) | 0.0 | 0 | 595121
+52 | (sqrt (/ -1.0 (- (+ (neg -5.7) irc) (neg 7.2)))) | 0.0 | 0 | 595121
+52 | (sqrt (/ -1.0 (- (+ (neg -4.5) 4.8) (neg 7.2)))) | 0.0 | 0 | 595121
+52 | (sqrt (abs (max fin_count 9.5))) | 0.001303008764668219 | 0 | 595121
+52 | (- -4.7 (sqr (neg (neg (min (abs rst_count) (sqr 2.8)))))) | 0.7283558436343915 | 0 | 595121
+52 | (sqrt (/ llc (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7707310860419347 | 0 | 595121
+52 | (sqrt (/ -1.0 (- (- iat duration) (neg 7.2)))) | 0.47830389426956343 | 0 | 595121
+52 | (sqrt urg_count) | 0.5554156590564263 | 0 | 595121
+52 | (sqrt (/ -1.0 (- 5.8 (neg 7.2)))) | 0.0 | 0 | 595121
+52 | (sqrt (/ -8.3 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289603495 | 0 | 595121
+52 | (sqrt (/ -1.0 (abs rate))) | 0.0612592856816025 | 11941 | 583180
+52 | (neg (sqrt (sqr (neg (sqr -2.0))))) | 0.0 | 0 | 595121
+52 | (sqrt (/ -1.0 (- (+ (neg iat) rst_count) (neg 7.2)))) | 0.19413091475393576 | 0 | 595121
+52 | (sqrt (/ -1.0 (- (+ (neg -4.5) urg_count) -7.2))) | 0.7363489998171 | 0 | 595121
+53 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.7722912003360903 | 0 | 595121
+53 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.77162616199599 | 0 | 595121
+53 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) -7.2))) | 0.7707664289605151 | 0 | 595121
+53 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289605151 | 0 | 595121
+53 | (sqrt (/ -8.3 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289603495 | 0 | 595121
+53 | (sqr (abs (max (/ 5.4 rate) (neg (abs (neg smtp)))))) | 0.0003759862926645022 | 11941 | 583180
+53 | (neg (abs (+ -8.9 (* (+ -5.5 2.9) 6.2)))) | 9.015578634303942e-06 | 0 | 595121
+53 | (sqrt (/ -1.0 (- (+ (neg -4.4) rst_count) (neg 7.2)))) | 0.7706841880807115 | 0 | 595121
+53 | (abs (sqrt (- -2.5 (sqrt 6.9)))) | 1.3517960061060905e-06 | 0 | 595121
+53 | (sqrt (/ dhcp (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.0 | 0 | 595121
+53 | (sqrt (/ 1.1 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289544599 | 0 | 595121
+53 | (sqrt (/ -8.3 (- (+ (sqr 1.9) rst_count) (neg 7.2)))) | 0.7699665791142796 | 0 | 595121
+53 | (sqrt (sqrt (* 6.1 (abs telnet)))) | 0.0 | 0 | 595121
+53 | (sqrt (sqr (max (neg syn_flag_number) (neg dns)))) | 0.0 | 0 | 595121
+53 | (sqrt telnet) | 0.0 | 0 | 595121
+53 | (sqrt (/ -8.3 (- (+ (neg -4.5) rst_count) 2.6))) | 0.715243831975181 | 0 | 595121
+53 | (neg (sqrt 1.3)) | 8.842149774511393e-06 | 0 | 595121
+53 | (sqrt (abs (* -2.3 (abs icmp)))) | 0.06841709530569079 | 0 | 595121
+53 | (neg (+ http (sqrt (/ 7.2 (/ -4.9 telnet))))) | 0.008123659239309222 | 0 | 595121
+53 | (sqrt (/ -8.3 (- (sqrt (neg (sqrt max))) (neg 7.2)))) | 0.05546246150763062 | 0 | 595121
+54 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.7722912003360903 | 0 | 595121
+54 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.77162616199599 | 0 | 595121
+54 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) -7.2))) | 0.7707664289605151 | 0 | 595121
+54 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289605151 | 0 | 595121
+54 | (sqrt (/ -8.3 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289603495 | 0 | 595121
+54 | (sqrt (/ -1.0 (- (sqr 7.4) (neg 7.2)))) | 1.907790592925097e-05 | 0 | 595121
+54 | (sqrt (/ -1.0 (- (+ weight rst_count) -7.2))) | 0.6154979562292687 | 0 | 595121
+54 | (abs (/ (abs -1.1) -9.5)) | 1.6586711612491156e-05 | 0 | 595121
+54 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) ssh))) | 0.7634744477828117 | 0 | 595121
+54 | (sqrt (/ -2.9 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261620004017 | 0 | 595121
+54 | (sqrt (/ -1.0 (- (sqrt 8.5) -7.2))) | 4.4963155565075575e-05 | 0 | 595121
+54 | (sqrt (/ -3.0 (- (+ (neg -4.5) rst_count) (neg 7.2)))) | 0.7707664289589382 | 0 | 595121
+54 | (sqrt (/ -1.0 (min fin_count rst_count))) | 0.0 | 565205 | 29916
+54 | (sqrt (/ -8.3 (- (+ (neg ece_flag_number) rst_count) (neg 7.2)))) | 0.7642417435169937 | 0 | 595121
+54 | (sqrt (/ -1.0 (- (+ (neg -4.5) flow_duration) (neg 7.2)))) | 0.5576568079959101 | 0 | 595121
+54 | (sqrt (/ -1.0 (- (+ (sqr -6.2) rst_count) (neg 7.2)))) | 0.7711650726310008 | 0 | 595121
+54 | (sqrt (+ udp (sqrt 3.7))) | 0.05486868956408577 | 0 | 595121
+54 | (sqrt (abs -3.1)) | 0.0 | 0 | 595121
+54 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) 5.0))) | 0.6325013073250785 | 0 | 595121
+54 | (sqrt (abs (* 0.6 0.9))) | 0.0 | 0 | 595121
+55 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.7722912003360903 | 0 | 595121
+55 | (sqrt (/ -2.9 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261620004017 | 0 | 595121
+55 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.77162616199599 | 0 | 595121
+55 | (sqrt (/ -1.0 (- (+ (sqr -6.2) rst_count) (neg 7.2)))) | 0.7711650726310008 | 0 | 595121
+55 | (sqrt (/ -1.0 (- (+ (neg -4.5) rst_count) -7.2))) | 0.7707664289605151 | 0 | 595121
+55 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.77162616199599 | 0 | 595121
+55 | (sqrt (/ -1.5 (- (+ (neg -4.5) rst_count) -7.2))) | 0.7707664289577436 | 0 | 595121
+55 | (sqrt (sqrt (neg (neg (neg protocol_type))))) | 0.011072398754918642 | 0 | 595121
+55 | (sqrt (/ -1.0 (- (+ (neg -4.5) (sqrt 0.8)) -7.2))) | 0.0 | 0 | 595121
+55 | (sqrt (/ -2.9 (- (+ (neg https) rst_count) (neg 7.2)))) | 0.7618321682930927 | 0 | 595121
+55 | (sqrt drate) | 0.0008464964054311281 | 0 | 595121
+55 | (sqrt (sqrt (/ 7.6 (neg dhcp)))) | 0.0 | 595121 | 0
+55 | (sqrt (neg 1.5)) | 0.0 | 0 | 595121
+55 | (sqrt (/ -1.0 (- (sqr (- ack_flag_number -9.7)) (neg 7.2)))) | 0.3404562060019106 | 0 | 595121
+55 | (abs (neg (- (abs ssh) (max -5.6 iat)))) | 0.004996132858482216 | 0 | 595121
+55 | (sqrt (/ -1.0 (- (+ (neg -4.5) (abs arp)) -7.2))) | 0.009714673954992455 | 0 | 595121
+55 | (sqrt (/ -1.0 (- (+ (sqr -6.2) -5.6) (neg 7.2)))) | 3.2192323832006865e-06 | 0 | 595121
+55 | (min (sqrt (+ -7.8 (neg -5.3))) (/ 0.8 weight)) | 0.0 | 0 | 595121
+55 | (sqrt (/ -1.0 (abs -1.4))) | 0.0 | 0 | 595121
+55 | (sqrt (/ -1.0 (- (+ iat rst_count) (neg 7.2)))) | 0.19345161209595488 | 0 | 595121
+56 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.7722912003360903 | 0 | 595121
+56 | (sqrt (/ -2.9 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261620004017 | 0 | 595121
+56 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.77162616199599 | 0 | 595121
+56 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.77162616199599 | 0 | 595121
+56 | (sqrt (/ -1.0 (- (+ (sqr -6.2) rst_count) (neg 7.2)))) | 0.7711650726310008 | 0 | 595121
+56 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206799676 | 0 | 595121
+56 | (sqr (abs (max (max -0.9 -8.8) 4.4))) | 0.0 | 0 | 595121
+56 | (sqrt (/ -1.0 (- (sqr 5.4) (neg 7.2)))) | 0.0 | 0 | 595121
+56 | (sqrt (/ -2.9 (- (+ (neg duration) rst_count) (neg 7.2)))) | 7.289167463488039e-06 | 0 | 595121
+56 | (sqr (- http 2.0)) | 0.008123659239309222 | 0 | 595121
+56 | (sqrt (/ syn_count (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.040540913084448606 | 0 | 595121
+56 | (sqrt (/ -2.9 (- (+ (neg -5.7) rst_count) (abs cwr_flag_number)))) | 0.7595151045468859 | 0 | 595121
+56 | (sqrt (/ -2.9 (- (+ (neg -5.7) rst_count) (neg magnitue)))) | 0.6223197994651165 | 0 | 595121
+56 | (sqrt (/ -1.0 (- (+ (neg -6.9) ssh) (neg 7.2)))) | 0.0012223697263450003 | 0 | 595121
+56 | (sqrt (/ -2.9 (- (+ (neg -5.7) udp) (neg 7.2)))) | 0.05486868953214538 | 0 | 595121
+56 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg -8.0)))) | 0.4912757950467535 | 13 | 595108
+56 | (sqrt (/ icmp (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.06840552822036026 | 0 | 595121
+56 | (sqrt (/ -1.0 (- (+ icmp rst_count) (neg 7.2)))) | 0.7582877014755084 | 0 | 595121
+56 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg ece_flag_number)))) | 0.7595151045460922 | 0 | 595121
+56 | (sqrt (/ -1.0 (- (+ (sqrt dns) rst_count) (neg 7.2)))) | 0.7642806433690672 | 0 | 595121
+57 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206799676 | 0 | 595121
+57 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.7722912003360903 | 0 | 595121
+57 | (sqrt (/ -2.9 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261620004017 | 0 | 595121
+57 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.77162616199599 | 0 | 595121
+57 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.77162616199599 | 0 | 595121
+57 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg https)))) | 0.7617125417142345 | 0 | 595121
+57 | (sqrt (/ -5.6 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261620009739 | 0 | 595121
+57 | (abs (sqrt -7.9)) | 1.1078268861689676e-05 | 0 | 595121
+57 | psh_flag_number | 0.039506112778848364 | 0 | 595121
+57 | (sqrt (min (abs -7.4) (sqr -4.1))) | 1.0263636342657355e-06 | 0 | 595121
+57 | (sqrt (/ -1.0 (- (+ (neg -5.7) rst_count) (neg syn_flag_number)))) | 0.7486298768227247 | 0 | 595121
+57 | (sqrt (/ -1.0 (- (sqr (sqr (neg -3.1))) (neg 7.2)))) | 2.180951518730281e-05 | 0 | 595121
+57 | (sqrt (/ -1.0 (- 9.2 (neg 7.2)))) | 8.498339913939068e-06 | 0 | 595121
+57 | (sqrt (/ -1.0 (- (+ (neg -5.7) tot_sum) (neg 7.2)))) | 0.2653393862425416 | 0 | 595121
+57 | (sqrt max) | 0.4397653349563218 | 0 | 595121
+57 | (sqrt (/ avg (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.13688295340380385 | 0 | 595121
+57 | (sqrt (/ 1.3 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261619992725 | 0 | 595121
+57 | (sqrt (/ -1.0 (- (neg 1.7) (neg 7.2)))) | 1.4915453726505302e-05 | 0 | 595121
+57 | (sqrt (/ -1.0 (/ -1.6 (abs (sqr 8.2))))) | 0.0 | 0 | 595121
+57 | (sqrt (/ -2.9 (- (neg -0.1) (neg 7.2)))) | 7.384811514838828e-06 | 0 | 595121
+58 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206799676 | 0 | 595121
+58 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.7722912003360903 | 0 | 595121
+58 | (sqrt (/ -5.6 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261620009739 | 0 | 595121
+58 | (sqrt (/ -2.9 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261620004017 | 0 | 595121
+58 | (sqrt (/ 1.3 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261619992725 | 0 | 595121
+58 | (sqr (abs (abs (* (abs (abs magnitue)) 3.1)))) | 0.3127129203415264 | 0 | 595121
+58 | (sqrt (max (/ dns 1.4) http)) | 0.007029347875647878 | 0 | 595121
+58 | (sqrt (/ -2.9 (- (+ radius rst_count) (neg 7.2)))) | 0.4900149407492465 | 0 | 595121
+58 | (- (+ 2.7 6.6) dns) | 0.0226128927047189 | 0 | 595121
+58 | (neg tot_size) | 0.31770127867858333 | 0 | 595121
+58 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (sqrt ack_count)))) | 0.7546784234512682 | 0 | 595121
+58 | (sqrt (sqrt (neg tcp))) | 0.08934228621314644 | 0 | 595121
+58 | (sqrt (/ -1.0 (- (+ (abs -2.2) rst_count) (neg 7.2)))) | 0.7683160831612279 | 0 | 595121
+58 | (sqrt (/ -2.9 (- (+ (neg dns) rst_count) (neg 7.2)))) | 0.7641837762135972 | 0 | 595121
+58 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg tot_size)))) | 0.4126472630080271 | 0 | 595121
+58 | (sqrt (/ srate (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.043310716765747354 | 0 | 595121
+58 | (sqrt (/ 1.3 (- (sqrt 0.7) (neg 7.2)))) | 2.5408301987593333e-05 | 0 | 595121
+58 | (sqrt (max (abs (sqrt 3.4)) (neg magnitue))) | 1.9025277122974608e-06 | 0 | 595121
+58 | (sqrt (/ icmp (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.06840552822036026 | 0 | 595121
+58 | (sqrt (/ -1.0 number)) | 0.223010812523313 | 0 | 595121
+59 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206799676 | 0 | 595121
+59 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.7722912003360903 | 0 | 595121
+59 | (sqrt (/ -5.6 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261620009739 | 0 | 595121
+59 | (sqrt (/ -2.9 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261620004017 | 0 | 595121
+59 | (sqrt (/ 1.3 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261619992725 | 0 | 595121
+59 | (sqrt (/ -4.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206770893 | 0 | 595121
+59 | (sqrt -0.1) | 2.7576245843190035e-05 | 0 | 595121
+59 | (sqrt 6.8) | 0.0 | 0 | 595121
+59 | (sqrt (/ -2.9 (- (+ (abs rst_flag_number) rst_count) (neg 7.2)))) | 0.7602851922517526 | 0 | 595121
+59 | (sqr (max 6.8 (abs (/ -7.9 (neg fin_count))))) | 0.0 | 516238 | 78883
+59 | (sqrt (/ 5.8 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261619954112 | 0 | 595121
+59 | (sqrt (/ 1.3 (- (+ (neg -5.7) rst_count) (neg flow_duration)))) | 0.6797558236320973 | 0 | 595121
+59 | (sqrt (/ 1.3 (- (+ (neg -5.7) rst_count) (abs 3.6)))) | 0.7212251516078195 | 0 | 595121
+59 | (sqrt (/ -5.6 (- (+ 1.0 rst_count) (neg 7.2)))) | 0.766389885121358 | 0 | 595121
+59 | (sqrt (/ drate (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.0008464590935396867 | 0 | 595121
+59 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206822068 | 0 | 595121
+59 | (sqr (abs -1.1)) | 0.0 | 0 | 595121
+59 | (sqrt (/ -5.6 (- (+ (neg -5.7) rst_count) (neg -8.1)))) | 0.4937016739146515 | 41 | 595080
+59 | (sqrt (/ std (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.087799558921888 | 0 | 595121
+59 | (sqrt (- (+ -4.2 9.8) (/ (/ -7.7 tot_sum) 3.2))) | 0.2512553306508745 | 0 | 595121
+60 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206822068 | 0 | 595121
+60 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206799676 | 0 | 595121
+60 | (sqrt (/ -4.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206770893 | 0 | 595121
+60 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.7722912003360903 | 0 | 595121
+60 | (sqrt (/ -5.6 (- (+ (neg -5.7) rst_count) (neg 7.2)))) | 0.7716261620009739 | 0 | 595121
+60 | (sqrt (/ -5.6 (- (abs -0.8) (neg 7.2)))) | 0.0 | 0 | 595121
+60 | (sqrt (/ -5.6 (- (+ (neg -3.5) rst_count) (neg 7.2)))) | 0.7698562403122331 | 0 | 595121
+60 | (sqrt (abs (sqrt (sqr (sqrt -5.8))))) | 1.224126383307182e-05 | 0 | 595121
+60 | (sqrt (/ -4.5 (- (+ (abs -9.6) 2.3) (neg 7.2)))) | 6.80734370657364e-06 | 0 | 595121
+60 | (sqrt (/ -1.0 (- (+ max rst_count) (neg 7.2)))) | 0.416340377908134 | 0 | 595121
+60 | (sqrt (/ -1.0 (- (sqrt (abs urg_count)) (neg 7.2)))) | 0.6931203889843154 | 0 | 595121
+60 | (sqrt (/ -1.0 (- (min (abs -6.9) -7.6) (neg 7.2)))) | 0.0 | 0 | 595121
+60 | (sqrt (/ -4.5 (- fin_flag_number (neg 7.2)))) | 0.04774692345956769 | 0 | 595121
+60 | (sqrt (/ -4.5 (sqr (sqr (sqrt (+ fin_count magnitue)))))) | 0.29131834662628264 | 0 | 595121
+60 | (sqrt (/ -1.0 (abs 1.1))) | 0.0 | 0 | 595121
+60 | (sqrt (/ -5.6 (- -7.3 (neg 7.2)))) | 0.0 | 0 | 595121
+60 | (sqrt (/ -1.0 (- (+ (sqr 6.7) rst_count) (neg 7.2)))) | 0.7698452374027105 | 0 | 595121
+60 | (sqrt (/ -1.0 (- (+ 5.2 (abs rst_count)) (neg 7.2)))) | 0.7712947029434871 | 0 | 595121
+60 | (sqrt (/ -1.0 (neg (abs (sqr 1.6))))) | 0.0 | 0 | 595121
+60 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+61 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+61 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206822068 | 0 | 595121
+61 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206799676 | 0 | 595121
+61 | (sqrt (/ -4.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206770893 | 0 | 595121
+61 | (sqrt (/ -1.0 (- (+ (neg -6.9) rst_count) (neg 7.2)))) | 0.7722912003360903 | 0 | 595121
+61 | (sqrt (/ -1.0 (- (+ (neg -6.9) 4.0) (neg 7.2)))) | 0.0 | 0 | 595121
+61 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg ipv)))) | 0.769742693309553 | 0 | 595121
+61 | (sqrt (/ -4.5 (- (sqrt udp) (neg 7.2)))) | 0.05486868954349949 | 0 | 595121
+61 | (sqrt (/ -4.6 (neg (sqrt 3.9)))) | 0.0 | 0 | 595121
+61 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (abs 10.0)))) | 0.18096402584369384 | 249 | 594872
+61 | (sqrt (/ -4.5 (- (+ (abs 3.0) rst_count) (neg 7.2)))) | 0.7693183748116261 | 0 | 595121
+61 | (min (neg rst_flag_number) (neg -5.6)) | 0.04894065789940479 | 0 | 595121
+61 | (sqrt (sqr -6.3)) | 8.567374729371815e-06 | 0 | 595121
+61 | (max (abs 7.7) (* (+ (sqrt (neg 6.4)) 5.9) dns)) | 0.0 | 0 | 595121
+61 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg min)))) | 0.4121707683271893 | 0 | 595121
+61 | (* (neg (sqrt (neg (/ -1.3 ack_flag_number)))) (sqr icmp)) | 0.0 | 521262 | 73859
+61 | (sqrt (max (neg 6.3) avg)) | 0.3051307343446046 | 0 | 595121
+61 | (sqrt (abs (abs (+ (+ http (abs llc)) (abs -3.5))))) | 0.008996878273823875 | 0 | 595121
+61 | (sqrt (/ 8.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206830421 | 0 | 595121
+61 | (sqrt (/ -8.4 (- (+ (sqr fin_flag_number) rst_count) (neg 7.2)))) | 0.7607266950525721 | 0 | 595121
+62 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+62 | (sqrt (/ 8.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206830421 | 0 | 595121
+62 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206822068 | 0 | 595121
+62 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206799676 | 0 | 595121
+62 | (sqrt (/ -4.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206770893 | 0 | 595121
+62 | (sqrt (max -1.3 (sqr (sqrt (min (abs weight) (sqr 0.3)))))) | 1.950670857803252e-05 | 0 | 595121
+62 | (sqrt (/ -1.0 (- (+ (abs -9.6) fin_count) (neg 7.2)))) | 0.04709810331605989 | 0 | 595121
+62 | (sqrt (/ -4.6 (- (+ (abs tot_size) rst_count) (neg 7.2)))) | 0.41280941861491055 | 0 | 595121
+62 | -4.0 | 0.0 | 0 | 595121
+62 | (sqrt (/ -8.4 (- (+ (abs 5.2) rst_count) (neg 7.2)))) | 0.7712947029416657 | 0 | 595121
+62 | (sqrt (/ -8.4 (- (+ (abs tcp) rst_count) (neg 7.2)))) | 0.7471087932858391 | 0 | 595121
+62 | (sqrt (/ smtp (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.0 | 0 | 595121
+62 | (sqrt (/ ssh (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.0011677451695424662 | 0 | 595121
+62 | (- (sqrt 6.3) (neg (* 7.1 (abs (/ ece_flag_number -5.2))))) | 0.0 | 0 | 595121
+62 | (sqrt (+ (/ (neg 0.3) (- ssh fin_flag_number)) (sqr 9.7))) | 0.0 | 543519 | 51602
+62 | (sqrt (/ -4.5 (- (+ (abs 7.5) rst_count) (neg 7.2)))) | 0.7725650233492949 | 0 | 595121
+62 | (sqrt (min urg_count (/ (/ 1.8 (abs -5.8)) 9.5))) | 0.3223040608274696 | 0 | 595121
+62 | (neg (* 6.8 (abs (* 5.8 ece_flag_number)))) | 0.0 | 0 | 595121
+62 | (sqrt (/ -4.5 (- (+ 1.4 rst_count) (neg 7.2)))) | 0.7670984471786736 | 0 | 595121
+62 | (sqrt (/ 8.6 (- -4.3 (neg 7.2)))) | 0.0 | 0 | 595121
+63 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+63 | (sqrt (/ 8.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206830421 | 0 | 595121
+63 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206822068 | 0 | 595121
+63 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206799676 | 0 | 595121
+63 | (sqrt (/ -4.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206770893 | 0 | 595121
+63 | (sqrt (/ -1.0 (- (sqr -7.0) (neg 7.2)))) | 3.733199319337519e-05 | 0 | 595121
+63 | (sqrt (+ (neg urg_count) -1.0)) | 0.5355901482159992 | 0 | 595121
+63 | (sqrt (* (- dns 2.9) (sqrt (min ssh (sqr rst_count))))) | 0.0012223673883033745 | 0 | 595121
+63 | (sqrt (/ -4.5 (- urg_count (neg 7.2)))) | 0.7433665372398189 | 0 | 595121
+63 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) fin_count))) | 0.7644075347494973 | 0 | 595121
+63 | (/ (sqr 5.0) (abs std)) | 0.0 | 404179 | 190942
+63 | (sqrt (abs (sqrt (min (* 4.1 (sqr 9.9)) (sqrt dhcp))))) | 0.0 | 0 | 595121
+63 | (sqrt (/ 8.6 (neg (neg (+ udp ssh))))) | 0.0 | 468827 | 126294
+63 | (sqrt (/ -1.0 (- (+ (abs -9.6) dns) (neg 7.2)))) | 0.022612890926388126 | 0 | 595121
+63 | (sqrt (/ -1.0 (- (+ (abs 8.1) rst_count) (neg 7.2)))) | 0.772805600292877 | 0 | 595121
+63 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) ipv))) | 0.767105039335319 | 0 | 595121
+63 | (sqrt (sqr (neg (+ (sqrt dns) number)))) | 0.005980070620509581 | 0 | 595121
+63 | (sqrt (/ -4.6 (- (+ (abs urg_count) rst_count) (neg 7.2)))) | 0.7501271954645667 | 0 | 595121
+63 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+63 | (sqrt (/ -8.4 (- (+ (abs 1.3) rst_count) (neg 7.2)))) | 0.7669281797126947 | 0 | 595121
+64 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+64 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+64 | (sqrt (/ 8.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206830421 | 0 | 595121
+64 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206822068 | 0 | 595121
+64 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206799676 | 0 | 595121
+64 | (sqrt (neg (neg (* (neg -8.2) dhcp)))) | 0.0 | 0 | 595121
+64 | (sqr (sqrt (sqrt (neg (/ cwr_flag_number rate))))) | 0.0 | 11941 | 583180
+64 | (abs (* 4.5 icmp)) | 0.06841709530573648 | 0 | 595121
+64 | (sqrt (/ protocol_type (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.2376438373745372 | 0 | 595121
+64 | (sqrt (/ -1.0 (- (+ fin_flag_number rst_count) (neg 7.2)))) | 0.7607266950463105 | 0 | 595121
+64 | (sqrt (/ 8.6 (- (abs https) (neg 7.2)))) | 0.4458308170274423 | 0 | 595121
+64 | (sqrt (/ ipv (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7723065863243823 | 0 | 595121
+64 | (sqrt (/ 2.5 (- (+ rst_flag_number rst_count) (neg 7.2)))) | 0.7602851922506159 | 0 | 595121
+64 | (sqrt (/ 8.6 (- (+ (abs -9.6) rst_count) (neg -7.6)))) | 0.7183657846425311 | 0 | 595121
+64 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (sqr -9.5)))) | 0.4858517461635358 | 0 | 595121
+64 | -1.8 | 1.7659789073558052e-05 | 0 | 595121
+64 | (sqrt (/ -4.5 (* (abs (max (neg 5.0) fin_flag_number)) -1.1))) | 0.0 | 543556 | 51565
+64 | (sqrt (- (sqr (neg (+ (sqrt drate) telnet))) std)) | 0.4696949204591663 | 0 | 595121
+64 | (sqrt (/ 8.6 dns)) | 0.0 | 595032 | 89
+64 | (sqrt (/ 2.5 (- (sqrt (sqrt (neg 1.1))) (neg 7.2)))) | 0.0 | 0 | 595121
+65 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+65 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+65 | (sqrt (/ 8.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206830421 | 0 | 595121
+65 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206822068 | 0 | 595121
+65 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206799676 | 0 | 595121
+65 | (sqrt (/ 8.6 (- (+ (abs -1.8) rst_count) (neg 7.2)))) | 0.7677376492701562 | 0 | 595121
+65 | (sqrt (/ -8.4 (- (+ (abs -4.2) rst_count) (neg 7.2)))) | 0.7705141995250739 | 0 | 595121
+65 | (* (sqr syn_flag_number) (neg (/ -4.4 (sqrt https)))) | 0.0 | 562209 | 32912
+65 | (sqrt (/ 2.5 (* (sqrt (neg (sqrt -8.4))) (neg -5.8)))) | 0.0 | 0 | 595121
+65 | (sqrt (/ 2.5 (- (+ (abs -9.6) -7.8) (neg 7.2)))) | 0.0 | 0 | 595121
+65 | (sqrt (/ -8.4 (- flow_duration (neg 7.2)))) | 0.5537687425966143 | 0 | 595121
+65 | (sqrt (+ (sqrt icmp) -1.1)) | 0.06841709530769892 | 0 | 595121
+65 | (sqr (/ (abs (sqrt 3.1)) 7.7)) | 0.0 | 0 | 595121
+65 | (sqrt (/ 8.6 (- -5.5 (neg 7.2)))) | 1.8774393789467428e-05 | 0 | 595121
+65 | (/ (+ (abs weight) (neg header_length)) (* variance (neg -5.3))) | 0.0 | 408821 | 186300
+65 | (neg (+ telnet (sqr iat))) | 0.3219308686362026 | 0 | 595121
+65 | (sqrt (/ -8.4 (- (+ (sqr udp) rst_count) (neg 7.2)))) | 0.7576252594252505 | 0 | 595121
+65 | (sqrt (/ -4.5 (- (+ syn_flag_number rst_count) (neg 7.2)))) | 0.7566938260412237 | 0 | 595121
+65 | (sqrt (max min (neg (sqrt (abs (sqrt cwr_flag_number)))))) | 0.08761955423390126 | 0 | 595121
+65 | (sqrt (/ -1.0 (- 9.3 (sqr (- -4.5 -1.5))))) | 2.0727538760293387e-05 | 0 | 595121
+66 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+66 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+66 | (sqrt (/ 8.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206830421 | 0 | 595121
+66 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206822068 | 0 | 595121
+66 | (sqrt (/ -1.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206799676 | 0 | 595121
+66 | (sqrt (/ 2.5 (- (+ (abs 6.0) rst_count) (neg 7.2)))) | 0.7718086872811917 | 0 | 595121
+66 | (sqrt (abs (sqr 4.8))) | 1.950670857803252e-05 | 0 | 595121
+66 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg -3.2)))) | 0.7620069123748513 | 0 | 595121
+66 | (sqrt (/ -8.4 (sqrt (+ ipv (sqr (sqr (neg irc))))))) | 1.8511676399465385e-05 | 69 | 595052
+66 | (sqrt (/ https (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.08234077439321738 | 0 | 595121
+66 | (sqrt (/ -4.5 (abs (- (/ 2.6 llc) (abs -8.6))))) | 0.01585618008870796 | 0 | 595121
+66 | (sqrt (/ (abs (sqrt (neg (sqr (neg smtp))))) (neg -8.8))) | 0.0 | 0 | 595121
+66 | (sqrt (abs (neg drate))) | 0.0008464964054311281 | 0 | 595121
+66 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) 9.6))) | 0.0 | 437905 | 157216
+66 | (sqr (/ ssh -8.7)) | 0.001222367388303374 | 0 | 595121
+66 | (sqrt (/ -4.5 (- (+ (abs -9.6) protocol_type) (neg 7.2)))) | 0.00603557241744854 | 0 | 595121
+66 | (sqrt (/ 8.6 (abs (sqrt (sqr (+ -5.4 -6.1)))))) | 0.0 | 0 | 595121
+66 | (sqrt (/ 9.1 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206809939 | 0 | 595121
+66 | (sqrt (/ 2.5 (- (+ (abs -9.6) -4.7) (neg 7.2)))) | 1.857467845427258e-05 | 0 | 595121
+66 | (sqr -1.9) | 2.18790686914208e-05 | 0 | 595121
+67 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+67 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+67 | (sqrt (/ 8.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206830421 | 0 | 595121
+67 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206822068 | 0 | 595121
+67 | (sqrt (/ 9.1 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206809939 | 0 | 595121
+67 | (sqrt (sqr radius)) | 0.43877871358993803 | 0 | 595121
+67 | (sqrt (/ 9.1 2.9)) | 1.725683309054974e-05 | 0 | 595121
+67 | (/ (min (sqr (neg ece_flag_number)) (sqr (sqrt (neg 2.4)))) -9.1) | 0.0 | 0 | 595121
+67 | (sqrt (/ flow_duration (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.07598977330034704 | 0 | 595121
+67 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) tot_size))) | 0.0002030147843241594 | 2 | 595119
+67 | (sqrt (/ 9.1 (max rst_flag_number (/ 2.6 telnet)))) | 0.0 | 0 | 595121
+67 | (sqrt (/ 9.1 (- (abs (+ -2.0 9.3)) (neg 7.2)))) | 1.5977746215747684e-05 | 0 | 595121
+67 | (sqrt (/ -8.4 (- (+ (abs -9.6) protocol_type) (neg 7.2)))) | 0.006035572419567808 | 0 | 595121
+67 | (sqrt (/ 8.6 (- -4.0 (neg 7.2)))) | 0.0 | 0 | 595121
+67 | (+ (max 0.8 -9.4) (neg -0.9)) | 2.7102870730946732e-05 | 0 | 595121
+67 | (sqrt (/ -8.4 (- (- 4.7 -8.3) (neg 7.2)))) | 2.3155764919409884e-05 | 0 | 595121
+67 | (sqrt (/ 8.6 (+ (sqr 5.9) (abs (abs (sqrt irc)))))) | 2.0747353764561126e-05 | 0 | 595121
+67 | (sqrt (/ -4.5 (- (+ (abs -8.0) rst_count) (neg 7.2)))) | 0.7727676530901647 | 0 | 595121
+67 | (sqrt (/ 2.5 (- (+ (abs -8.7) rst_count) (neg 7.2)))) | 0.7730165361452587 | 0 | 595121
+67 | (sqrt (/ -4.5 (- (+ (abs -9.6) 4.5) (neg 7.2)))) | 3.114990572697045e-05 | 0 | 595121
+68 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+68 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+68 | (sqrt (/ 8.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206830421 | 0 | 595121
+68 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206822068 | 0 | 595121
+68 | (sqrt (/ 9.1 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206809939 | 0 | 595121
+68 | (sqrt (/ 8.6 (abs (sqrt (sqrt (abs dhcp)))))) | 0.0 | 595121 | 0
+68 | (sqrt (/ -8.4 (- (+ -7.0 rst_count) (neg 7.2)))) | 0.5097854020655423 | 0 | 595121
+68 | (sqrt (/ 8.6 (- (max -1.6 tcp) (neg 7.2)))) | 0.08934228619949725 | 0 | 595121
+68 | (sqrt (/ -8.1 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206805613 | 0 | 595121
+68 | (sqrt (/ -8.4 psh_flag_number)) | 0.0 | 542596 | 52525
+68 | (sqr -8.2) | 0.0 | 0 | 595121
+68 | (sqrt (/ 9.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206811642 | 0 | 595121
+68 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+68 | (sqrt (/ -4.3 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206791538 | 0 | 595121
+68 | (sqrt (/ 9.1 (- (+ (abs -4.8) rst_count) (neg 7.2)))) | 0.771002666969976 | 0 | 595121
+68 | (sqrt (neg (+ (max ack_flag_number ece_flag_number) (abs covariance)))) | 0.44302988695379797 | 0 | 595121
+68 | (sqrt (/ (* (sqrt -7.7) (sqrt ipv)) (sqrt (abs protocol_type)))) | 0.04094165278947997 | 4 | 595117
+68 | (sqrt (/ -4.5 (- (sqrt urg_count) (neg 7.2)))) | 0.693120388998465 | 0 | 595121
+68 | (sqrt (/ 2.5 (neg 8.4))) | 1.648207743055852e-05 | 0 | 595121
+68 | (sqrt (sqr (max (/ ipv weight) (sqr ece_flag_number)))) | 0.23010244672761052 | 0 | 595121
+69 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+69 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+69 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+69 | (sqrt (/ 8.6 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206830421 | 0 | 595121
+69 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206822068 | 0 | 595121
+69 | (sqrt (/ -4.5 (- (+ -6.3 rst_count) (neg 7.2)))) | 0.6566699244520886 | 0 | 595121
+69 | (sqrt (sqr fin_count)) | 0.043654106884872694 | 0 | 595121
+69 | (sqrt (/ 6.0 (- (+ (abs 2.7) rst_count) (neg 7.2)))) | 0.7689645456714922 | 0 | 595121
+69 | (sqrt (/ -4.5 (- (+ (abs -9.6) rst_count) 8.0))) | 0.7039091686243292 | 0 | 595121
+69 | (sqrt (sqr (abs (abs (sqr 5.3))))) | 2.2944531742830082e-05 | 0 | 595121
+69 | (sqrt (/ (abs 0.2) (min arp -6.5))) | 2.8390563684227005e-05 | 0 | 595121
+69 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+69 | (sqrt (/ 2.5 (- (+ (abs syn_flag_number) rst_count) (neg 7.2)))) | 0.7566938260416812 | 0 | 595121
+69 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+69 | (sqrt -4.7) | 3.6648691721098456e-05 | 0 | 595121
+69 | (neg (abs tcp)) | 0.08934228621314644 | 0 | 595121
+69 | (sqrt (/ -3.1 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206834888 | 0 | 595121
+69 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg ipv)))) | 0.7697426933118343 | 0 | 595121
+69 | (sqrt (/ -4.5 (- -8.8 (neg 7.2)))) | 0.0 | 0 | 595121
+69 | (neg (sqrt (/ (max 4.0 6.1) udp))) | 0.0 | 468864 | 126257
+70 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+70 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+70 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+70 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+70 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+70 | (sqrt (/ avg (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.12854375856249325 | 0 | 595121
+70 | (sqrt (abs (neg covariance))) | 0.4430188084084385 | 0 | 595121
+70 | (sqrt (/ -0.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838625 | 0 | 595121
+70 | (sqrt (sqr (sqrt (/ (max (sqrt arp) 4.6) 2.6)))) | 0.0 | 0 | 595121
+70 | (sqrt (/ -3.9 (- (min -6.9 (neg syn_count)) (neg 7.2)))) | 0.0001620646988737214 | 0 | 595121
+70 | (sqrt (min psh_flag_number ack_count)) | 0.021475152355763742 | 0 | 595121
+70 | (sqrt (max -6.7 (neg 2.0))) | 0.0 | 0 | 595121
+70 | (sqrt (/ -5.4 (- (sqr -6.5) (neg 7.2)))) | 0.0 | 0 | 595121
+70 | (sqrt (/ -8.4 (- (+ (abs -9.6) irc) (neg 7.2)))) | 0.0 | 0 | 595121
+70 | (sqrt (/ -3.9 (sqrt (sqr (neg 7.0))))) | 0.0 | 0 | 595121
+70 | (sqrt (abs (* (neg -5.5) (* header_length 0.9)))) | 0.42122229443653664 | 0 | 595121
+70 | (- (min 2.3 6.5) (- (abs 3.5) (min 5.1 9.2))) | 0.0 | 0 | 595121
+70 | (sqrt (/ -3.9 (- (+ rate rst_count) (neg 7.2)))) | 0.17677667465163274 | 0 | 595121
+70 | dns | 0.02261289222008236 | 0 | 595121
+70 | (sqrt (/ 2.5 (- syn_flag_number (neg 7.2)))) | 0.07923584796315679 | 0 | 595121
+71 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+71 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+71 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+71 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+71 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+71 | (sqrt (sqr (sqrt 3.3))) | 1.4387884062911083e-05 | 0 | 595121
+71 | (sqrt (/ -3.9 (- (+ (abs 5.3) rst_count) (neg 7.2)))) | 0.7713638657530297 | 0 | 595121
+71 | (sqrt (/ -8.4 (min (+ std -5.8) (- -3.0 rst_count)))) | 0.6335108164014547 | 0 | 595121
+71 | (sqrt (abs (max (sqr 7.9) tot_size))) | 0.29687645797319717 | 0 | 595121
+71 | (sqrt (/ tot_sum (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.13166446873146678 | 0 | 595121
+71 | (- (abs 4.0) 5.2) | 1.5109831492408259e-05 | 0 | 595121
+71 | (sqrt (/ 2.5 (- (min (sqrt -4.3) -0.8) (neg 7.2)))) | 0.0 | 0 | 595121
+71 | (sqrt (/ -5.4 (sqr icmp))) | 0.0 | 498100 | 97021
+71 | (sqrt (/ 2.5 (- (+ (abs variance) rst_count) (neg 7.2)))) | 0.7627654553510917 | 0 | 595121
+71 | (max (abs (abs min)) (max (sqrt http) radius)) | 0.38731670049363487 | 0 | 595121
+71 | (sqrt (/ -0.1 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838625 | 0 | 595121
+71 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) -2.5))) | 0.771078056745976 | 0 | 595121
+71 | (neg (sqr (abs radius))) | 0.25306434485821094 | 0 | 595121
+71 | (sqrt (/ max (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.04993374593996913 | 0 | 595121
+71 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (abs 9.6)))) | 0.0 | 437905 | 157216
+72 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+72 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+72 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+72 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+72 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+72 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg ack_flag_number)))) | 0.7611737255623517 | 0 | 595121
+72 | (sqr drate) | 0.0002095275906426603 | 0 | 595121
+72 | (sqrt (/ 6.0 (abs (+ (abs (sqr 9.3)) (abs -0.1))))) | 1.2140485591341526e-05 | 0 | 595121
+72 | (sqrt (- (neg 7.0) (neg tot_size))) | 0.3018929270058855 | 0 | 595121
+72 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (sqrt psh_flag_number)))) | 0.7713578841843468 | 0 | 595121
+72 | (sqrt (/ -8.4 (- (abs number) (neg 7.2)))) | 0.13457091538139287 | 0 | 595121
+72 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) -3.9))) | 0.7719799077100686 | 0 | 595121
+72 | (sqrt (/ 2.5 (min (/ -1.1 (sqr (abs syn_count))) ipv))) | 0.11086750733208398 | 0 | 595121
+72 | (abs covariance) | 0.25758195370544673 | 0 | 595121
+72 | (sqrt (- (sqr variance) (neg 5.5))) | 0.5255739580845051 | 0 | 595121
+72 | (sqrt (neg (sqr (sqrt (sqr (sqrt (/ 7.1 max))))))) | 0.35494139107573036 | 0 | 595121
+72 | (sqrt (sqrt (abs (+ 5.4 min)))) | 0.08572431571789611 | 0 | 595121
+72 | (sqr (sqrt (neg (sqr (min llc (abs flow_duration)))))) | 0.3476402459148925 | 0 | 595121
+72 | (- -0.7 (neg (sqrt (sqrt (abs 0.2))))) | 4.85619423653661e-06 | 0 | 595121
+72 | (sqrt (/ 6.0 (- (sqrt 1.9) (neg 7.2)))) | 2.8793689776821548e-05 | 0 | 595121
+73 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+73 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+73 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+73 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+73 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+73 | (sqrt (/ -8.4 (- (+ (abs -9.6) 7.4) (neg 7.2)))) | 8.359591507180879e-05 | 0 | 595121
+73 | (sqrt (/ -3.9 (- (+ (abs urg_count) rst_count) (neg 7.2)))) | 0.7501271954601986 | 0 | 595121
+73 | (sqrt (abs (abs (- 9.7 rst_flag_number)))) | 0.048940657877932066 | 0 | 595121
+73 | (sqrt (/ -8.4 (- (+ (abs -9.6) -6.0) (neg 7.2)))) | 3.063727334150877e-06 | 0 | 595121
+73 | (sqrt (/ -3.9 (- (+ (sqr tot_size) rst_count) (neg 7.2)))) | 0.299505824126118 | 0 | 595121
+73 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) 0.1))) | 0.7684520678111464 | 0 | 595121
+73 | (neg (* (sqrt (abs dhcp)) (sqr (* -1.8 (abs icmp))))) | 0.0 | 0 | 595121
+73 | (sqrt (/ covariance (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.12539035681906702 | 0 | 595121
+73 | (sqrt (/ protocol_type (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.2376438373745372 | 0 | 595121
+73 | (sqrt (/ 6.0 covariance)) | 0.0 | 408821 | 186300
+73 | (sqrt (/ -3.9 (- (+ (abs -9.6) 2.5) (neg 7.2)))) | 4.42260546541727e-06 | 0 | 595121
+73 | (sqrt (/ -8.4 0.1)) | 1.738690972188554e-05 | 0 | 595121
+73 | (sqrt (/ -8.4 (- (+ (abs -5.2) rst_count) (neg 7.2)))) | 0.7712947029416657 | 0 | 595121
+73 | (max (/ header_length 5.7) (max -8.6 (abs (sqr -4.5)))) | 0.30965173500033494 | 0 | 595121
+73 | (min (max 1.5 (abs max)) (sqrt 6.7)) | 0.0 | 0 | 595121
+74 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+74 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+74 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+74 | (sqrt (/ 2.5 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206839156 | 0 | 595121
+74 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206838801 | 0 | 595121
+74 | (sqrt (- (sqr 2.8) 4.8)) | 0.0 | 0 | 595121
+74 | (sqrt (/ -8.4 (- (+ (abs -9.6) rst_count) (neg -4.5)))) | 0.756822057009931 | 0 | 595121
+74 | (sqrt (/ tot_size (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.12936767986695313 | 0 | 595121
+74 | (sqrt (abs (sqr (+ (abs syn_count) (* number dns))))) | 0.11275504041578337 | 0 | 595121
+74 | (sqrt (/ 6.0 (- (abs 9.0) (neg 7.2)))) | 0.0 | 0 | 595121
+74 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) dns))) | 0.7685400461332593 | 0 | 595121
+74 | (sqrt (/ -3.9 (- (+ (abs -6.6) rst_count) (neg 7.2)))) | 0.7721405294786573 | 0 | 595121
+74 | (sqrt (sqrt (sqr (max (/ (sqr udp) 9.8) 5.6)))) | 1.4620572214871908e-05 | 0 | 595121
+74 | (sqrt (/ dns (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.017907320222271973 | 0 | 595121
+74 | (sqrt (/ -8.4 (- (+ (abs 9.8) rst_count) (neg 7.2)))) | 0.7733362531125184 | 0 | 595121
+74 | (sqrt (neg (sqr max))) | 0.4484412001724941 | 0 | 595121
+74 | (sqrt (/ -5.4 (- -5.4 (neg 7.2)))) | 0.0 | 0 | 595121
+74 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 2.9)))) | 0.771363865755727 | 0 | 595121
+74 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+74 | (sqrt (/ 6.1 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206836781 | 0 | 595121
+75 | (sqrt (/ -8.4 (- (+ (abs 9.8) rst_count) (neg 7.2)))) | 0.7733362531125184 | 0 | 595121
+75 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+75 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+75 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+75 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+75 | (sqrt (/ -8.4 (- (+ (abs 9.8) -2.0) (neg 7.2)))) | 0.0 | 0 | 595121
+75 | (sqrt (/ -3.9 (- (+ (abs 4.7) rst_count) (neg 7.2)))) | 0.7709256261257137 | 0 | 595121
+75 | (sqrt (abs srate)) | 0.027753726577892306 | 0 | 595121
+75 | (sqrt (/ -3.9 (- (+ 1.4 rate) (neg 7.2)))) | 0.06385295465270699 | 0 | 595121
+75 | (sqrt (/ 6.0 (- header_length (neg 7.2)))) | 0.17222226010315425 | 0 | 595121
+75 | (sqrt (/ -3.9 (- -7.9 (neg 7.2)))) | 0.0 | 0 | 595121
+75 | (sqrt (- header_length (neg (sqr (sqrt 4.2))))) | 0.4211848784271225 | 0 | 595121
+75 | (sqrt (/ -3.9 (- (+ (abs llc) rst_count) (neg 7.2)))) | 0.7663764360630668 | 0 | 595121
+75 | (sqrt (/ -3.9 (- (+ (neg udp) rst_count) (neg 7.2)))) | 0.7473444330751646 | 0 | 595121
+75 | (abs 3.1) | 4.981618615094667e-06 | 0 | 595121
+75 | (sqrt (/ 6.0 (neg (* (neg 6.9) psh_flag_number)))) | 0.0 | 542596 | 52525
+75 | (sqrt (/ -3.9 (- (+ (abs -0.7) rst_count) (neg 7.2)))) | 0.765806813553866 | 0 | 595121
+75 | (sqrt (/ -3.9 (- (+ (abs -9.6) -1.9) (neg 7.2)))) | 0.0 | 0 | 595121
+75 | (sqrt (/ -3.9 (- (+ (abs -9.6) protocol_type) (neg 7.2)))) | 0.006035572420136177 | 0 | 595121
+75 | (abs (max (sqrt telnet) -8.3)) | 0.0 | 0 | 595121
+76 | (sqrt (/ -8.4 (- (+ (abs 9.8) rst_count) (neg 7.2)))) | 0.7733362531125184 | 0 | 595121
+76 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+76 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+76 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+76 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+76 | (sqrt (abs (* -6.1 (sqrt syn_flag_number)))) | 0.07923584798050916 | 0 | 595121
+76 | (sqrt (/ -5.4 (- (+ (abs tot_size) rst_count) (neg 7.2)))) | 0.4128094186135637 | 0 | 595121
+76 | (sqrt (/ -3.9 (- (* irc srate) (neg 7.2)))) | 6.714398970675717e-06 | 0 | 595121
+76 | (sqrt (sqr dhcp)) | 0.0 | 0 | 595121
+76 | (sqrt (abs (min (abs drate) -6.2))) | 1.9468691079356532e-05 | 0 | 595121
+76 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg -2.2)))) | 0.7647211973667806 | 0 | 595121
+76 | (sqrt (/ -5.4 (- (min fin_count magnitue) (neg 7.2)))) | 0.047623680408217954 | 0 | 595121
+76 | (sqrt (/ 6.0 (- (+ (sqr -5.4) rst_count) (neg 7.2)))) | 0.7728373713695772 | 0 | 595121
+76 | (sqrt (/ -8.4 (- (+ (abs 9.8) 3.2) (neg 7.2)))) | 2.3155764919409884e-05 | 0 | 595121
+76 | (sqrt (/ -8.4 (- (* (neg 1.9) 9.3) (neg 7.2)))) | 1.1282643019217643e-05 | 0 | 595121
+76 | (sqrt (abs (abs (sqr (sqrt (sqr 0.5)))))) | 0.0 | 0 | 595121
+76 | (sqrt (sqr (sqrt (sqr 3.5)))) | 0.0 | 0 | 595121
+76 | (sqrt (/ -3.9 (sqr (* urg_count (* 1.4 -0.3))))) | 0.0 | 472724 | 122397
+76 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) -1.8))) | 0.7705141995200997 | 0 | 595121
+76 | (abs (min 1.7 (neg (abs cwr_flag_number)))) | 0.0 | 0 | 595121
+77 | (sqrt (/ -8.4 (- (+ (abs 9.8) rst_count) (neg 7.2)))) | 0.7733362531125184 | 0 | 595121
+77 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+77 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+77 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+77 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+77 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg -8.2)))) | 0.694174123737742 | 0 | 595121
+77 | (sqrt (/ 6.0 (- (+ (abs 5.6) rst_count) (neg 7.2)))) | 0.7715626767198096 | 0 | 595121
+77 | (sqrt (/ -3.9 (- (+ (abs -9.6) 0.7) (neg 7.2)))) | 0.0 | 0 | 595121
+77 | (sqrt (/ 6.0 (- (+ (abs -9.6) -4.6) (neg 7.2)))) | 0.0 | 0 | 595121
+77 | (sqrt (/ -8.4 (- (+ (abs 9.8) rst_count) (neg -0.9)))) | 0.7675838554134979 | 0 | 595121
+77 | (sqrt (abs (abs (+ (sqr (/ (sqr 4.7) srate)) 4.3)))) | 0.0015531972006120338 | 11941 | 583180
+77 | (abs (max 4.9 (+ -0.1 (+ udp (abs ece_flag_number))))) | 0.0 | 0 | 595121
+77 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg -4.2)))) | 0.7582444305398361 | 0 | 595121
+77 | (sqrt (/ -8.4 (- (+ (abs 9.8) syn_flag_number) (neg 7.2)))) | 0.07923584799571746 | 0 | 595121
+77 | (sqrt (/ -3.9 (- (abs (max magnitue tot_size)) (neg 7.2)))) | 0.28935250349708846 | 0 | 595121
+77 | (sqrt (/ -8.4 (- (+ (abs covariance) rst_count) (neg 7.2)))) | 0.3621452767554986 | 0 | 595121
+77 | (sqrt (/ -3.9 (- (+ llc rst_count) (neg 7.2)))) | 0.7663764360630668 | 0 | 595121
+77 | (sqrt (/ -3.9 -5.2)) | 0.0 | 0 | 595121
+77 | (+ (- (sqr (abs drate)) -4.1) (sqr 7.7)) | 0.00020959005497531258 | 0 | 595121
+77 | (abs (- (sqr -0.1) (max iat iat))) | 0.004996132822977721 | 0 | 595121
+78 | (sqrt (/ -8.4 (- (+ (abs 9.8) rst_count) (neg 7.2)))) | 0.7733362531125184 | 0 | 595121
+78 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+78 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+78 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+78 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+78 | (sqrt (/ -8.4 (- (sqrt (neg tot_size)) (neg 7.2)))) | 0.02180043400513854 | 50 | 595071
+78 | (sqrt (/ -3.9 (- (+ variance rst_count) (neg 7.2)))) | 0.762765455347548 | 0 | 595121
+78 | (sqrt (/ -8.4 (sqrt ssh))) | 0.0 | 595084 | 37
+78 | (sqrt (sqrt -9.9)) | 2.393410016578758e-05 | 0 | 595121
+78 | (sqrt (/ -3.9 (- (+ (neg -6.7) rst_count) (neg 7.2)))) | 0.7721918283334406 | 0 | 595121
+78 | (sqrt (- (neg -4.4) (sqr (sqrt (sqr (sqr protocol_type)))))) | 0.03891105847165603 | 0 | 595121
+78 | (sqrt (neg (sqr 1.2))) | 1.950670857803252e-05 | 0 | 595121
+78 | (sqrt (/ -3.9 (- (+ (abs 7.1) rst_count) (neg 7.2)))) | 0.772386415268521 | 0 | 595121
+78 | (abs -4.1) | 1.9945083471489648e-05 | 0 | 595121
+78 | (sqrt (/ -3.9 (- (+ (abs min) rst_count) (neg 7.2)))) | 0.4107939144722278 | 0 | 595121
+78 | (sqrt (/ -0.3 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206819962 | 0 | 595121
+78 | (sqrt (/ -8.4 (- (+ (abs 0.3) rst_count) (neg 7.2)))) | 0.7649507347679984 | 0 | 595121
+78 | (sqrt (/ 6.0 (sqr (min (* -9.8 covariance) duration)))) | 0.0 | 408821 | 186300
+78 | (sqrt (/ -3.9 (- (+ (abs urg_count) rst_count) (neg 7.2)))) | 0.7501271954601986 | 0 | 595121
+78 | (sqrt (sqrt (- (min 4.0 syn_count) -4.8))) | 0.11501233167946232 | 0 | 595121
+79 | (sqrt (/ -8.4 (- (+ (abs 9.8) rst_count) (neg 7.2)))) | 0.7733362531125184 | 0 | 595121
+79 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+79 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+79 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+79 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+79 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg -2.0)))) | 0.7651738269749265 | 0 | 595121
+79 | (sqrt (max (sqr magnitue) (sqr iat))) | 0.004996005368998512 | 0 | 595121
+79 | (sqrt (/ -5.4 (- (+ (abs -9.6) 4.4) (neg 7.2)))) | 0.0 | 0 | 595121
+79 | (abs (min tot_sum (sqrt ece_flag_number))) | 0.0 | 0 | 595121
+79 | (max (sqrt 6.7) 2.5) | 0.0 | 0 | 595121
+79 | (sqrt (/ -3.9 (- (+ (abs 9.1) rst_count) (neg 7.2)))) | 0.7731422402992228 | 0 | 595121
+79 | (sqrt (/ -8.4 (- (+ (abs 9.8) rst_count) (sqr std)))) | 0.13332099459398566 | 0 | 595121
+79 | (sqr (abs (* (sqr dns) 3.1))) | 0.02261289222008238 | 0 | 595121
+79 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg ipv)))) | 0.7697426933147223 | 0 | 595121
+79 | (sqrt (sqrt (sqr -0.9))) | 2.7838695275678316e-05 | 0 | 595121
+79 | (sqrt (/ -5.4 (- 2.6 (neg 7.2)))) | 0.0 | 0 | 595121
+79 | (sqrt (/ 6.0 (- (/ 4.4 min) (neg 7.2)))) | 0.11386575380837004 | 0 | 595121
+79 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) smtp))) | 0.7685848114524789 | 0 | 595121
+79 | (sqrt (/ -2.2 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684475 | 0 | 595121
+79 | (sqrt (/ -8.4 (+ http dhcp))) | 0.0 | 566216 | 28905
+80 | (sqrt (/ -8.4 (- (+ (abs 9.8) rst_count) (neg 7.2)))) | 0.7733362531125184 | 0 | 595121
+80 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206851002 | 0 | 595121
+80 | (sqrt (/ 6.0 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.7732840206845889 | 0 | 595121
+80 | (sqrt (/ -2.2 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684475 | 0 | 595121
+80 | (sqrt (/ -3.9 (- (+ (abs -9.6) rst_count) (neg 7.2)))) | 0.773284020684356 | 0 | 595121
+80 | (sqrt (/ -5.4 (- (+ 0.9 0.1) (neg 7.2)))) | 1.307143020500623e-05 | 0 | 595121
+80 | (sqrt (/ -3.9 (neg (sqrt (- 5.8 5.3))))) | 2.887585887295158e-05 | 0 | 595121
+80 | (sqrt (/ -3.9 (- (sqrt radius) (neg 7.2)))) | 0.4484104656801747 | 0 | 595121
+80 | (sqrt (/ -8.4 (- (+ (abs dhcp) rst_count) (neg 7.2)))) | 0.7642417435229785 | 0 | 595121
+80 | (sqrt (/ -2.2 (- (+ (abs -9.2) rst_count) (neg 7.2)))) | 0.7731719210392936 | 0 | 595121
+80 | (sqrt (/ -2.2 (- (+ (abs -9.6) rst_count) tot_sum))) | 0.27286981420130135 | 1 | 595120
+80 | (sqrt (/ -3.9 (- (+ (abs -9.6) psh_flag_number) (neg 7.2)))) | 0.0395061127287639 | 0 | 595121
+80 | (sqrt (/ -8.4 (- (+ (abs udp) rst_count) (neg 7.2)))) | 0.7576252594252505 | 0 | 595121
+80 | (sqrt (/ -5.4 (- (+ (abs -9.6) rst_count) (neg 8.3)))) | 0.7735423354134335 | 0 | 595121
+80 | (sqrt (* (sqr rst_count) header_length)) | 0.3221034263835173 | 0 | 595121
+80 | (sqr (* -6.8 std)) | 0.2533610082129191 | 0 | 595121
+80 | (sqrt (/ -2.2 (- (+ (abs 2.2) rst_count) (neg 7.2)))) | 0.7683160831583993 | 0 | 595121
+80 | (/ (sqrt dns) urg_count) | 0.0 | 472724 | 122397
+80 | (sqrt (/ -2.2 (neg (* (- variance 3.5) 9.7)))) | 0.5137586447520675 | 0 | 595121
+80 | (* (sqrt (* 3.7 8.7)) (sqrt (sqr tot_size))) | 0.31770127867868203 | 0 | 595121
