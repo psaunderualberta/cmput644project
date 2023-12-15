@@ -44,19 +44,16 @@ Once the above config is set appropriately, simply run `python genetic_algorithm
 At the start of the output, you will see a local link appear (i.e. http://127.0.0.1:8787/). This site represents the status of the parallel workers operating on your machine. It is primarily a diagnostic tool to analyse worker status, but the main page is somewhat interesting to look at.
 
 ## Training Models
-Training of models takes place in the `train_model.py` directory. 
+Training of models takes place in the `train_model.py` directory. If one wishes to only train models on their most recent genetic algorithm output, then they should change line `271` in `train_model.py` to set `paths = ["local"]. As is, models will be trained for all experiments, which will take several hours. Training the models with the small dataset should take no more than 10 minutes, and likely far less.
 
 ## Generating plots
 Scripts to generate plots are found within `plot.py`. This is by far the messiest python file I wrote within this repository, as there is a lot of experimentation that went into its design. The function within should be somewhat self-explanatory, or at least what must be changed to get the scripts running. All plots are placed within the `./plots/` folder. To change the type of plot, go into `plot.py` and comment/uncomment the specific plotting function you wish to run, before executing the script as `python plot.py`. 
 
-#### `heatmaps()`
+### `heatmaps()`
 Generates heatmaps showing the contents of the MAP-Elites tables. This plot does not appear in the final paper, though was shown during the final presentation. No additional changes needs to be done to run this function. 
 
-#### `fitness_vs_coefs_kde_1d()`
+### `fitness_vs_coefs_kde_1d()`
 Generates the KDE plots showing the distribution of coefficients between synthesized and original features. The only thing to change is the `source` variable to one of "MAP-Elites" or "Elitism" to differentiate the two types of runs.
 
-#### `feature_explain()`
-
-
-#### `plot_run()`
+### `plot_run()`
 Generates the plots seen in the paper, with the thick red line over many small points. Change the `run_path` variable to point to the logfile of your genetic algorithm, and run the function. By default, the logfile is located at `./logs/results/*.txt`. 
