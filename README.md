@@ -1,7 +1,7 @@
 # F23 CMPUT 644 Project - Paul Saunders
 
 ## Creating virtual environment
-To create an environment capable of running all scripts in this repository, use your virtual environment manager of choice to create an environment with Python 3.10.9. Other versions of python will likely work, but have not been tested. Once this is complete, run `pip install -r ./requirements.txt` to install the appropriate libraries. The total size of the virtual environment is approximately 20-25MB. 
+To create an environment capable of running all scripts in this repository, use your virtual environment manager of choice to create an environment with Python 3.10.9 or Python 3.9.13. Other versions of python 3.7+ will likely work, but have not been tested. Once this is complete, run `pip install -r ./requirements.txt` from the project root to install the appropriate libraries. Note that the total size of the virtual environment is approximately 20-25MB. 
 
 ## Producing a compatible dataset
 If you only wish to use a small part of the data, then this is already included in the `./shortened_data` directory. To create a compatible dataset from the entire original dataset, one must just download the CICIoT2023 dataset from [this](https://www.unb.ca/cic/datasets/iotdataset-2023.html) link and place it into the directory `CICIoT2023/data/original`. Once this is complete, run `python combine_dataset.py`. This script performs a few manipulations to the data, such as changing column names and converting the original csv files into `parquet` format. This enables faster loading of the data, among other benefits. 
