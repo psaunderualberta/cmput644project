@@ -3,7 +3,7 @@
 ## Creating virtual environment
 To create an environment capable of running all scripts in this repository, use your virtual environment manager of choice to create an environment with Python 3.10.9. Other versions of python will likely work, but have not been tested. Once this is complete, run `pip install -r ./requirements.txt` to install the appropriate libraries. The total size of the virtual environment is approximately 20-25MB. 
 
-## Producing a compatible Dataset
+## Producing a compatible dataset
 If you only wish to use a small part of the data, then this is already included in the `./shortened_data` directory. To create a compatible dataset from the entire original dataset, one must just download the CICIoT2023 dataset from [this](https://www.unb.ca/cic/datasets/iotdataset-2023.html) link and place it into the directory `CICIoT2023/data/original`. Once this is complete, run `python combine_dataset.py`. This script performs a few manipulations to the data, such as changing column names and converting the original csv files into `parquet` format. This enables faster loading of the data, among other benefits. 
 
 ## Genetic Algorithm
@@ -45,6 +45,8 @@ At the start of the output, you will see a local link appear (i.e. http://127.0.
 
 ## Training Models
 Training of models takes place in the `train_model.py` directory. If one wishes to only train models on their most recent genetic algorithm output, then they should change line `271` in `train_model.py` to set `paths = ["local"]. As is, models will be trained for all experiments, which will take several hours. Training the models with the small dataset should take no more than 10 minutes, and likely far less.
+
+Evaluating the baseline model (one without any synthesized features) can be done by setting `USE_HEURISTIC = False` on line 277. To use the synthesized features, set `USE_HEURISTIC = True`. 
 
 ## Generating plots
 Scripts to generate plots are found within `plot.py`. This is by far the messiest python file I wrote within this repository, as there is a lot of experimentation that went into its design. The function within should be somewhat self-explanatory, or at least what must be changed to get the scripts running. All plots are placed within the `./plots/` folder. To change the type of plot, go into `plot.py` and comment/uncomment the specific plotting function you wish to run, before executing the script as `python plot.py`. 
