@@ -7,9 +7,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+import time
 from src.utility.constants import *
 from src.heuristic.parsing import parse_heuristic
 from dask import delayed, compute 
+from dask.distributed import Client, LocalCluster
 import scienceplots
 plt.style.use(["science", "grid"])
 
@@ -52,14 +54,7 @@ def delayed_trim_nans(X, y):
 
 def heatmaps():
     file_location = os.path.dirname(os.path.realpath(__file__))
-    table_files = glob(
-        os.path.join(
-            file_location,
-            "artifacts",
-            "**",
-            "tables.pkl",
-        )
-    )
+    table_files = list(map(lambda f: os.path.join(f, "tables.pkl"), MAPELITES_RESULTS))
 
     tables = []
     dirnames = []
@@ -107,8 +102,10 @@ def fitness_vs_coefs_kde_1d():
     source = "Elitism"
     if source == "MAP-Elites":
         folders = MAPELITES_RESULTS
-    else:
+    elif source == "Elitism":
         folders = TRADITIONAL_RESULTS
+    else:
+        raise ValueError(f"Invalid source: {source}")
 
     table_files = list(map(lambda f: os.path.join(f, "models.pkl"), folders))
 
@@ -150,75 +147,6 @@ def fitness_vs_coefs_kde_1d():
     plt.clf()
 
 
-def feature_explain():
-    # \sqrt{\min\left(5.6^{2}, \sqrt{\text{rst count} - 3.0}\right) - 5.1} in our heuristic grammar
-    feature_str = "(sqrt (min (sqr 5.6) (sqrt (- rst_count 3.0)) -5.1))"
-    feature = parse_heuristic(feature_str)
-
-    # Load the data, execute the heuristic, and trim the nans
-    dfs = [delayed_load_data(file) for file in COMBINED_DATA_FILES]
-    Xs = [None for _ in dfs]
-    ys = [None for _ in dfs]
-
-    # Execute heuristics
-    for i, df in enumerate(dfs):
-        Xs[i], ys[i] = delayed_execute_heuristic(
-            df, [feature], use_heuristic=True
-        )
-
-        Xs[i], ys[i] = delayed_trim_nans(Xs[i], ys[i])
-
-    X_raw = [df["rst_count"] for df in dfs]
-    X = [df[feature_str] for df in Xs]
-    y = [df[CLASSES_2_Y_COLUMN] for df in ys]
-
-    X_raw, X, y = compute(X_raw, X, y)
-    X_raw = np.concatenate(X_raw)
-    X = np.concatenate(X)
-    y = np.where(np.concatenate(y) == BENIGN_CLASS, "Benign", "Malicious")
-
-    # Basic statistics for X_raw and X
-    print("X_raw stats:")
-    print("min: {}".format(np.min(X_raw)))
-    print("max: {}".format(np.max(X_raw)))
-    print("mean: {}".format(np.mean(X_raw)))
-    print("std: {}".format(np.std(X_raw)))
-    print("X stats:")
-    print("min: {}".format(np.min(X)))
-    print("max: {}".format(np.max(X)))
-    print("mean: {}".format(np.mean(X)))
-    print("std: {}".format(np.std(X)))
-
-    # Plot X vs. X_raw
-    ax = sns.scatterplot(x=X_raw, y=X, hue=y)
-    ax.set(
-        xlabel="rst_count",
-        ylabel="Synthesized Feature",
-        title="Synthesized Feature vs. rst_count",
-    )
-
-    plot_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "plots")
-    os.makedirs(plot_dir, exist_ok=True)
-    plt.savefig(os.path.join(plot_dir, "feature_vs_rst_count.pdf"))
-
-    # Plot the distributions of X vs. y and X_raw vs. y
-    fig, axs = plt.subplots(2, 1, sharex=True)
-    sns.histplot(x=X_raw, hue=y, ax=axs[0])
-    sns.histplot(x=X, hue=y, ax=axs[1])
-    axs[0].set(
-        ylabel="Count",
-        title="rst_count vs. Target",
-    )
-    axs[1].set(
-        xlabel="Synthesized Feature",
-        ylabel="Count",
-        title="Synthesized Feature vs. Target",
-    )
-
-    plt.savefig(os.path.join(plot_dir, "feature_vs_rst_count_distributions.pdf"))
-    plt.clf()
-
-
 def plot_run():
     file_location = os.path.dirname(os.path.realpath(__file__))
     run_path = os.path.join(file_location, "logs", "results", "mapelites-12hr-ga-1.txt")
@@ -255,8 +183,8 @@ def plot_run():
 
 if __name__ == "__main__":
     # heatmaps()
-    fitness_vs_coefs_kde_1d()
+    # fitness_vs_coefs_kde_1d()
     # fitness_vs_coefs_kde_2d()
-    # feature_explain()
     # plot_run()
     # mapelites_vs_traditional()
+    pass

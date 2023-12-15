@@ -85,6 +85,8 @@ def main():
 
         # Execute the population
         # To parallize this, we use dask.delayed and a custom computation of the fitness
+        # Without this, we would need to load the entire dataset into memory, which might not be
+        # possible with some machines.
         delayed_fitnesses = []
         delayed_nan_counts = []
         delayed_num_samples = []
@@ -148,7 +150,7 @@ def main():
         fitnesses = np.where(nan_counts > MAX_NAN_PERCENTAGE * num_samples, 0, fitnesses)
         print("Time to compute fitnesses: {}".format(time.time() - start))
 
-        # Insert the population into MAP-Elites
+        # Insert the population into the storage
         for heuristic, fitness in zip(population, fitnesses):
             heuristic_storage.insert_heuristic_if_better(heuristic, fitness)
 

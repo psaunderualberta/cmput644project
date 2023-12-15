@@ -40,7 +40,7 @@ def top_k_to_latex_table():
         simplified = latex(simplifier.symbolic(h, False), full_prec=False, mul_symbol='dot')
         size = parsed_h.size()
         depth = parsed_h.depth()
-        print(f"\t{i+1} & ${simplified}$ & {fitness} & {size} & {depth} \\\\")
+        print(f"\t{h} & {i+1} & ${simplified}$ & {fitness} & {size} & {depth} \\\\")
 
 
 def mapelites_2_latex():
@@ -66,12 +66,13 @@ def mapelites_2_latex():
 
     # Convert to simplified format
     simplifier = Simplifier()
-    for i, (h, f) in enumerate(zip(heuristics, fitnesses)):
+    for i, (h, f) in enumerate(zip(heuristics[13:21], fitnesses[13:21])):
         parsed_h = parse_heuristic(h)
         fitness = np.round(f, 3)
         size = parsed_h.size()
         depth = parsed_h.depth()
         simplified = latex(simplifier.symbolic(h, False), full_prec=False, mul_symbol='dot')
+        print(h)
         print(f"\t{i+1} & ${simplified}$ & {fitness} & {size} & {depth} \\\\")
 
 
