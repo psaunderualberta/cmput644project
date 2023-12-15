@@ -44,7 +44,7 @@ Once the above config is set appropriately, simply run `python genetic_algorithm
 At the start of the output, you will see a local link appear (i.e. http://127.0.0.1:8787/). This site represents the status of the parallel workers operating on your machine. It is primarily a diagnostic tool to analyse worker status, but the main page is somewhat interesting to look at.
 
 ## Training Models
-Training of models takes place in the `train_model.py` directory. If one wishes to only train models on their most recent genetic algorithm output, then they should change line `271` in `train_model.py` to set `paths = ["local"]. As is, models will be trained for all experiments, which will take several hours. Training the models with the small dataset should take no more than 10 minutes, and likely far less.
+Training of models takes place in the `train_model.py` directory. If one wishes to only train models on their most recent genetic algorithm output, then they should change line `271` in `train_model.py` to set `paths = ["local"]`. As is, models will be trained for all experiments over the course of the semester, which will take several hours. Training the models with the small dataset should take no more than 10 minutes, and likely far less.
 
 Evaluating the baseline model (one without any synthesized features) can be done by setting `USE_HEURISTIC = False` on line 277. To use the synthesized features, set `USE_HEURISTIC = True`. 
 
